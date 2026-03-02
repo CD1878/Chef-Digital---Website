@@ -1,0 +1,576 @@
+import { motion } from "motion/react";
+import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock } from "lucide-react";
+import { useState, useEffect } from "react";
+
+// --- Components ---
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/90 backdrop-blur-md py-3" : "bg-black py-4"}`}>
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="flex items-center gap-10">
+          <a href="/" className="flex items-center">
+            <svg width="80" height="24" viewBox="0 0 54 16" fill="white">
+              <path fillRule="evenodd" clipRule="evenodd" d="M40.7085 3.35548C41.6337 3.35548 42.3838 2.60433 42.3838 1.67774C42.3838 0.751151 41.6337 0 40.7085 0C39.7833 0 39.0332 0.751151 39.0332 1.67774C39.0332 2.60433 39.7833 3.35548 40.7085 3.35548ZM22.8399 5.21793C19.8747 5.21793 17.4678 7.63388 17.4678 10.5979C17.4678 13.5619 19.8803 15.9779 22.8399 15.9779C25.7996 15.9779 28.212 13.5619 28.212 10.5979C28.212 7.63388 25.8052 5.21793 22.8399 5.21793ZM22.8399 13.4332C21.2819 13.4332 20.0143 12.1638 20.0143 10.6035C20.0143 9.04322 21.2819 7.77369 22.8399 7.77369C24.3979 7.77369 25.6656 9.04322 25.6656 10.6035C25.6656 12.1638 24.3979 13.4332 22.8399 13.4332ZM11.4589 5.20637C11.5985 5.20637 11.7326 5.21196 11.8722 5.22315C13.0449 5.32381 14.123 5.86628 14.9101 6.7499C15.6974 7.62791 16.133 8.76322 16.133 9.94317V15.7594H13.5642V9.87047C13.5586 8.71281 12.6037 7.76772 11.4422 7.76772C11.3752 7.76772 11.3026 7.77331 11.23 7.77891C10.1913 7.88517 9.32014 8.86947 9.32014 9.93199V15.7594H6.7514V9.88725C6.74581 8.724 5.79648 7.77331 4.63495 7.77331C4.56795 7.77331 4.49534 7.77891 4.42275 7.7845C3.38966 7.89076 2.51293 8.87506 2.51293 9.94317V15.7594H0V9.87047C0 7.29795 2.09411 5.20637 4.66287 5.20637C5.94726 5.20637 7.17022 5.74324 8.05254 6.67719C8.93489 5.73765 10.1634 5.20637 11.4589 5.20637ZM32.1664 0.251824H29.5976V15.7709H32.1664V0.251824ZM34.5114 0.251824H37.0802V15.7709H34.5114V0.251824ZM41.994 5.47478H39.4253V15.7649H41.994V5.47478ZM52.508 6.72752C53.4685 7.7062 53.999 8.9925 53.999 10.357V11.537H46.1866C46.5328 12.7786 47.6609 13.651 48.9676 13.651C49.9896 13.651 50.9109 13.1309 51.4414 12.2529L51.5475 12.0796L53.6695 13.1253L53.5467 13.3322C52.5806 14.9596 50.8104 15.9719 48.923 15.9719H48.9174C47.4766 15.9719 46.1252 15.4015 45.1033 14.3668C44.0814 13.3322 43.5285 11.9676 43.5453 10.5248C43.562 9.10994 44.1205 7.7845 45.1145 6.78345C46.1084 5.78239 47.4375 5.22315 48.8447 5.20637H48.9118C50.2687 5.20637 51.5419 5.74884 52.508 6.72752ZM51.4023 9.41192C51.0337 8.31577 49.984 7.54402 48.8112 7.54402C47.6385 7.54402 46.5887 8.31577 46.2257 9.41192H51.4023Z" fill="white" />
+            </svg>
+          </a>
+          <div className="hidden md:flex items-center gap-6 text-white/70 font-medium text-sm">
+            <button className="flex items-center gap-1 hover:text-white transition-colors">Producten <ChevronDown size={14} /></button>
+            <button className="flex items-center gap-1 hover:text-white transition-colors">Partners <ChevronDown size={14} /></button>
+            <button className="flex items-center gap-1 hover:text-white transition-colors">Developers <ChevronDown size={14} /></button>
+            <button className="flex items-center gap-1 hover:text-white transition-colors">Kennis <ChevronDown size={14} /></button>
+            <a href="/pricing" className="hover:text-white transition-colors">Tarieven</a>
+            <button className="flex items-center gap-1 hover:text-white transition-colors">Contact <ChevronDown size={14} /></button>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <a href="/login" className="text-white text-sm font-medium hover:text-white/80 transition-colors">Inloggen</a>
+          <a href="/signup" className="bg-mollie-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-mollie-orange/20">Account aanmaken</a>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+const Hero = () => {
+  return (
+    <section className="bg-white pt-32 pb-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl md:text-7xl font-bold tracking-tight text-mollie-dark max-w-4xl mx-auto leading-[1.1]"
+        >
+          Online en in-person betalingen voor bedrijven van elk formaat
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8 text-lg md:text-xl text-mollie-dark/60 max-w-2xl mx-auto"
+        >
+          Ruim <span className="text-mollie-dark font-semibold">250.000 Europese bedrijven</span> maken gebruik van onze oplossingen: van start-ups tot internationale ondernemingen.
+        </motion.p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <button className="w-full sm:w-auto bg-mollie-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20">
+            Account aanmaken
+          </button>
+          <button className="w-full sm:w-auto bg-gray-100 text-mollie-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition-all">
+            Neem contact op met sales
+          </button>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-20 relative max-w-5xl mx-auto"
+        >
+          <div className="rounded-[40px] overflow-hidden shadow-2xl relative aspect-video">
+            <img 
+              src="https://framerusercontent.com/images/B9CjbPjXp1LpJvVYgl58Z5AJI.jpg" 
+              alt="Veloretti Bike" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            
+            {/* Checkout Overlay */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
+              <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20">
+                <div className="text-center mb-6">
+                  <p className="text-xs text-gray-500 font-medium mb-1">Bestelling #3526</p>
+                  <h3 className="text-2xl font-bold text-gray-800">Voorlamp Zilver</h3>
+                  <p className="text-2xl font-bold text-gray-800 mt-1">€ 24,95</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <button className="w-full bg-black text-white py-3 rounded-xl flex items-center justify-center gap-2 font-semibold">
+                    <span className="text-lg"></span> Pay
+                  </button>
+                  <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-between border border-black/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold text-[10px]">iDEAL</div>
+                      <span className="font-medium text-sm">iDEAL</span>
+                    </div>
+                    <ArrowRight size={16} className="text-gray-400" />
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-between border border-black/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center text-white font-bold text-[10px]">VISA</div>
+                      <span className="font-medium text-sm">Creditcard</span>
+                    </div>
+                    <ArrowRight size={16} className="text-gray-400" />
+                  </div>
+                </div>
+                
+                <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-gray-400 font-medium uppercase tracking-wider">
+                  <Lock size={10} /> Secure payments by <span className="text-gray-600">Mollie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const LogoTicker = () => {
+  const logos = [
+    "Gymshark", "Gisou", "XXL Nutrition", "Patta", "Plantsome", "Marie-Stella-Maris", "Crisp", "Rosefield", "Veloretti", "Otrium"
+  ];
+  
+  return (
+    <div className="bg-white py-10 border-b border-gray-100 overflow-hidden">
+      <div className="flex animate-marquee whitespace-nowrap">
+        {[...Array(2)].map((_, i) => (
+          <div key={i} className="flex items-center gap-20 px-10">
+            {logos.map((logo) => (
+              <span key={logo} className="text-2xl font-bold text-gray-300 hover:text-gray-400 transition-colors cursor-default">
+                {logo}
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const BusinessAccount = () => {
+  return (
+    <section className="bg-mollie-warm py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+            Eén platform voor al je geldzaken
+          </h2>
+          <p className="mt-6 text-lg text-mollie-dark/60">
+            Maak meer omzet, verlaag je kosten en beheer je geldzaken via één platform. Gebruik Mollie voor online en in-person betalingen, abonnementsbetalingen, financiering, reconciliatie en fraudebestrijding.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Large Card */}
+          <div className="md:col-span-3 bg-black rounded-[32px] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-hidden relative min-h-[500px]">
+            <div className="z-10 max-w-md">
+              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                De zakelijke rekening van Mollie
+              </h3>
+              <p className="mt-4 text-white/80 text-lg">
+                Meld je als één van de eerste bedrijven aan.
+              </p>
+              <button className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all">
+                Ontdek meer
+              </button>
+            </div>
+            <div className="mt-10 md:mt-0 relative w-full md:w-1/2 flex justify-center">
+              <img 
+                src="https://framerusercontent.com/images/dea10WjynbzwNZ22BHzJlwYIg.png" 
+                alt="Mollie Cards" 
+                className="w-full max-w-lg rotate-12 translate-x-10"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+
+          {/* Bento Cards */}
+          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
+            <div>
+              <h4 className="text-2xl font-bold">Ontvang online betalingen</h4>
+              <p className="mt-3 text-gray-500">Verhoog je conversie door klanten alle populaire betaalmethoden aan te bieden.</p>
+            </div>
+            <div className="mt-8 flex justify-center">
+               <div className="grid grid-cols-3 gap-4 w-full">
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center font-bold text-gray-200">LOGO</div>
+                  ))}
+               </div>
+            </div>
+            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Ontdek meer <ArrowRight size={18} />
+            </button>
+          </div>
+
+          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
+            <div>
+              <h4 className="text-2xl font-bold">In-persoon betalingen</h4>
+              <p className="mt-3 text-gray-500">Bestel je terminals en begin direct met het accepteren van betalingen.</p>
+            </div>
+            <div className="mt-8 flex justify-center">
+               <img src="https://framerusercontent.com/images/Mpniu7Xd6RfDfIyKxb5iVS4ljk.png" alt="Terminal" className="h-48 object-contain" referrerPolicy="no-referrer" />
+            </div>
+            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Ontdek meer <ArrowRight size={18} />
+            </button>
+          </div>
+
+          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
+            <div>
+              <h4 className="text-2xl font-bold">Krijg sneller betaald</h4>
+              <p className="mt-3 text-gray-500">Maak een betaallink aan en deel hem veilig met je klant.</p>
+            </div>
+            <div className="mt-8 flex justify-center">
+               <div className="w-full max-w-[200px] bg-black rounded-3xl p-4 aspect-[9/16] relative overflow-hidden">
+                  <div className="bg-white rounded-xl p-3 mt-10">
+                    <div className="h-2 w-1/2 bg-gray-100 rounded mb-2"></div>
+                    <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 bg-mollie-blue h-10 rounded-lg"></div>
+               </div>
+            </div>
+            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Aan de slag <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const TapToPay = () => {
+  return (
+    <section className="bg-white py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="bg-black rounded-[40px] p-10 md:p-20 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative">
+          <div className="z-10 max-w-lg">
+            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              Tap to Pay op iPhone
+            </h3>
+            <p className="mt-6 text-white/70 text-lg">
+              Accepteer contactloze betalingen op je iPhone. Je hebt alleen je iPhone en de app van Mollie nodig.
+            </p>
+            <button className="mt-10 bg-white/20 backdrop-blur-md text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-all">
+              Ontdek meer
+            </button>
+          </div>
+          <div className="relative w-full md:w-1/2 flex justify-center">
+            <img 
+              src="https://framerusercontent.com/images/ULTklewmPBPDWl1pG4HiZzMk3Q.png" 
+              alt="Tap to Pay" 
+              className="w-full max-w-md rotate-[-15deg] translate-y-10"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="bg-black text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
+          <div className="col-span-2 md:col-span-1">
+            <svg width="80" height="24" viewBox="0 0 54 16" fill="white">
+              <path fillRule="evenodd" clipRule="evenodd" d="M40.7085 3.35548C41.6337 3.35548 42.3838 2.60433 42.3838 1.67774C42.3838 0.751151 41.6337 0 40.7085 0C39.7833 0 39.0332 0.751151 39.0332 1.67774C39.0332 2.60433 39.7833 3.35548 40.7085 3.35548ZM22.8399 5.21793C19.8747 5.21793 17.4678 7.63388 17.4678 10.5979C17.4678 13.5619 19.8803 15.9779 22.8399 15.9779C25.7996 15.9779 28.212 13.5619 28.212 10.5979C28.212 7.63388 25.8052 5.21793 22.8399 5.21793ZM22.8399 13.4332C21.2819 13.4332 20.0143 12.1638 20.0143 10.6035C20.0143 9.04322 21.2819 7.77369 22.8399 7.77369C24.3979 7.77369 25.6656 9.04322 25.6656 10.6035C25.6656 12.1638 24.3979 13.4332 22.8399 13.4332ZM11.4589 5.20637C11.5985 5.20637 11.7326 5.21196 11.8722 5.22315C13.0449 5.32381 14.123 5.86628 14.9101 6.7499C15.6974 7.62791 16.133 8.76322 16.133 9.94317V15.7594H13.5642V9.87047C13.5586 8.71281 12.6037 7.76772 11.4422 7.76772C11.3752 7.76772 11.3026 7.77331 11.23 7.77891C10.1913 7.88517 9.32014 8.86947 9.32014 9.93199V15.7594H6.7514V9.88725C6.74581 8.724 5.79648 7.77331 4.63495 7.77331C4.56795 7.77331 4.49534 7.77891 4.42275 7.7845C3.38966 7.89076 2.51293 8.87506 2.51293 9.94317V15.7594H0V9.87047C0 7.29795 2.09411 5.20637 4.66287 5.20637C5.94726 5.20637 7.17022 5.74324 8.05254 6.67719C8.93489 5.73765 10.1634 5.20637 11.4589 5.20637ZM32.1664 0.251824H29.5976V15.7709H32.1664V0.251824ZM34.5114 0.251824H37.0802V15.7709H34.5114V0.251824ZM41.994 5.47478H39.4253V15.7649H41.994V5.47478ZM52.508 6.72752C53.4685 7.7062 53.999 8.9925 53.999 10.357V11.537H46.1866C46.5328 12.7786 47.6609 13.651 48.9676 13.651C49.9896 13.651 50.9109 13.1309 51.4414 12.2529L51.5475 12.0796L53.6695 13.1253L53.5467 13.3322C52.5806 14.9596 50.8104 15.9719 48.923 15.9719H48.9174C47.4766 15.9719 46.1252 15.4015 45.1033 14.3668C44.0814 13.3322 43.5285 11.9676 43.5453 10.5248C43.562 9.10994 44.1205 7.7845 45.1145 6.78345C46.1084 5.78239 47.4375 5.22315 48.8447 5.20637H48.9118C50.2687 5.20637 51.5419 5.74884 52.508 6.72752ZM51.4023 9.41192C51.0337 8.31577 49.984 7.54402 48.8112 7.54402C47.6385 7.54402 46.5887 8.31577 46.2257 9.41192H51.4023Z" fill="white" />
+            </svg>
+          </div>
+          <div>
+            <h5 className="font-bold mb-6">Producten</h5>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Online betalingen</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">In-person betalingen</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Terugkerende betalingen</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Checkout</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Acceptance & Risk</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold mb-6">Partners</h5>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Betalingen voor SaaS</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Marktplaatsen</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Franchises</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Agencies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold mb-6">Developers</h5>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Libraries</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Integraties</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Documentatie</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold mb-6">Bedrijf</h5>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Over ons</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Tarieven</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Carrières</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Nieuws</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-6 opacity-50 text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <span>© 2025 Mollie B.V.</span>
+            <a href="#" className="hover:text-white transition-colors">Gebruikersovereenkomst</a>
+            <a href="#" className="hover:text-white transition-colors">Privacyverklaring</a>
+            <a href="#" className="hover:text-white transition-colors">Responsible Disclosure</a>
+            <a href="#" className="hover:text-white transition-colors">Klokkenluidersbeleid</a>
+          </div>
+          <div className="flex items-center gap-4">
+            <Instagram size={18} className="hover:text-white cursor-pointer" />
+            <Twitter size={18} className="hover:text-white cursor-pointer" />
+            <Github size={18} className="hover:text-white cursor-pointer" />
+            <Linkedin size={18} className="hover:text-white cursor-pointer" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+const DashboardSection = () => {
+  return (
+    <section className="bg-mollie-warm py-24 border-t border-black/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="bg-white rounded-[40px] p-10 md:p-16 shadow-sm border border-black/5 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h3 className="text-3xl md:text-5xl font-bold leading-tight">
+                Alles op één plek met het Mollie Dashboard
+              </h3>
+              <p className="mt-6 text-lg text-gray-500">
+                Beheer betalingen, krijg inzichten, vraag financiering aan en vereenvoudig je boekhouding.
+              </p>
+              <button className="mt-10 bg-gray-100 text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all">
+                Ontdek het Mollie Dashboard
+              </button>
+            </div>
+            <div className="relative">
+              <div className="bg-mollie-dark rounded-3xl p-6 shadow-2xl">
+                <div className="flex justify-between items-end mb-8">
+                  <div>
+                    <p className="text-white/60 text-sm">Vandaag</p>
+                    <p className="text-2xl font-bold text-white">€ 24.312,12</p>
+                    <div className="flex items-center gap-1 text-green-400 text-sm mt-1">
+                      <ArrowRight size={12} className="-rotate-45" /> 405,8%
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-white/60 text-sm">Transacties</p>
+                    <p className="text-2xl font-bold text-white">498</p>
+                    <div className="flex items-center gap-1 text-green-400 text-sm mt-1 justify-end">
+                      <ArrowRight size={12} className="-rotate-45" /> 220,9%
+                    </div>
+                  </div>
+                </div>
+                {/* Simple SVG Graph placeholder */}
+                <svg viewBox="0 0 400 100" className="w-full h-32">
+                  <path 
+                    d="M0 80 Q 50 20, 100 50 T 200 30 T 300 70 T 400 10" 
+                    fill="none" 
+                    stroke="#4778eb" 
+                    strokeWidth="3" 
+                    strokeLinecap="round"
+                  />
+                  <path 
+                    d="M0 80 Q 50 20, 100 50 T 200 30 T 300 70 T 400 10 V 100 H 0 Z" 
+                    fill="url(#gradient)" 
+                    opacity="0.1"
+                  />
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#4778eb" />
+                      <stop offset="100%" stopColor="#4778eb" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const IntegrationsSection = () => {
+  return (
+    <section className="bg-mollie-warm py-24 border-t border-black/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+            Voor elk bedrijf een geschikte oplossing
+          </h2>
+          <p className="mt-6 text-lg text-mollie-dark/60">
+            Krijg toegang tot een ecosysteem van technologische oplossingen om je bedrijf naar een hoger niveau te tillen. Koppel Mollie naadloos aan je bestaande infrastructuur.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
+            <div>
+              <h3 className="text-2xl font-bold text-mollie-dark">Handige integraties</h3>
+              <p className="mt-4 text-gray-500">Koppel Mollie aan je e-commerceplatform en tech stack met onze kant-en-klare plug-ins.</p>
+            </div>
+            <div className="grid grid-cols-3 gap-4 my-8">
+              {[
+                "https://framerusercontent.com/images/dAo2rEXDpxQXytZv4V7FkByXM.png",
+                "https://framerusercontent.com/images/Xkb4CLU1Z6LjSIlyJj9EKB6dte4.png",
+                "https://framerusercontent.com/images/SeIjV62tnRUVuPX2Ix2Q6IsYwM.png",
+                "https://framerusercontent.com/images/hr008Czc1HOY241cSvTg9BHK2A.png",
+                "https://framerusercontent.com/images/Tc5J2rrxuYH6zW7GTQoEbWQWqGw.svg",
+                "https://framerusercontent.com/images/U63Qb2zApjdsSEfhrt1Cq5itd7Y.svg"
+              ].map((src, i) => (
+                <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center p-3">
+                  <img src={src} alt="Logo" className="w-full h-full object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" referrerPolicy="no-referrer" />
+                </div>
+              ))}
+            </div>
+            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Ontdek alle integraties <ArrowRight size={18} />
+            </button>
+          </div>
+
+          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
+            <div>
+              <h3 className="text-2xl font-bold text-mollie-dark">Eersteklas support</h3>
+              <p className="mt-4 text-gray-500">Krijg ondersteuning van lokale experts in je eigen taal.</p>
+            </div>
+            <div className="flex flex-col items-center justify-center my-8">
+              <span className="text-8xl font-light text-mollie-dark">0.0</span>
+              <div className="flex gap-1 text-yellow-400 mt-2">
+                {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+              </div>
+              <span className="text-xs text-gray-400 mt-2 uppercase tracking-widest font-bold">Trustpilot</span>
+            </div>
+            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Neem contact op <ArrowRight size={18} />
+            </button>
+          </div>
+
+          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
+            <div>
+              <h3 className="text-2xl font-bold text-mollie-dark">Kant-en-klare libraries</h3>
+              <p className="mt-4 text-gray-500">Gebruik onze client libraries en server libraries voor alles van JS en PHP tot .NET en Python.</p>
+            </div>
+            <div className="grid grid-cols-3 gap-4 my-8">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center text-[10px] font-bold text-gray-300">SDK</div>
+              ))}
+            </div>
+            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+              Bekijk alle libraries <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CustomerStories = () => {
+  return (
+    <section className="bg-mollie-warm py-24 border-t border-black/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+            Een betrouwbare partner voor bedrijven in Europa
+          </h2>
+          <p className="mt-6 text-lg text-mollie-dark/60">
+            Maak kennis met de bedrijven die onze oplossingen gebruiken om hun groei te stimuleren.
+          </p>
+        </div>
+      </div>
+      
+      <div className="flex gap-6">
+        <div className="flex animate-marquee-fast gap-6">
+          {[
+            "https://framerusercontent.com/images/KTjc7jo1m3ZHD2Rk4kig227pQ.jpg",
+            "https://framerusercontent.com/images/HC79c1OyyXNZAyFIzxHJSJGRM.jpg",
+            "https://framerusercontent.com/images/ZaGve0oI5633W8U526GprCTM.jpg",
+            "https://framerusercontent.com/images/SWVACnMQfwAsZLi43PYXru9CHz8.jpg"
+          ].map((src, i) => (
+            <div key={i} className="w-[400px] h-[520px] rounded-[32px] overflow-hidden flex-shrink-0 relative group cursor-pointer">
+              <img src={src} alt="Customer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="h-8 w-24 bg-white/20 backdrop-blur-md rounded mb-4"></div>
+                <p className="text-white font-medium text-lg">"Mollie maakt dingen zo makkelijk mogelijk."</p>
+              </div>
+            </div>
+          ))}
+          {/* Duplicate for marquee */}
+          {[
+            "https://framerusercontent.com/images/KTjc7jo1m3ZHD2Rk4kig227pQ.jpg",
+            "https://framerusercontent.com/images/HC79c1OyyXNZAyFIzxHJSJGRM.jpg",
+            "https://framerusercontent.com/images/ZaGve0oI5633W8U526GprCTM.jpg",
+            "https://framerusercontent.com/images/SWVACnMQfwAsZLi43PYXru9CHz8.jpg"
+          ].map((src, i) => (
+            <div key={`dup-${i}`} className="w-[400px] h-[520px] rounded-[32px] overflow-hidden flex-shrink-0 relative group cursor-pointer">
+              <img src={src} alt="Customer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="h-8 w-24 bg-white/20 backdrop-blur-md rounded mb-4"></div>
+                <p className="text-white font-medium text-lg">"Mollie maakt dingen zo makkelijk mogelijk."</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- Main App ---
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white selection:bg-mollie-orange selection:text-white">
+      <Navbar />
+      <Hero />
+      <LogoTicker />
+      <BusinessAccount />
+      <TapToPay />
+      <CustomerStories />
+      <IntegrationsSection />
+      <DashboardSection />
+
+      {/* Final CTA Section */}
+      <section className="bg-black py-32 text-center overflow-hidden relative">
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            Vereenvoudig betalingen en geldzaken
+          </h2>
+          <p className="mt-6 text-xl text-white/60">
+            Verhoog je inkomsten, verlaag je kosten en beheer al je geldzaken via Mollie.
+          </p>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto bg-mollie-orange text-white px-10 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20">
+              Start nu
+            </button>
+            <button className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all">
+              Neem contact op met sales
+            </button>
+          </div>
+        </div>
+        {/* Abstract background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mollie-blue/20 rounded-full blur-[120px] pointer-events-none"></div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

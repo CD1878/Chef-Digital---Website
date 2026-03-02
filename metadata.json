@@ -1,0 +1,5 @@
+{
+  "name": "Mollie Clone",
+  "description": "A pixel-perfect recreation of the Mollie homepage built with React and Tailwind CSS.",
+  "requestFramePermissions": []
+}
