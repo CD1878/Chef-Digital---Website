@@ -748,8 +748,8 @@ const Pricing = () => {
       </div>
 
       <CTASection
-        title="Je conversies verbeteren is eenvoudig met Chef Digital"
-        subtitle="Klaar voor meer conversie, zonder technische drempels? Start vandaag nog en zie het verschil in je omzet."
+        title="Maak jouw zaak vandaag nog beter zichtbaar."
+        subtitle="Klaar voor meer tafelreserveringen en eventaanvragen? Start vandaag met Chef Digital en zie direct het verschil."
         primaryButtonText="Nu beginnen"
         secondaryButtonText="Neem contact op met sales"
       />
