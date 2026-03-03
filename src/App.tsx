@@ -189,91 +189,84 @@ const LogoTicker = () => {
   );
 };
 
-const BusinessAccount = () => {
+const MarketingSection = () => {
   return (
     <section className="bg-chef-warm py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-            Eén platform voor al je geldzaken
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+            Één plek voor alle marketing van jouw horecazaak
           </h2>
-          <p className="mt-6 text-lg text-chef-dark/60">
-            Maak meer omzet, verlaag je kosten en beheer je geldzaken via één platform. Gebruik Chef Digital voor online en in-person betalingen, abonnementsbetalingen, financiering, reconciliatie en fraudebestrijding.
+          <p className="mt-6 text-lg md:text-xl text-chef-dark/90 font-medium leading-relaxed max-w-2xl">
+            Wij verzorgen alle digitale marketing die jouw horecazaak nodig heeft. Van websites en Google advertenties tot emailcampagnes en meer reviews. Jouw persoonlijke Chef Digital, zodat jij je volledig kunt richten op het runnen van je zaak!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Large Card */}
-          <div className="md:col-span-3 bg-black rounded-[32px] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-hidden relative min-h-[500px]">
-            <div className="z-10 max-w-md">
-              <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                De zakelijke rekening van Chef Digital
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Large Top Card */}
+          <div className="md:col-span-2 bg-black rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] relative">
+            <div className="max-w-xl z-10 relative">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Horeca websites
               </h3>
-              <p className="mt-4 text-white/80 text-lg">
-                Meld je als één van de eerste bedrijven aan.
+              <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-sm">
+                Wij doen alles qua bouw, beheer en updates. Jij bespaart kostbare tijd en hebt nergens omkijken naar.
               </p>
-              <button className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all">
-                Ontdek meer
+              <p className="text-white font-bold text-xl mb-10">
+                €129 per maand
+              </p>
+              <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all w-max inline-block">
+                Bekijk meer
               </button>
             </div>
-            <div className="mt-10 md:mt-0 relative w-full md:w-1/2 flex justify-center">
-              <img
-                src="https://framerusercontent.com/images/dea10WjynbzwNZ22BHzJlwYIg.png"
-                alt="Chef Digital Cards"
-                className="w-full max-w-lg rotate-12 translate-x-10"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
 
-          {/* Bento Cards */}
-          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
-            <div>
-              <h4 className="text-2xl font-bold">Ontvang online betalingen</h4>
-              <p className="mt-3 text-gray-500">Verhoog je conversie door klanten alle populaire betaalmethoden aan te bieden.</p>
-            </div>
-            <div className="mt-8 flex justify-center">
-              <div className="grid grid-cols-3 gap-4 w-full">
-                {[...Array(6)].map((_, i) => (
-                  <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center font-bold text-gray-200">LOGO</div>
-                ))}
+            {/* Absolute positioning for user image */}
+            <div className="absolute right-0 bottom-0 md:top-1/2 md:-translate-y-1/2 translate-y-1/4 translate-x-1/4 w-full md:w-[65%] z-0 flex items-center justify-end pointer-events-none">
+              {/* Fallback box when image is missing */}
+              <div className="w-full aspect-[16/9] bg-[#111] rounded-tl-[32px] border-t border-l border-white/10 flex items-center justify-center text-white/30 text-sm overflow-hidden">
+                <p className="text-center px-4">Upload collage-afbeelding in chat<br />(horeca-websites-collage.png)</p>
+                {/* <img src="/images/home_marketing/horeca-websites.png" alt="Horeca websites" className="w-full h-full object-cover" /> */}
               </div>
             </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Ontdek meer <ArrowRight size={18} />
-            </button>
           </div>
 
-          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
-            <div>
-              <h4 className="text-2xl font-bold">In-persoon betalingen</h4>
-              <p className="mt-3 text-gray-500">Bestel je terminals en begin direct met het accepteren van betalingen.</p>
-            </div>
-            <div className="mt-8 flex justify-center">
-              <img src="https://framerusercontent.com/images/Mpniu7Xd6RfDfIyKxb5iVS4ljk.png" alt="Terminal" className="h-48 object-contain" referrerPolicy="no-referrer" />
-            </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Ontdek meer <ArrowRight size={18} />
-            </button>
-          </div>
+          {/* Small Left Card */}
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+            <div className="z-10 w-full flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold text-chef-dark">Google Maps ads</h3>
+              <p className="text-gray-400 font-semibold mb-6">Direct boven als je concurrenten</p>
 
-          <div className="bg-white rounded-[32px] p-8 shadow-sm border border-black/5 flex flex-col justify-between min-h-[400px]">
-            <div>
-              <h4 className="text-2xl font-bold">Krijg sneller betaald</h4>
-              <p className="mt-3 text-gray-500">Maak een betaallink aan en deel hem veilig met je klant.</p>
-            </div>
-            <div className="mt-8 flex justify-center">
-              <div className="w-full max-w-[200px] bg-black rounded-3xl p-4 aspect-[9/16] relative overflow-hidden">
-                <div className="bg-white rounded-xl p-3 mt-10">
-                  <div className="h-2 w-1/2 bg-gray-100 rounded mb-2"></div>
-                  <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 bg-chef-blue h-10 rounded-lg"></div>
+              <p className="text-chef-dark/80 mb-8 leading-relaxed text-sm md:text-base max-w-xs">
+                Meer tafelreserveringen doordat je direct bovenaan staat in Google Maps en Local Search bij gasten die nú op zoek zijn naar een plek om te eten of drinken.
+              </p>
+
+              <div className="mt-auto">
+                <p className="font-bold text-lg">€59 per maand</p>
+                <p className="text-xs text-gray-500 mb-8">*Excl. advertentie budget</p>
+
+                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+                  Lees meer
+                </button>
               </div>
             </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Aan de slag <ArrowRight size={18} />
-            </button>
+
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[45%] flex justify-end pointer-events-none">
+              <div className="w-full h-[300px] bg-gray-50 rounded-[40px] border-[8px] border-black shadow-lg relative flex justify-center pt-4 overflow-hidden">
+                <div className="w-1/3 h-1 bg-black rounded-full mb-4"></div>
+                <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-gray-400 text-xs px-2">Upload telefoon-afbeelding<br />(google-maps-phone.png)</p>
+                {/* <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-full object-cover" /> */}
+              </div>
+            </div>
+          </div>
+
+          {/* Small Right Card */}
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+            <div className="z-10 flex flex-col h-full">
+              <h3 className="text-2xl font-bold text-chef-dark mb-6">Google Search ads</h3>
+              <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
+                Meer formulieraanvragen voor borrels, groepen, feestjes en evenementen door direct zichtbaar te zijn op de juiste zoekintentie.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -771,7 +764,7 @@ export default function App() {
     <>
       <Hero />
       <LogoTicker />
-      <BusinessAccount />
+      <MarketingSection />
       <TapToPay />
       <CustomerStories />
       <IntegrationsSection />
