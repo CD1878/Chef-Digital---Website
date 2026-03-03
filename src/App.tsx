@@ -121,9 +121,49 @@ const Hero = () => {
   );
 };
 
+const LogoImage = ({ name, src }: { name: string; src: string }) => {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <span className="text-2xl font-bold text-gray-300 hover:text-gray-400 transition-colors cursor-default whitespace-nowrap">
+        {name}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={name}
+      className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+      onError={() => setError(true)}
+    />
+  );
+};
+
 const LogoTicker = () => {
+  // Dit is de gereserveerde lijst met logo's.
+  // Zolang het bestand (bijv. gymshark.png, gisou.png) niet bestaat, 
+  // wordt op de website automatisch de gewone tekst (zoals voorheen) getoond.
   const logos = [
-    "Gymshark", "Gisou", "XXL Nutrition", "Patta", "Plantsome", "Marie-Stella-Maris", "Crisp", "Rosefield", "Veloretti", "Otrium"
+    { name: "Belly of the Beast", src: "/images/logos/Belly of the Beast - Chef Digital.png" },
+    { name: "Cafe Molenpad", src: "/images/logos/Cafe Molenpad - Chef Digital.png" },
+    { name: "Café Kramer", src: "/images/logos/Café Kramer.png" },
+    { name: "Café Luxembourg", src: "/images/logos/Café Luxembourg.png" },
+    { name: "Café Mojo", src: "/images/logos/Café Mojo - Chef Digital.png" },
+    { name: "Dutch Courage", src: "/images/logos/Dutch Courage.png" },
+    { name: "Good Food Group", src: "/images/logos/Good Food Group.png" },
+    { name: "Het Paardje", src: "/images/logos/Het Paardje - Chef Digital.png" },
+    { name: "Kim's So Korean Food", src: "/images/logos/Kim's So Korean Food - Chef Digital.png" },
+    { name: "Lola's Diemen", src: "/images/logos/Lola's Diemen - Chef Digital.png" },
+    { name: "Onze Zaak", src: "/images/logos/Onze Zaak - Chef Digital.png" },
+    { name: "Pompstation", src: "/images/logos/Pompstation - Chef Digital.png" },
+    { name: "Spaghetteria", src: "/images/logos/Spaghetteria - Chef Digital.png" },
+    { name: "Venster33", src: "/images/logos/Venster33- Chef Digital.png" },
+    { name: "Auberge", src: "/images/logos/auberge.png" },
+    { name: "Dr Wines", src: "/images/logos/dr wines.png" },
+    { name: "Happy Tosti", src: "/images/logos/happy tosti.png" }
   ];
 
   return (
@@ -131,10 +171,8 @@ const LogoTicker = () => {
       <div className="flex animate-marquee whitespace-nowrap">
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex items-center gap-20 px-10">
-            {logos.map((logo) => (
-              <span key={logo} className="text-2xl font-bold text-gray-300 hover:text-gray-400 transition-colors cursor-default">
-                {logo}
-              </span>
+            {logos.map((logo, index) => (
+              <LogoImage key={`${logo.name}-${index}`} name={logo.name} src={logo.src} />
             ))}
           </div>
         ))}
