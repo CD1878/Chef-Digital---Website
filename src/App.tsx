@@ -21,7 +21,7 @@ const Navbar = () => {
             <img
               src="/images/logos/chef-digital-logo.png"
               alt="Chef Digital"
-              className="h-10 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
           </a>
           <div className="hidden md:flex items-center gap-6 text-chef-dark/70 font-medium text-sm">
