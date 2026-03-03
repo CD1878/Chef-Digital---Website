@@ -41,87 +41,79 @@ const Navbar = () => {
 };
 
 const Hero = () => {
+  const [activeTab, setActiveTab] = useState<'restaurant' | 'kitchen'>('restaurant');
+
   return (
     <section className="bg-white pt-32 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-mollie-dark max-w-4xl mx-auto leading-[1.1]"
+          className="text-5xl md:text-7xl font-bold tracking-tight text-mollie-dark max-w-5xl mx-auto leading-[1.1]"
         >
-          Online en in-person betalingen voor bedrijven van elk formaat
+          Meer gasten door een betere online zichtbaarheid van jouw horecazaak
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8 text-lg md:text-xl text-mollie-dark/60 max-w-2xl mx-auto"
+          className="mt-8 text-lg md:text-xl text-mollie-dark/80 max-w-4xl mx-auto leading-relaxed"
         >
-          Ruim <span className="text-mollie-dark font-semibold">250.000 Europese bedrijven</span> maken gebruik van onze oplossingen: van start-ups tot internationale ondernemingen.
+          Ruim <span className="text-black font-semibold">210 restaurants</span> maken gebruik van Chef Digital. Van lokale pizzeria's tot ketens met meerdere locaties. Wij zetten jouw zaak digitaal op de kaart al <span className="text-black font-semibold">vanaf €129 per maand</span>.
         </motion.p>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="w-full sm:w-auto bg-mollie-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20">
-            Account aanmaken
+          <button className="w-full sm:w-[240px] bg-black text-white px-8 py-4 rounded-md font-medium text-base hover:bg-gray-900 transition-all">
+            Afspraak maken
           </button>
-          <button className="w-full sm:w-auto bg-gray-100 text-mollie-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-200 transition-all">
-            Neem contact op met sales
+          <button className="w-full sm:w-[240px] bg-white border border-black text-black px-8 py-4 rounded-md font-medium text-base hover:bg-gray-50 transition-all">
+            Pakketten
           </button>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 relative max-w-5xl mx-auto"
+          className="mt-20 relative max-w-5xl mx-auto flex flex-col items-center"
         >
-          <div className="rounded-[40px] overflow-hidden shadow-2xl relative aspect-video">
-            <img 
-              src="https://framerusercontent.com/images/B9CjbPjXp1LpJvVYgl58Z5AJI.jpg" 
-              alt="Veloretti Bike" 
-              className="w-full h-full object-cover"
+          <div className="w-full rounded-[40px] overflow-hidden shadow-2xl relative aspect-[16/10] sm:aspect-video transition-all duration-500">
+            <img
+              key={activeTab}
+              src={activeTab === 'restaurant' ? "/images/hero.png" : "/images/dashboard.png"}
+              alt={activeTab === 'restaurant' ? "Restaurant" : "The Kitchen platform"}
+              className="w-full h-full object-cover animate-in fade-in duration-500 bg-gray-100"
               referrerPolicy="no-referrer"
             />
-            
-            {/* Checkout Overlay */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
-              <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20">
-                <div className="text-center mb-6">
-                  <p className="text-xs text-gray-500 font-medium mb-1">Bestelling #3526</p>
-                  <h3 className="text-2xl font-bold text-gray-800">Voorlamp Zilver</h3>
-                  <p className="text-2xl font-bold text-gray-800 mt-1">€ 24,95</p>
-                </div>
-                
-                <div className="space-y-3">
-                  <button className="w-full bg-black text-white py-3 rounded-xl flex items-center justify-center gap-2 font-semibold">
-                    <span className="text-lg"></span> Pay
-                  </button>
-                  <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-between border border-black/5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold text-[10px]">iDEAL</div>
-                      <span className="font-medium text-sm">iDEAL</span>
-                    </div>
-                    <ArrowRight size={16} className="text-gray-400" />
-                  </div>
-                  <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-between border border-black/5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center text-white font-bold text-[10px]">VISA</div>
-                      <span className="font-medium text-sm">Creditcard</span>
-                    </div>
-                    <ArrowRight size={16} className="text-gray-400" />
-                  </div>
-                </div>
-                
-                <div className="mt-6 flex items-center justify-center gap-2 text-[10px] text-gray-400 font-medium uppercase tracking-wider">
-                  <Lock size={10} /> Secure payments by <span className="text-gray-600">Mollie</span>
-                </div>
-              </div>
-            </div>
+          </div>
+
+          <div className="mt-8 flex items-center justify-center gap-6 bg-white px-8 py-3 rounded-full border border-gray-200 shadow-sm z-10 w-auto">
+            <span
+              onClick={() => setActiveTab('restaurant')}
+              className={`text-sm font-semibold cursor-pointer transition-colors ${activeTab === 'restaurant' ? 'text-black' : 'text-gray-400 hover:text-gray-600'}`}
+            >
+              Restaurant
+            </span>
+            <button
+              onClick={() => setActiveTab(activeTab === 'restaurant' ? 'kitchen' : 'restaurant')}
+              className={`w-14 h-8 rounded-full relative p-1 transition-colors duration-300 focus:outline-none ${activeTab === 'kitchen' ? 'bg-black' : 'bg-gray-300'}`}
+              aria-label="Toggle image"
+            >
+              <div
+                className={`w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300 ${activeTab === 'kitchen' ? 'translate-x-6' : 'translate-x-0'}`}
+              />
+            </button>
+            <span
+              onClick={() => setActiveTab('kitchen')}
+              className={`text-sm font-semibold cursor-pointer transition-colors ${activeTab === 'kitchen' ? 'text-black' : 'text-gray-400 hover:text-gray-600'}`}
+            >
+              The Kitchen platform
+            </span>
           </div>
         </motion.div>
       </div>
@@ -133,7 +125,7 @@ const LogoTicker = () => {
   const logos = [
     "Gymshark", "Gisou", "XXL Nutrition", "Patta", "Plantsome", "Marie-Stella-Maris", "Crisp", "Rosefield", "Veloretti", "Otrium"
   ];
-  
+
   return (
     <div className="bg-white py-10 border-b border-gray-100 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">
@@ -179,9 +171,9 @@ const BusinessAccount = () => {
               </button>
             </div>
             <div className="mt-10 md:mt-0 relative w-full md:w-1/2 flex justify-center">
-              <img 
-                src="https://framerusercontent.com/images/dea10WjynbzwNZ22BHzJlwYIg.png" 
-                alt="Mollie Cards" 
+              <img
+                src="https://framerusercontent.com/images/dea10WjynbzwNZ22BHzJlwYIg.png"
+                alt="Mollie Cards"
                 className="w-full max-w-lg rotate-12 translate-x-10"
                 referrerPolicy="no-referrer"
               />
@@ -195,11 +187,11 @@ const BusinessAccount = () => {
               <p className="mt-3 text-gray-500">Verhoog je conversie door klanten alle populaire betaalmethoden aan te bieden.</p>
             </div>
             <div className="mt-8 flex justify-center">
-               <div className="grid grid-cols-3 gap-4 w-full">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center font-bold text-gray-200">LOGO</div>
-                  ))}
-               </div>
+              <div className="grid grid-cols-3 gap-4 w-full">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center font-bold text-gray-200">LOGO</div>
+                ))}
+              </div>
             </div>
             <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
               Ontdek meer <ArrowRight size={18} />
@@ -212,7 +204,7 @@ const BusinessAccount = () => {
               <p className="mt-3 text-gray-500">Bestel je terminals en begin direct met het accepteren van betalingen.</p>
             </div>
             <div className="mt-8 flex justify-center">
-               <img src="https://framerusercontent.com/images/Mpniu7Xd6RfDfIyKxb5iVS4ljk.png" alt="Terminal" className="h-48 object-contain" referrerPolicy="no-referrer" />
+              <img src="https://framerusercontent.com/images/Mpniu7Xd6RfDfIyKxb5iVS4ljk.png" alt="Terminal" className="h-48 object-contain" referrerPolicy="no-referrer" />
             </div>
             <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
               Ontdek meer <ArrowRight size={18} />
@@ -225,13 +217,13 @@ const BusinessAccount = () => {
               <p className="mt-3 text-gray-500">Maak een betaallink aan en deel hem veilig met je klant.</p>
             </div>
             <div className="mt-8 flex justify-center">
-               <div className="w-full max-w-[200px] bg-black rounded-3xl p-4 aspect-[9/16] relative overflow-hidden">
-                  <div className="bg-white rounded-xl p-3 mt-10">
-                    <div className="h-2 w-1/2 bg-gray-100 rounded mb-2"></div>
-                    <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4 bg-mollie-blue h-10 rounded-lg"></div>
-               </div>
+              <div className="w-full max-w-[200px] bg-black rounded-3xl p-4 aspect-[9/16] relative overflow-hidden">
+                <div className="bg-white rounded-xl p-3 mt-10">
+                  <div className="h-2 w-1/2 bg-gray-100 rounded mb-2"></div>
+                  <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 bg-mollie-blue h-10 rounded-lg"></div>
+              </div>
             </div>
             <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
               Aan de slag <ArrowRight size={18} />
@@ -260,9 +252,9 @@ const TapToPay = () => {
             </button>
           </div>
           <div className="relative w-full md:w-1/2 flex justify-center">
-            <img 
-              src="https://framerusercontent.com/images/ULTklewmPBPDWl1pG4HiZzMk3Q.png" 
-              alt="Tap to Pay" 
+            <img
+              src="https://framerusercontent.com/images/ULTklewmPBPDWl1pG4HiZzMk3Q.png"
+              alt="Tap to Pay"
               className="w-full max-w-md rotate-[-15deg] translate-y-10"
               referrerPolicy="no-referrer"
             />
@@ -360,45 +352,11 @@ const DashboardSection = () => {
               </button>
             </div>
             <div className="relative">
-              <div className="bg-mollie-dark rounded-3xl p-6 shadow-2xl">
-                <div className="flex justify-between items-end mb-8">
-                  <div>
-                    <p className="text-white/60 text-sm">Vandaag</p>
-                    <p className="text-2xl font-bold text-white">€ 24.312,12</p>
-                    <div className="flex items-center gap-1 text-green-400 text-sm mt-1">
-                      <ArrowRight size={12} className="-rotate-45" /> 405,8%
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-white/60 text-sm">Transacties</p>
-                    <p className="text-2xl font-bold text-white">498</p>
-                    <div className="flex items-center gap-1 text-green-400 text-sm mt-1 justify-end">
-                      <ArrowRight size={12} className="-rotate-45" /> 220,9%
-                    </div>
-                  </div>
-                </div>
-                {/* Simple SVG Graph placeholder */}
-                <svg viewBox="0 0 400 100" className="w-full h-32">
-                  <path 
-                    d="M0 80 Q 50 20, 100 50 T 200 30 T 300 70 T 400 10" 
-                    fill="none" 
-                    stroke="#4778eb" 
-                    strokeWidth="3" 
-                    strokeLinecap="round"
-                  />
-                  <path 
-                    d="M0 80 Q 50 20, 100 50 T 200 30 T 300 70 T 400 10 V 100 H 0 Z" 
-                    fill="url(#gradient)" 
-                    opacity="0.1"
-                  />
-                  <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#4778eb" />
-                      <stop offset="100%" stopColor="#4778eb" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
+              <img
+                src="/images/dashboard.png"
+                alt="Dashboard Report"
+                className="w-full rounded-2xl shadow-2xl border border-black/5 bg-white"
+              />
             </div>
           </div>
         </div>
@@ -494,7 +452,7 @@ const CustomerStories = () => {
           </p>
         </div>
       </div>
-      
+
       <div className="flex gap-6">
         <div className="flex animate-marquee-fast gap-6">
           {[
