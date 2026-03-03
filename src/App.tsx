@@ -202,9 +202,9 @@ const MarketingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Large Top Card */}
-          <div className="md:col-span-2 bg-black rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] relative">
+          <div className="lg:col-span-3 bg-black rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] relative">
             <div className="max-w-xl z-10 relative">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Horeca websites
@@ -231,8 +231,8 @@ const MarketingSection = () => {
           </div>
 
           {/* Small Left Card */}
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
-            <div className="z-10 w-full flex flex-col flex-grow">
+          <div className="lg:col-span-2 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+            <div className="z-10 w-full flex flex-col flex-grow max-w-sm">
               <h3 className="text-2xl font-bold text-chef-dark">Google Maps ads</h3>
               <p className="text-gray-400 font-semibold mb-6">Direct boven als je concurrenten</p>
 
@@ -250,17 +250,13 @@ const MarketingSection = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[45%] flex justify-end pointer-events-none">
-              <div className="w-full h-[300px] bg-gray-50 rounded-[40px] border-[8px] border-black shadow-lg relative flex justify-center pt-4 overflow-hidden">
-                <div className="w-1/3 h-1 bg-black rounded-full mb-4"></div>
-                <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-gray-400 text-xs px-2">Upload telefoon-afbeelding<br />(google-maps-phone.png)</p>
-                {/* <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-full object-cover" /> */}
-              </div>
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[45%] max-w-[300px] flex justify-end pointer-events-none">
+              <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
 
           {/* Small Right Card */}
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+          <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
             <div className="z-10 flex flex-col h-full">
               <h3 className="text-2xl font-bold text-chef-dark mb-6">Google Search ads</h3>
               <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
