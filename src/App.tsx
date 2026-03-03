@@ -534,6 +534,31 @@ const CustomerStories = () => {
   );
 };
 
+const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
+  return (
+    <section className="bg-black py-32 text-center overflow-hidden relative">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+          {title}
+        </h2>
+        <p className="mt-6 text-xl text-white/60">
+          {subtitle}
+        </p>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="w-full sm:w-auto bg-mollie-orange text-white px-10 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20 flex items-center justify-center gap-2">
+            {primaryButtonText} <ArrowRight size={20} />
+          </button>
+          <button className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all">
+            {secondaryButtonText}
+          </button>
+        </div>
+      </div>
+      {/* Abstract background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mollie-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
+    </section>
+  );
+};
+
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
 
@@ -567,7 +592,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Basic */}
           <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
             <h3 className="text-xl font-bold mb-4">Basic</h3>
@@ -667,38 +692,68 @@ const Pricing = () => {
               </button>
             </div>
           </div>
+        </div>
+        <p className="text-center text-sm text-gray-400 mt-10 mb-24">*Minimaal 6 maanden looptijd voor alle abonnementen.</p>
 
-          {/* Addons */}
-          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
-            <h3 className="text-xl font-bold mb-4">Extra</h3>
-            <div className="mb-6">
-              <span className="text-4xl font-bold">Add-ons</span>
-              <span className="text-gray-500 text-sm block mt-2 mb-2">Eenmalig of maandelijks</span>
+        {/* Add ons section */}
+        <div className="max-w-6xl mx-auto mb-24">
+          <h2 className="text-3xl font-bold mb-10 text-mollie-dark tracking-tight">Add ons</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div className="flex flex-col gap-8">
+              {/* Google Maps Ads */}
+              <div className="border-2 border-black p-10 bg-white">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-2xl font-bold">Google Maps Ads</h3>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold">€59</span>
+                    <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed max-w-sm">
+                  83% van de mensen zoekt een restaurant of horeca gelegenheid via Google Maps. Wij zorgen ervoor dat je bovenaan staat en beter zichtbaar bent op zoekwoorden zoals restaurant, café en bar
+                </p>
+              </div>
+
+              {/* Extra Campagne */}
+              <div className="border-2 border-black p-10 bg-white">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-2xl font-bold">Extra Campagne</h3>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold">€59</span>
+                    <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed max-w-sm">
+                  In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe, bijvoorbeeld gericht op table seating of specifieke leadgeneratie.
+                </p>
+              </div>
             </div>
-            <p className="font-semibold text-sm mb-6 pb-6 border-b border-gray-100">Voeg extra functionaliteit toe aan je pakket.</p>
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Extra Google campagne</strong><br />€59 per stuk</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Extra taal + vertaling</strong><br />€15 per maand</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600 mt-4 bg-gray-50 p-3 rounded-xl">
-                <span className="text-xs">In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe.</span>
-              </li>
-            </ul>
-            <div className="mt-auto pt-8">
-              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
-                Talk to sales
-              </button>
+
+            {/* Rankmaster */}
+            <div className="border-2 border-black p-10 bg-white">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold">Rankmaster</h3>
+                <div className="text-right">
+                  <span className="text-3xl font-bold">€69</span>
+                  <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
+                </div>
+              </div>
+              <p className="text-gray-600 leading-relaxed max-w-sm">
+                Beter vindbaar in Google Maps door je bedrijfsprofiel met relevante keywords te optimaliseren, meer reviews te genereren, automatisch te beantwoorden en krachtige post management door middel van AI.
+              </p>
             </div>
           </div>
-
         </div>
-        <p className="text-center text-sm text-gray-400 mt-10">*Minimaal 6 maanden looptijd voor alle abonnementen.</p>
+
       </div>
+
+      <CTASection
+        title="Je conversies verbeteren is eenvoudig met Chef Digital"
+        subtitle="Klaar voor meer conversie, zonder technische drempels? Start vandaag nog en zie het verschil in je omzet."
+        primaryButtonText="Nu beginnen"
+        secondaryButtonText="Neem contact op met sales"
+      />
     </div>
   );
 };
@@ -719,27 +774,12 @@ export default function App() {
       <IntegrationsSection />
       <DashboardSection />
 
-      {/* Final CTA Section */}
-      <section className="bg-black py-32 text-center overflow-hidden relative">
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Vereenvoudig betalingen en geldzaken
-          </h2>
-          <p className="mt-6 text-xl text-white/60">
-            Verhoog je inkomsten, verlaag je kosten en beheer al je geldzaken via Mollie.
-          </p>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-mollie-orange text-white px-10 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20">
-              Start nu
-            </button>
-            <button className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all">
-              Neem contact op met sales
-            </button>
-          </div>
-        </div>
-        {/* Abstract background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mollie-blue/20 rounded-full blur-[120px] pointer-events-none"></div>
-      </section>
+      <CTASection
+        title="Vereenvoudig betalingen en geldzaken"
+        subtitle="Verhoog je inkomsten, verlaag je kosten en beheer al je geldzaken via Mollie."
+        primaryButtonText="Start nu"
+        secondaryButtonText="Neem contact op met sales"
+      />
     </>
   );
 
