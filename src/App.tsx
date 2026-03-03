@@ -215,18 +215,16 @@ const MarketingSection = () => {
               <p className="text-white font-bold text-xl mb-10">
                 €129 per maand
               </p>
-              <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all w-max inline-block">
-                Bekijk meer
-              </button>
+              <div className="mt-auto">
+                <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all w-max inline-block">
+                  Bekijk meer
+                </button>
+              </div>
             </div>
 
             {/* Absolute positioning for user image */}
-            <div className="absolute right-0 bottom-0 md:top-1/2 md:-translate-y-1/2 translate-y-1/4 translate-x-1/4 w-full md:w-[65%] z-0 flex items-center justify-end pointer-events-none">
-              {/* Fallback box when image is missing */}
-              <div className="w-full aspect-[16/9] bg-[#111] rounded-tl-[32px] border-t border-l border-white/10 flex items-center justify-center text-white/30 text-sm overflow-hidden">
-                <p className="text-center px-4">Upload collage-afbeelding in chat<br />(horeca-websites-collage.png)</p>
-                {/* <img src="/images/home_marketing/horeca-websites.png" alt="Horeca websites" className="w-full h-full object-cover" /> */}
-              </div>
+            <div className="absolute right-0 bottom-0 md:top-1/2 md:-translate-y-1/2 translate-y-1/4 translate-x-[15%] w-[110%] md:w-[70%] z-0 flex items-center justify-end pointer-events-none pb-8 pr-8">
+              <img src="/images/home_marketing/horeca-websites-collage.png" alt="Horeca websites" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
 
@@ -250,18 +248,24 @@ const MarketingSection = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[45%] max-w-[300px] flex justify-end pointer-events-none">
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[50%] max-w-[350px] flex justify-end pointer-events-none">
               <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
 
           {/* Small Right Card */}
           <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
-            <div className="z-10 flex flex-col h-full">
+            <div className="z-10 flex flex-col h-full flex-grow">
               <h3 className="text-2xl font-bold text-chef-dark mb-6">Google Search ads</h3>
               <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
                 Meer formulieraanvragen voor borrels, groepen, feestjes en evenementen door direct zichtbaar te zijn op de juiste zoekintentie.
               </p>
+
+              <div className="mt-auto">
+                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+                  Lees meer
+                </button>
+              </div>
             </div>
           </div>
         </div>
