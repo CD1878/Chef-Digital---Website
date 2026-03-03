@@ -536,25 +536,25 @@ const CustomerStories = () => {
 
 const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
   return (
-    <section className="bg-black py-32 text-center overflow-hidden relative">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+    <section className="bg-black py-32 text-left overflow-hidden relative">
+      <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-start">
         <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
           {title}
         </h2>
-        <p className="mt-6 text-xl text-white/60">
+        <p className="mt-6 text-xl text-white/60 max-w-2xl">
           {subtitle}
         </p>
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto bg-mollie-orange text-white px-10 py-4 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl shadow-mollie-orange/20 flex items-center justify-center gap-2">
+        <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
+          <button className="w-full sm:w-auto bg-mollie-orange text-white px-8 py-3 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_rgba(239,111,46,0.6)] flex items-center justify-center gap-2">
             {primaryButtonText} <ArrowRight size={20} />
           </button>
-          <button className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all">
+          <button className="w-full sm:w-auto bg-[#1A1A1A] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#2A2A2A] transition-all border border-white/5">
             {secondaryButtonText}
           </button>
         </div>
       </div>
       {/* Abstract background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mollie-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-mollie-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
   );
 };
@@ -563,187 +563,188 @@ const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
-    <div className="pt-32 pb-24 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-5xl font-bold tracking-tight text-mollie-dark mb-6">
-            Kies het pakket wat bij je onderneming past en groei door.
-          </h1>
-          <p className="text-lg text-gray-500 mb-10">
-            Designed for every stage of your journey.<br />
-            Start today, no credit card required.
-          </p>
+    <div className="bg-white flex flex-col flex-grow">
+      <div className="pt-32 pb-24 flex-grow">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-5xl font-bold tracking-tight text-mollie-dark mb-6">
+              Kies het pakket wat bij je onderneming past en groei door.
+            </h1>
+            <p className="text-lg text-gray-500 mb-10">
+              Designed for every stage of your journey.<br />
+              Start today, no credit card required.
+            </p>
 
-          <div className="flex items-center justify-center p-1 rounded-full mx-auto w-max mb-12">
-            <div className="bg-gray-100 p-1 rounded-full flex gap-1">
-              <button
-                onClick={() => setIsAnnual(false)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
-              >
-                Maandelijks
-              </button>
-              <button
-                onClick={() => setIsAnnual(true)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
-              >
-                Jaarlijks
-              </button>
+            <div className="flex items-center justify-center p-1 rounded-full mx-auto w-max mb-12">
+              <div className="bg-gray-100 p-1 rounded-full flex gap-1">
+                <button
+                  onClick={() => setIsAnnual(false)}
+                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
+                >
+                  Maandelijks
+                </button>
+                <button
+                  onClick={() => setIsAnnual(true)}
+                  className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
+                >
+                  Jaarlijks
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {/* Basic */}
+            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+              <h3 className="text-xl font-bold mb-4">Basic</h3>
+              <div className="mb-6">
+                <span className="text-5xl font-bold">€129</span>
+                <span className="text-gray-500 text-sm block mt-2">Per maand, gefactureerd per jaar</span>
+              </div>
+              <p className="font-semibold text-sm mb-6 pb-6 border-b border-gray-100">Ideaal als basis van de online zichtbaarheid.</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span><strong>Mobiel vriendelijke website</strong><br />Géén opstartkosten en commissies</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Zoekmachine geoptimaliseerd</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Google Maps vermelding</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Koppeling met bestelplatformen</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Koppeling met reserveersysteem</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span><strong>Website beheer</strong><br />Chef Digital vult de website</span>
+                </li>
+              </ul>
+              <div className="mt-auto pt-8">
+                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                  Start met Basic
+                </button>
+              </div>
+            </div>
+
+            {/* Groei */}
+            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full relative">
+              <h3 className="text-xl font-bold mb-4">Groei</h3>
+              <div className="mb-6 flex items-center gap-3">
+                <span className="text-5xl font-bold">€289</span>
+                <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
+              </div>
+              <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
+              <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Basic pakket +</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span><strong>Google Advertising</strong><br />Opzetten van Google Ads applicatie</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Flexibel advertentiebudget iedere maand</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <strong>Overzichtelijke rapportage</strong>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span><strong>Toegang tot 'The Kitchen'</strong><br />24/7 inzicht in alle resultaten</span>
+                </li>
+              </ul>
+              <div className="mt-auto pt-8">
+                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                  Continue met Groei
+                </button>
+              </div>
+            </div>
+
+            {/* Full Support (Highlighted) */}
+            <div className="border border-blue-200 shadow-[0_0_40px_-15px_rgba(59,130,246,0.3)] rounded-3xl p-8 bg-white flex flex-col relative transform lg:-translate-y-2 h-[calc(100%+16px)]">
+              <h3 className="text-xl font-bold mb-4">Full support</h3>
+              <div className="mb-6 flex items-center gap-3">
+                <span className="text-5xl font-bold">€389</span>
+                <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
+              </div>
+              <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
+              <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Groei pakket +</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3 text-sm text-gray-600">
+                  <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <span><strong>E-mail marketing</strong><br />1 email campagne per maand<br />Verzending en rapportage</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-transparent select-none p-4">
+                  Spacer text
+                </li>
+              </ul>
+              <div className="mt-auto pt-8">
+                <button className="w-full py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10">
+                  Continue met Full support
+                </button>
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-sm text-gray-400 mt-10 mb-24">*Minimaal 6 maanden looptijd voor alle abonnementen.</p>
+
+          {/* Add ons section */}
+          <div className="max-w-6xl mx-auto mb-24">
+            <h2 className="text-3xl font-bold mb-10 text-mollie-dark tracking-tight">Add ons</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+              {/* Google Maps Ads */}
+              <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xl font-bold">Google Maps Ads</h3>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold">€59</span>
+                    <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  83% van de mensen zoekt een restaurant of horeca gelegenheid via Google Maps. Wij zorgen ervoor dat je bovenaan staat en beter zichtbaar bent op zoekwoorden zoals restaurant, café en bar
+                </p>
+              </div>
+
+              {/* Extra Campagne */}
+              <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xl font-bold">Extra Campagne</h3>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold">€59</span>
+                    <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe, bijvoorbeeld gericht op table seating of specifieke leadgeneratie.
+                </p>
+              </div>
+
+              {/* Rankmaster */}
+              <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xl font-bold border-b-2 border-mollie-dark pb-1 inline-block">Rankmaster</h3>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold">€69</span>
+                    <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Beter vindbaar in Google Maps door je bedrijfsprofiel met relevante keywords te optimaliseren, meer reviews te genereren, automatisch te beantwoorden en krachtige post management door middel van AI.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {/* Basic */}
-          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
-            <h3 className="text-xl font-bold mb-4">Basic</h3>
-            <div className="mb-6">
-              <span className="text-5xl font-bold">€129</span>
-              <span className="text-gray-500 text-sm block mt-2">Per maand, gefactureerd per jaar</span>
-            </div>
-            <p className="font-semibold text-sm mb-6 pb-6 border-b border-gray-100">Ideaal als basis van de online zichtbaarheid.</p>
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Mobiel vriendelijke website</strong><br />Géén opstartkosten en commissies</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Zoekmachine geoptimaliseerd</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Google Maps vermelding</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Koppeling met bestelplatformen</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Koppeling met reserveersysteem</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Website beheer</strong><br />Chef Digital vult de website</span>
-              </li>
-            </ul>
-            <div className="mt-auto pt-8">
-              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
-                Start met Basic
-              </button>
-            </div>
-          </div>
-
-          {/* Groei */}
-          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full relative">
-            <h3 className="text-xl font-bold mb-4">Groei</h3>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="text-5xl font-bold">€289</span>
-              <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
-            </div>
-            <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
-            <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Basic pakket +</p>
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Google Advertising</strong><br />Opzetten van Google Ads applicatie</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Flexibel advertentiebudget iedere maand</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <strong>Overzichtelijke rapportage</strong>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>Toegang tot 'The Kitchen'</strong><br />24/7 inzicht in alle resultaten</span>
-              </li>
-            </ul>
-            <div className="mt-auto pt-8">
-              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
-                Continue met Groei
-              </button>
-            </div>
-          </div>
-
-          {/* Full Support (Highlighted) */}
-          <div className="border border-blue-200 shadow-[0_0_40px_-15px_rgba(59,130,246,0.3)] rounded-3xl p-8 bg-white flex flex-col relative transform lg:-translate-y-2 h-[calc(100%+16px)]">
-            <h3 className="text-xl font-bold mb-4">Full support</h3>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="text-5xl font-bold">€389</span>
-              <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
-            </div>
-            <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
-            <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Groei pakket +</p>
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span><strong>E-mail marketing</strong><br />1 email campagne per maand<br />Verzending en rapportage</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-transparent select-none p-4">
-                Spacer text
-              </li>
-            </ul>
-            <div className="mt-auto pt-8">
-              <button className="w-full py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10">
-                Continue met Full support
-              </button>
-            </div>
-          </div>
-        </div>
-        <p className="text-center text-sm text-gray-400 mt-10 mb-24">*Minimaal 6 maanden looptijd voor alle abonnementen.</p>
-
-        {/* Add ons section */}
-        <div className="max-w-6xl mx-auto mb-24">
-          <h2 className="text-3xl font-bold mb-10 text-mollie-dark tracking-tight">Add ons</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            {/* Google Maps Ads */}
-            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-xl font-bold">Google Maps Ads</h3>
-                <div className="text-right">
-                  <span className="text-3xl font-bold">€59</span>
-                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                83% van de mensen zoekt een restaurant of horeca gelegenheid via Google Maps. Wij zorgen ervoor dat je bovenaan staat en beter zichtbaar bent op zoekwoorden zoals restaurant, café en bar
-              </p>
-            </div>
-
-            {/* Extra Campagne */}
-            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-xl font-bold">Extra Campagne</h3>
-                <div className="text-right">
-                  <span className="text-3xl font-bold">€59</span>
-                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe, bijvoorbeeld gericht op table seating of specifieke leadgeneratie.
-              </p>
-            </div>
-
-            {/* Rankmaster */}
-            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
-              <div className="flex justify-between items-start mb-6">
-                <h3 className="text-xl font-bold border-b-2 border-mollie-dark pb-1 inline-block">Rankmaster</h3>
-                <div className="text-right">
-                  <span className="text-3xl font-bold">€69</span>
-                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Beter vindbaar in Google Maps door je bedrijfsprofiel met relevante keywords te optimaliseren, meer reviews te genereren, automatisch te beantwoorden en krachtige post management door middel van AI.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       <CTASection
@@ -785,7 +786,7 @@ export default function App() {
     <div className="min-h-screen bg-white selection:bg-mollie-orange selection:text-white flex flex-col">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow flex flex-col">
         {isPricingPage ? <Pricing /> : <LandingContent />}
       </main>
 
