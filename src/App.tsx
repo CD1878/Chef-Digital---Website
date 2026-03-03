@@ -223,8 +223,8 @@ const MarketingSection = () => {
             </div>
 
             {/* Absolute positioning for user image */}
-            <div className="absolute right-0 bottom-0 md:top-1/2 md:-translate-y-1/2 translate-y-1/4 translate-x-[15%] w-[110%] md:w-[70%] z-0 flex items-center justify-end pointer-events-none pb-8 pr-8">
-              <img src="/images/home_marketing/horeca-websites-collage.png" alt="Horeca websites" className="w-full h-auto object-contain drop-shadow-2xl" />
+            <div className="absolute right-0 bottom-0 top-0 w-full md:w-[60%] z-0 flex items-center justify-end pointer-events-none p-8">
+              <img src="/images/home_marketing/horeca-websites-collage.png" alt="Horeca websites" className="w-full max-h-full object-contain object-right drop-shadow-2xl" />
             </div>
           </div>
 
@@ -248,7 +248,7 @@ const MarketingSection = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-8 w-[50%] max-w-[350px] flex justify-end pointer-events-none">
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[60%] max-w-[420px] flex justify-end pointer-events-none">
               <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
@@ -261,11 +261,15 @@ const MarketingSection = () => {
                 Meer formulieraanvragen voor borrels, groepen, feestjes en evenementen door direct zichtbaar te zijn op de juiste zoekintentie.
               </p>
 
-              <div className="mt-auto">
-                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+              <div className="mt-auto relative z-10 w-max">
+                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all">
                   Lees meer
                 </button>
               </div>
+            </div>
+
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[85%] max-w-[280px] flex justify-end pointer-events-none z-0">
+              <img src="/images/home_marketing/google-search-phone.png" alt="Google Search ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
         </div>
