@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock } from "lucide-react";
+import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // --- Components ---
@@ -534,12 +534,183 @@ const CustomerStories = () => {
   );
 };
 
+const Pricing = () => {
+  const [isAnnual, setIsAnnual] = useState(true);
+
+  return (
+    <div className="pt-32 pb-24 bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h1 className="text-5xl font-bold tracking-tight text-mollie-dark mb-6">
+            Kies het pakket wat bij je onderneming past en groei door.
+          </h1>
+          <p className="text-lg text-gray-500 mb-10">
+            Designed for every stage of your journey.<br />
+            Start today, no credit card required.
+          </p>
+
+          <div className="flex items-center justify-center p-1 rounded-full mx-auto w-max mb-12">
+            <div className="bg-gray-100 p-1 rounded-full flex gap-1">
+              <button
+                onClick={() => setIsAnnual(false)}
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${!isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
+              >
+                Maandelijks
+              </button>
+              <button
+                onClick={() => setIsAnnual(true)}
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${isAnnual ? 'bg-white shadow-sm text-black' : 'text-gray-500 hover:text-black'}`}
+              >
+                Jaarlijks
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {/* Basic */}
+          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+            <h3 className="text-xl font-bold mb-4">Basic</h3>
+            <div className="mb-6">
+              <span className="text-5xl font-bold">€129</span>
+              <span className="text-gray-500 text-sm block mt-2">Per maand, gefactureerd per jaar</span>
+            </div>
+            <p className="font-semibold text-sm mb-6 pb-6 border-b border-gray-100">Ideaal als basis van de online zichtbaarheid.</p>
+            <ul className="space-y-4 mb-8 flex-grow">
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Mobiel vriendelijke website</strong><br />Géén opstartkosten en commissies</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Zoekmachine geoptimaliseerd</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Google Maps vermelding</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Koppeling met bestelplatformen</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Koppeling met reserveersysteem</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Website beheer</strong><br />Chef Digital vult de website</span>
+              </li>
+            </ul>
+            <div className="mt-auto pt-8">
+              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                Start met Basic
+              </button>
+            </div>
+          </div>
+
+          {/* Groei */}
+          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full relative">
+            <h3 className="text-xl font-bold mb-4">Groei</h3>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-5xl font-bold">€289</span>
+              <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
+            </div>
+            <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
+            <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Basic pakket +</p>
+            <ul className="space-y-4 mb-8 flex-grow">
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Google Advertising</strong><br />Opzetten van Google Ads applicatie</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Flexibel advertentiebudget iedere maand</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <strong>Overzichtelijke rapportage</strong>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Toegang tot 'The Kitchen'</strong><br />24/7 inzicht in alle resultaten</span>
+              </li>
+            </ul>
+            <div className="mt-auto pt-8">
+              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                Continue met Groei
+              </button>
+            </div>
+          </div>
+
+          {/* Full Support (Highlighted) */}
+          <div className="border border-blue-200 shadow-[0_0_40px_-15px_rgba(59,130,246,0.3)] rounded-3xl p-8 bg-white flex flex-col relative transform lg:-translate-y-2 h-[calc(100%+16px)]">
+            <h3 className="text-xl font-bold mb-4">Full support</h3>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-5xl font-bold">€389</span>
+              <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Save 20%</span>
+            </div>
+            <span className="text-gray-500 text-sm block mb-6 -mt-4">Per maand, gefactureerd per jaar</span>
+            <p className="font-semibold text-sm mb-6 text-black border-b border-gray-100 pb-6">Alles uit het Groei pakket +</p>
+            <ul className="space-y-4 mb-8 flex-grow">
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>E-mail marketing</strong><br />1 email campagne per maand<br />Verzending en rapportage</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-transparent select-none p-4">
+                Spacer text
+              </li>
+            </ul>
+            <div className="mt-auto pt-8">
+              <button className="w-full py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10">
+                Continue met Full support
+              </button>
+            </div>
+          </div>
+
+          {/* Addons */}
+          <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+            <h3 className="text-xl font-bold mb-4">Extra</h3>
+            <div className="mb-6">
+              <span className="text-4xl font-bold">Add-ons</span>
+              <span className="text-gray-500 text-sm block mt-2 mb-2">Eenmalig of maandelijks</span>
+            </div>
+            <p className="font-semibold text-sm mb-6 pb-6 border-b border-gray-100">Voeg extra functionaliteit toe aan je pakket.</p>
+            <ul className="space-y-4 mb-8 flex-grow">
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Extra Google campagne</strong><br />€59 per stuk</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <Check className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                <span><strong>Extra taal + vertaling</strong><br />€15 per maand</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600 mt-4 bg-gray-50 p-3 rounded-xl">
+                <span className="text-xs">In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe.</span>
+              </li>
+            </ul>
+            <div className="mt-auto pt-8">
+              <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                Talk to sales
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <p className="text-center text-sm text-gray-400 mt-10">*Minimaal 6 maanden looptijd voor alle abonnementen.</p>
+      </div>
+    </div>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
-  return (
-    <div className="min-h-screen bg-white selection:bg-mollie-orange selection:text-white">
-      <Navbar />
+  const currentPath = window.location.pathname;
+  const isPricingPage = currentPath === '/pakketten' || currentPath === '/pricing';
+
+  const LandingContent = () => (
+    <>
       <Hero />
       <LogoTicker />
       <BusinessAccount />
@@ -569,6 +740,16 @@ export default function App() {
         {/* Abstract background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mollie-blue/20 rounded-full blur-[120px] pointer-events-none"></div>
       </section>
+    </>
+  );
+
+  return (
+    <div className="min-h-screen bg-white selection:bg-mollie-orange selection:text-white flex flex-col">
+      <Navbar />
+
+      <main className="flex-grow">
+        {isPricingPage ? <Pricing /> : <LandingContent />}
+      </main>
 
       <Footer />
     </div>
