@@ -14,26 +14,28 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/90 backdrop-blur-md py-3" : "bg-black py-4"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-white py-4"}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-10">
           <a href="/" className="flex items-center">
-            <svg width="80" height="24" viewBox="0 0 54 16" fill="white">
-              <path fillRule="evenodd" clipRule="evenodd" d="M40.7085 3.35548C41.6337 3.35548 42.3838 2.60433 42.3838 1.67774C42.3838 0.751151 41.6337 0 40.7085 0C39.7833 0 39.0332 0.751151 39.0332 1.67774C39.0332 2.60433 39.7833 3.35548 40.7085 3.35548ZM22.8399 5.21793C19.8747 5.21793 17.4678 7.63388 17.4678 10.5979C17.4678 13.5619 19.8803 15.9779 22.8399 15.9779C25.7996 15.9779 28.212 13.5619 28.212 10.5979C28.212 7.63388 25.8052 5.21793 22.8399 5.21793ZM22.8399 13.4332C21.2819 13.4332 20.0143 12.1638 20.0143 10.6035C20.0143 9.04322 21.2819 7.77369 22.8399 7.77369C24.3979 7.77369 25.6656 9.04322 25.6656 10.6035C25.6656 12.1638 24.3979 13.4332 22.8399 13.4332ZM11.4589 5.20637C11.5985 5.20637 11.7326 5.21196 11.8722 5.22315C13.0449 5.32381 14.123 5.86628 14.9101 6.7499C15.6974 7.62791 16.133 8.76322 16.133 9.94317V15.7594H13.5642V9.87047C13.5586 8.71281 12.6037 7.76772 11.4422 7.76772C11.3752 7.76772 11.3026 7.77331 11.23 7.77891C10.1913 7.88517 9.32014 8.86947 9.32014 9.93199V15.7594H6.7514V9.88725C6.74581 8.724 5.79648 7.77331 4.63495 7.77331C4.56795 7.77331 4.49534 7.77891 4.42275 7.7845C3.38966 7.89076 2.51293 8.87506 2.51293 9.94317V15.7594H0V9.87047C0 7.29795 2.09411 5.20637 4.66287 5.20637C5.94726 5.20637 7.17022 5.74324 8.05254 6.67719C8.93489 5.73765 10.1634 5.20637 11.4589 5.20637ZM32.1664 0.251824H29.5976V15.7709H32.1664V0.251824ZM34.5114 0.251824H37.0802V15.7709H34.5114V0.251824ZM41.994 5.47478H39.4253V15.7649H41.994V5.47478ZM52.508 6.72752C53.4685 7.7062 53.999 8.9925 53.999 10.357V11.537H46.1866C46.5328 12.7786 47.6609 13.651 48.9676 13.651C49.9896 13.651 50.9109 13.1309 51.4414 12.2529L51.5475 12.0796L53.6695 13.1253L53.5467 13.3322C52.5806 14.9596 50.8104 15.9719 48.923 15.9719H48.9174C47.4766 15.9719 46.1252 15.4015 45.1033 14.3668C44.0814 13.3322 43.5285 11.9676 43.5453 10.5248C43.562 9.10994 44.1205 7.7845 45.1145 6.78345C46.1084 5.78239 47.4375 5.22315 48.8447 5.20637H48.9118C50.2687 5.20637 51.5419 5.74884 52.508 6.72752ZM51.4023 9.41192C51.0337 8.31577 49.984 7.54402 48.8112 7.54402C47.6385 7.54402 46.5887 8.31577 46.2257 9.41192H51.4023Z" fill="white" />
-            </svg>
+            <img
+              src="/images/logos/chef-digital-logo.png"
+              alt="Chef Digital"
+              className="h-10 w-auto"
+            />
           </a>
-          <div className="hidden md:flex items-center gap-6 text-white/70 font-medium text-sm">
-            <a href="/about" className="hover:text-white transition-colors">Over ons</a>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">Producten <ChevronDown size={14} /></button>
-            <a href="/how-it-works" className="hover:text-white transition-colors">Hoe het werkt</a>
-            <a href="/customers" className="hover:text-white transition-colors">Klanten</a>
-            <a href="/pricing" className="hover:text-white transition-colors">Pakketten</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+          <div className="hidden md:flex items-center gap-6 text-chef-dark/70 font-medium text-sm">
+            <a href="/about" className="hover:text-chef-dark transition-colors">Over ons</a>
+            <button className="flex items-center gap-1 hover:text-chef-dark transition-colors">Producten <ChevronDown size={14} /></button>
+            <a href="/how-it-works" className="hover:text-chef-dark transition-colors">Hoe het werkt</a>
+            <a href="/customers" className="hover:text-chef-dark transition-colors">Klanten</a>
+            <a href="/pricing" className="hover:text-chef-dark transition-colors">Pakketten</a>
+            <a href="/contact" className="hover:text-chef-dark transition-colors">Contact</a>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <a href="/login" className="text-white text-sm font-medium hover:text-white/80 transition-colors">Inloggen</a>
-          <a href="/demo" className="bg-mollie-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-mollie-orange/20">Demo aanvragen</a>
+          <a href="/login" className="text-chef-dark text-sm font-medium hover:text-chef-dark/80 transition-colors">Inloggen</a>
+          <a href="/demo" className="bg-chef-accent text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-chef-accent/20">Demo aanvragen</a>
         </div>
       </div>
     </nav>
@@ -50,7 +52,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-mollie-dark max-w-5xl mx-auto leading-[1.1]"
+          className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark max-w-5xl mx-auto leading-[1.1]"
         >
           Meer gasten door een betere online zichtbaarheid van jouw horecazaak
         </motion.h1>
@@ -58,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8 text-lg md:text-xl text-mollie-dark/80 max-w-4xl mx-auto leading-relaxed"
+          className="mt-8 text-lg md:text-xl text-chef-dark/80 max-w-4xl mx-auto leading-relaxed"
         >
           Ruim <span className="text-black font-semibold">210 restaurants</span> maken gebruik van Chef Digital. Van lokale pizzeria's tot ketens met meerdere locaties. Wij zetten jouw zaak digitaal op de kaart al <span className="text-black font-semibold">vanaf €129 per maand</span>.
         </motion.p>
@@ -187,14 +189,14 @@ const LogoTicker = () => {
 
 const BusinessAccount = () => {
   return (
-    <section className="bg-mollie-warm py-24">
+    <section className="bg-chef-warm py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Eén platform voor al je geldzaken
           </h2>
-          <p className="mt-6 text-lg text-mollie-dark/60">
-            Maak meer omzet, verlaag je kosten en beheer je geldzaken via één platform. Gebruik Mollie voor online en in-person betalingen, abonnementsbetalingen, financiering, reconciliatie en fraudebestrijding.
+          <p className="mt-6 text-lg text-chef-dark/60">
+            Maak meer omzet, verlaag je kosten en beheer je geldzaken via één platform. Gebruik Chef Digital voor online en in-person betalingen, abonnementsbetalingen, financiering, reconciliatie en fraudebestrijding.
           </p>
         </div>
 
@@ -203,7 +205,7 @@ const BusinessAccount = () => {
           <div className="md:col-span-3 bg-black rounded-[32px] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-hidden relative min-h-[500px]">
             <div className="z-10 max-w-md">
               <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                De zakelijke rekening van Mollie
+                De zakelijke rekening van Chef Digital
               </h3>
               <p className="mt-4 text-white/80 text-lg">
                 Meld je als één van de eerste bedrijven aan.
@@ -215,7 +217,7 @@ const BusinessAccount = () => {
             <div className="mt-10 md:mt-0 relative w-full md:w-1/2 flex justify-center">
               <img
                 src="https://framerusercontent.com/images/dea10WjynbzwNZ22BHzJlwYIg.png"
-                alt="Mollie Cards"
+                alt="Chef Digital Cards"
                 className="w-full max-w-lg rotate-12 translate-x-10"
                 referrerPolicy="no-referrer"
               />
@@ -235,7 +237,7 @@ const BusinessAccount = () => {
                 ))}
               </div>
             </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Ontdek meer <ArrowRight size={18} />
             </button>
           </div>
@@ -248,7 +250,7 @@ const BusinessAccount = () => {
             <div className="mt-8 flex justify-center">
               <img src="https://framerusercontent.com/images/Mpniu7Xd6RfDfIyKxb5iVS4ljk.png" alt="Terminal" className="h-48 object-contain" referrerPolicy="no-referrer" />
             </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Ontdek meer <ArrowRight size={18} />
             </button>
           </div>
@@ -264,10 +266,10 @@ const BusinessAccount = () => {
                   <div className="h-2 w-1/2 bg-gray-100 rounded mb-2"></div>
                   <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 bg-mollie-blue h-10 rounded-lg"></div>
+                <div className="absolute bottom-4 left-4 right-4 bg-chef-blue h-10 rounded-lg"></div>
               </div>
             </div>
-            <button className="mt-8 flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="mt-8 flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Aan de slag <ArrowRight size={18} />
             </button>
           </div>
@@ -287,7 +289,7 @@ const TapToPay = () => {
               Tap to Pay op iPhone
             </h3>
             <p className="mt-6 text-white/70 text-lg">
-              Accepteer contactloze betalingen op je iPhone. Je hebt alleen je iPhone en de app van Mollie nodig.
+              Accepteer contactloze betalingen op je iPhone. Je hebt alleen je iPhone en de app van Chef Digital nodig.
             </p>
             <button className="mt-10 bg-white/20 backdrop-blur-md text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-all">
               Ontdek meer
@@ -358,7 +360,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-6 opacity-50 text-xs">
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <span>© 2025 Mollie B.V.</span>
+            <span>© 2025 Chef Digital B.V.</span>
             <a href="#" className="hover:text-white transition-colors">Gebruikersovereenkomst</a>
             <a href="#" className="hover:text-white transition-colors">Privacyverklaring</a>
             <a href="#" className="hover:text-white transition-colors">Responsible Disclosure</a>
@@ -378,19 +380,19 @@ const Footer = () => {
 
 const DashboardSection = () => {
   return (
-    <section className="bg-mollie-warm py-24 border-t border-black/5">
+    <section className="bg-chef-warm py-24 border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-white rounded-[40px] p-10 md:p-16 shadow-sm border border-black/5 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h3 className="text-3xl md:text-5xl font-bold leading-tight">
-                Alles op één plek met het Mollie Dashboard
+                Alles op één plek met het Chef Digital Dashboard
               </h3>
               <p className="mt-6 text-lg text-gray-500">
                 Beheer betalingen, krijg inzichten, vraag financiering aan en vereenvoudig je boekhouding.
               </p>
               <button className="mt-10 bg-gray-100 text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all">
-                Ontdek het Mollie Dashboard
+                Ontdek het Chef Digital Dashboard
               </button>
             </div>
             <div className="relative">
@@ -409,21 +411,21 @@ const DashboardSection = () => {
 
 const IntegrationsSection = () => {
   return (
-    <section className="bg-mollie-warm py-24 border-t border-black/5">
+    <section className="bg-chef-warm py-24 border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Voor elk bedrijf een geschikte oplossing
           </h2>
-          <p className="mt-6 text-lg text-mollie-dark/60">
-            Krijg toegang tot een ecosysteem van technologische oplossingen om je bedrijf naar een hoger niveau te tillen. Koppel Mollie naadloos aan je bestaande infrastructuur.
+          <p className="mt-6 text-lg text-chef-dark/60">
+            Krijg toegang tot een ecosysteem van technologische oplossingen om je bedrijf naar een hoger niveau te tillen. Koppel Chef Digital naadloos aan je bestaande infrastructuur.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
             <div>
-              <h3 className="text-2xl font-bold text-mollie-dark">Handige integraties</h3>
-              <p className="mt-4 text-gray-500">Koppel Mollie aan je e-commerceplatform en tech stack met onze kant-en-klare plug-ins.</p>
+              <h3 className="text-2xl font-bold text-chef-dark">Handige integraties</h3>
+              <p className="mt-4 text-gray-500">Koppel Chef Digital aan je e-commerceplatform en tech stack met onze kant-en-klare plug-ins.</p>
             </div>
             <div className="grid grid-cols-3 gap-4 my-8">
               {[
@@ -439,31 +441,31 @@ const IntegrationsSection = () => {
                 </div>
               ))}
             </div>
-            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Ontdek alle integraties <ArrowRight size={18} />
             </button>
           </div>
 
           <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
             <div>
-              <h3 className="text-2xl font-bold text-mollie-dark">Eersteklas support</h3>
+              <h3 className="text-2xl font-bold text-chef-dark">Eersteklas support</h3>
               <p className="mt-4 text-gray-500">Krijg ondersteuning van lokale experts in je eigen taal.</p>
             </div>
             <div className="flex flex-col items-center justify-center my-8">
-              <span className="text-8xl font-light text-mollie-dark">0.0</span>
+              <span className="text-8xl font-light text-chef-dark">0.0</span>
               <div className="flex gap-1 text-yellow-400 mt-2">
                 {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
               </div>
               <span className="text-xs text-gray-400 mt-2 uppercase tracking-widest font-bold">Trustpilot</span>
             </div>
-            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Neem contact op <ArrowRight size={18} />
             </button>
           </div>
 
           <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
             <div>
-              <h3 className="text-2xl font-bold text-mollie-dark">Kant-en-klare libraries</h3>
+              <h3 className="text-2xl font-bold text-chef-dark">Kant-en-klare libraries</h3>
               <p className="mt-4 text-gray-500">Gebruik onze client libraries en server libraries voor alles van JS en PHP tot .NET en Python.</p>
             </div>
             <div className="grid grid-cols-3 gap-4 my-8">
@@ -471,7 +473,7 @@ const IntegrationsSection = () => {
                 <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center text-[10px] font-bold text-gray-300">SDK</div>
               ))}
             </div>
-            <button className="flex items-center gap-2 font-semibold text-mollie-dark hover:gap-3 transition-all">
+            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
               Bekijk alle libraries <ArrowRight size={18} />
             </button>
           </div>
@@ -483,13 +485,13 @@ const IntegrationsSection = () => {
 
 const CustomerStories = () => {
   return (
-    <section className="bg-mollie-warm py-24 border-t border-black/5 overflow-hidden">
+    <section className="bg-chef-warm py-24 border-t border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Een betrouwbare partner voor bedrijven in Europa
           </h2>
-          <p className="mt-6 text-lg text-mollie-dark/60">
+          <p className="mt-6 text-lg text-chef-dark/60">
             Maak kennis met de bedrijven die onze oplossingen gebruiken om hun groei te stimuleren.
           </p>
         </div>
@@ -508,7 +510,7 @@ const CustomerStories = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="h-8 w-24 bg-white/20 backdrop-blur-md rounded mb-4"></div>
-                <p className="text-white font-medium text-lg">"Mollie maakt dingen zo makkelijk mogelijk."</p>
+                <p className="text-white font-medium text-lg">"Chef Digital maakt dingen zo makkelijk mogelijk."</p>
               </div>
             </div>
           ))}
@@ -524,7 +526,7 @@ const CustomerStories = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="h-8 w-24 bg-white/20 backdrop-blur-md rounded mb-4"></div>
-                <p className="text-white font-medium text-lg">"Mollie maakt dingen zo makkelijk mogelijk."</p>
+                <p className="text-white font-medium text-lg">"Chef Digital maakt dingen zo makkelijk mogelijk."</p>
               </div>
             </div>
           ))}
@@ -545,7 +547,7 @@ const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }:
           {subtitle}
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <button className="w-full sm:w-auto bg-mollie-orange text-white px-8 py-3 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_rgba(239,111,46,0.6)] flex items-center justify-center gap-2">
+          <button className="w-full sm:w-auto bg-chef-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_rgba(239,111,46,0.6)] flex items-center justify-center gap-2">
             {primaryButtonText} <ArrowRight size={20} />
           </button>
           <button className="w-full sm:w-auto bg-[#1A1A1A] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#2A2A2A] transition-all border border-white/5">
@@ -554,7 +556,7 @@ const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }:
         </div>
       </div>
       {/* Abstract background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-mollie-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-chef-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
   );
 };
@@ -567,7 +569,7 @@ const Pricing = () => {
       <div className="pt-32 pb-24 flex-grow">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-5xl font-bold tracking-tight text-mollie-dark mb-6">
+            <h1 className="text-5xl font-bold tracking-tight text-chef-dark mb-6">
               Kies het pakket wat bij je onderneming past en groei door.
             </h1>
             <p className="text-lg text-gray-500 mb-10">
@@ -629,7 +631,7 @@ const Pricing = () => {
                 </li>
               </ul>
               <div className="mt-auto pt-8">
-                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-chef-dark hover:bg-gray-50 transition-colors">
                   Start met Basic
                 </button>
               </div>
@@ -663,7 +665,7 @@ const Pricing = () => {
                 </li>
               </ul>
               <div className="mt-auto pt-8">
-                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-mollie-dark hover:bg-gray-50 transition-colors">
+                <button className="w-full py-3 rounded-full border border-gray-200 font-semibold text-chef-dark hover:bg-gray-50 transition-colors">
                   Continue met Groei
                 </button>
               </div>
@@ -698,7 +700,7 @@ const Pricing = () => {
 
           {/* Add ons section */}
           <div className="max-w-6xl mx-auto mb-24">
-            <h2 className="text-3xl font-bold mb-10 text-mollie-dark tracking-tight">Add ons</h2>
+            <h2 className="text-3xl font-bold mb-10 text-chef-dark tracking-tight">Add ons</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {/* Google Maps Ads */}
@@ -732,7 +734,7 @@ const Pricing = () => {
               {/* Rankmaster */}
               <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-xl font-bold border-b-2 border-mollie-dark pb-1 inline-block">Rankmaster</h3>
+                  <h3 className="text-xl font-bold border-b-2 border-chef-dark pb-1 inline-block">Rankmaster</h3>
                   <div className="text-right">
                     <span className="text-3xl font-bold">€69</span>
                     <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
@@ -775,7 +777,7 @@ export default function App() {
 
       <CTASection
         title="Vereenvoudig betalingen en geldzaken"
-        subtitle="Verhoog je inkomsten, verlaag je kosten en beheer al je geldzaken via Mollie."
+        subtitle="Verhoog je inkomsten, verlaag je kosten en beheer al je geldzaken via Chef Digital."
         primaryButtonText="Start nu"
         secondaryButtonText="Neem contact op met sales"
       />
@@ -783,7 +785,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-white selection:bg-mollie-orange selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white selection:bg-chef-accent selection:text-white flex flex-col">
       <Navbar />
 
       <main className="flex-grow flex flex-col">
