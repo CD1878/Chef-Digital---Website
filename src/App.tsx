@@ -23,17 +23,17 @@ const Navbar = () => {
             </svg>
           </a>
           <div className="hidden md:flex items-center gap-6 text-white/70 font-medium text-sm">
+            <a href="/about" className="hover:text-white transition-colors">Over ons</a>
             <button className="flex items-center gap-1 hover:text-white transition-colors">Producten <ChevronDown size={14} /></button>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">Partners <ChevronDown size={14} /></button>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">Developers <ChevronDown size={14} /></button>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">Kennis <ChevronDown size={14} /></button>
-            <a href="/pricing" className="hover:text-white transition-colors">Tarieven</a>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">Contact <ChevronDown size={14} /></button>
+            <a href="/how-it-works" className="hover:text-white transition-colors">Hoe het werkt</a>
+            <a href="/customers" className="hover:text-white transition-colors">Klanten</a>
+            <a href="/pricing" className="hover:text-white transition-colors">Pakketten</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <a href="/login" className="text-white text-sm font-medium hover:text-white/80 transition-colors">Inloggen</a>
-          <a href="/signup" className="bg-mollie-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-mollie-orange/20">Account aanmaken</a>
+          <a href="/demo" className="bg-mollie-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-mollie-orange/20">Demo aanvragen</a>
         </div>
       </div>
     </nav>
