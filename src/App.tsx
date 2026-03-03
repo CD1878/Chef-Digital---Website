@@ -121,24 +121,28 @@ const Hero = () => {
   );
 };
 
-const LogoImage = ({ name, src }: { name: string; src: string }) => {
+const LogoImage = ({ name, src }: { key?: string; name: string; src: string }) => {
   const [error, setError] = useState(false);
 
   if (error) {
     return (
-      <span className="text-2xl font-bold text-gray-300 hover:text-gray-400 transition-colors cursor-default whitespace-nowrap">
-        {name}
-      </span>
+      <div className="w-40 md:w-56 h-16 md:h-20 flex items-center justify-center shrink-0">
+        <span className="text-2xl font-bold text-gray-300 hover:text-gray-400 transition-colors cursor-default whitespace-nowrap">
+          {name}
+        </span>
+      </div>
     );
   }
 
   return (
-    <img
-      src={src}
-      alt={name}
-      className="h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-      onError={() => setError(true)}
-    />
+    <div className="w-40 md:w-56 h-16 md:h-20 flex items-center justify-center shrink-0">
+      <img
+        src={src}
+        alt={name}
+        className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+        onError={() => setError(true)}
+      />
+    </div>
   );
 };
 
