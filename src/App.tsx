@@ -536,8 +536,8 @@ const CustomerStories = () => {
 
 const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
   return (
-    <section className="bg-black py-32 text-left overflow-hidden relative">
-      <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-start">
+    <section className="bg-black py-32 overflow-hidden relative w-full">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-start">
         <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
           {title}
         </h2>
