@@ -46,7 +46,7 @@ const Hero = () => {
   const [activeTab, setActiveTab] = useState<'restaurant' | 'kitchen'>('restaurant');
 
   return (
-    <section className="bg-white pt-32 pb-20 overflow-hidden">
+    <section className="bg-white pt-40 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,11 @@ const Hero = () => {
           <button className="w-full sm:w-[240px] bg-black text-white px-8 py-4 rounded-md font-medium text-base hover:bg-gray-900 transition-all">
             Afspraak maken
           </button>
-          <button className="w-full sm:w-[240px] bg-white border border-black text-black px-8 py-4 rounded-md font-medium text-base hover:bg-gray-50 transition-all">
-            Pakketten
-          </button>
+          <a href="/pakketten" className="w-full sm:w-[240px]">
+            <button className="w-full bg-chef-warm text-chef-dark border border-black/10 px-8 py-4 rounded-md font-medium text-base hover:bg-gray-100 transition-all">
+              Pakketten
+            </button>
+          </a>
         </motion.div>
 
         <motion.div
@@ -566,7 +568,7 @@ const Pricing = () => {
 
   return (
     <div className="bg-white flex flex-col flex-grow">
-      <div className="pt-32 pb-24 flex-grow">
+      <div className="pt-40 pb-24 flex-grow">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-5xl font-bold tracking-tight text-chef-dark mb-6">
