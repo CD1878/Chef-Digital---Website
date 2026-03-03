@@ -699,47 +699,45 @@ const Pricing = () => {
         <div className="max-w-6xl mx-auto mb-24">
           <h2 className="text-3xl font-bold mb-10 text-mollie-dark tracking-tight">Add ons</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div className="flex flex-col gap-8">
-              {/* Google Maps Ads */}
-              <div className="border-2 border-black p-10 bg-white">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-bold">Google Maps Ads</h3>
-                  <div className="text-right">
-                    <span className="text-3xl font-bold">€59</span>
-                    <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {/* Google Maps Ads */}
+            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-xl font-bold">Google Maps Ads</h3>
+                <div className="text-right">
+                  <span className="text-3xl font-bold">€59</span>
+                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
                 </div>
-                <p className="text-gray-600 leading-relaxed max-w-sm">
-                  83% van de mensen zoekt een restaurant of horeca gelegenheid via Google Maps. Wij zorgen ervoor dat je bovenaan staat en beter zichtbaar bent op zoekwoorden zoals restaurant, café en bar
-                </p>
               </div>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                83% van de mensen zoekt een restaurant of horeca gelegenheid via Google Maps. Wij zorgen ervoor dat je bovenaan staat en beter zichtbaar bent op zoekwoorden zoals restaurant, café en bar
+              </p>
+            </div>
 
-              {/* Extra Campagne */}
-              <div className="border-2 border-black p-10 bg-white">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-bold">Extra Campagne</h3>
-                  <div className="text-right">
-                    <span className="text-3xl font-bold">€59</span>
-                    <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
-                  </div>
+            {/* Extra Campagne */}
+            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-xl font-bold">Extra Campagne</h3>
+                <div className="text-right">
+                  <span className="text-3xl font-bold">€59</span>
+                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
                 </div>
-                <p className="text-gray-600 leading-relaxed max-w-sm">
-                  In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe, bijvoorbeeld gericht op table seating of specifieke leadgeneratie.
-                </p>
               </div>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                In het Groei pakket zit standaard een Google campagne. Voor €59 extra per stuk voeg je een extra campagne toe, bijvoorbeeld gericht op table seating of specifieke leadgeneratie.
+              </p>
             </div>
 
             {/* Rankmaster */}
-            <div className="border-2 border-black p-10 bg-white">
+            <div className="border border-gray-200 rounded-3xl p-8 bg-white flex flex-col hover:border-gray-300 transition-colors h-full">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold">Rankmaster</h3>
+                <h3 className="text-xl font-bold border-b-2 border-mollie-dark pb-1 inline-block">Rankmaster</h3>
                 <div className="text-right">
                   <span className="text-3xl font-bold">€69</span>
-                  <span className="block text-xs text-gray-500 mt-1">Prijs per maand*</span>
+                  <span className="block text-[10px] text-gray-500 mt-1">Prijs per maand*</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed max-w-sm">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Beter vindbaar in Google Maps door je bedrijfsprofiel met relevante keywords te optimaliseren, meer reviews te genereren, automatisch te beantwoorden en krachtige post management door middel van AI.
               </p>
             </div>
