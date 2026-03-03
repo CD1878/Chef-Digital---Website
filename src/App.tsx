@@ -205,7 +205,7 @@ const MarketingSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Large Top Card */}
           <div className="lg:col-span-3 bg-black rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] relative">
-            <div className="max-w-xl z-10 relative">
+            <div className="max-w-xl z-10 relative flex flex-col h-full">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Horeca websites
               </h3>
@@ -248,7 +248,7 @@ const MarketingSection = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[60%] max-w-[420px] flex justify-end pointer-events-none">
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[75%] max-w-[480px] flex justify-end pointer-events-none">
               <img src="/images/home_marketing/google-maps-phone.png" alt="Google Maps ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
@@ -260,15 +260,9 @@ const MarketingSection = () => {
               <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
                 Meer formulieraanvragen voor borrels, groepen, feestjes en evenementen door direct zichtbaar te zijn op de juiste zoekintentie.
               </p>
-
-              <div className="mt-auto relative z-10 w-max">
-                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all">
-                  Lees meer
-                </button>
-              </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[85%] max-w-[280px] flex justify-end pointer-events-none z-0">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-12 w-[75%] max-w-[250px] flex justify-center pointer-events-none z-0">
               <img src="/images/home_marketing/google-search-phone.png" alt="Google Search ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
