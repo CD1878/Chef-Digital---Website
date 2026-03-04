@@ -286,7 +286,7 @@ const MarketingSection = () => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0 translate-x-1/3 translate-y-12 w-[85%] max-w-[320px] flex justify-end pointer-events-none z-0">
+            <div className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 w-[85%] max-w-[320px] flex justify-end pointer-events-none z-0">
               <img src="/images/home_marketing/email-marketing.png" alt="Email Marketing" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
