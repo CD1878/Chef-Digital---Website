@@ -20,12 +20,12 @@ const HorecaWebsite = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-chef-warm selection:bg-chef-accent selection:text-white flex flex-col pt-24">
+        <div className="min-h-screen bg-white selection:bg-chef-accent selection:text-white flex flex-col pt-24">
             <Navbar />
 
             <main className="flex-grow flex flex-col">
                 {/* Hero Section */}
-                <section className="bg-chef-warm pt-24 pb-0 overflow-hidden text-center relative z-10">
+                <section className="bg-white pt-24 pb-0 overflow-hidden text-center relative z-10">
                     <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
                             Website voor restaurants en hospitality
@@ -84,25 +84,48 @@ const HorecaWebsite = () => {
                     </div>
                 </section>
 
+                {/* Intro Text Section */}
+                <section className="bg-chef-warm py-24 md:py-32 border-t border-black/5">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <p className="text-xl md:text-[22px] text-chef-dark/90 leading-[1.6] font-medium mb-24 md:mb-32 text-center text-balance">
+                            De eerste indruk van jouw restaurant begint vaak niet bij de voordeur, maar online. Potentiële gasten bekijken je menu, foto's en recensies voordat ze beslissen of ze bij jou willen reserveren. Met een professionele website van Chef Digital zorg je ervoor dat die eerste indruk telt &ndash; en direct leidt tot reserveringen. Wij bouwen websites die niet alleen mooi zijn, maar ook functioneel, snel en volledig ingericht op de horeca.
+                        </p>
+
+                        <div className="max-w-3xl mx-auto">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-8 leading-tight">
+                                Jij houdt tijd over, wij ontzorgen
+                            </h2>
+                            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                                <p>
+                                    Met Chef Digital heb je nergens omkijken naar. Wij doen al het beheer en onderhoud, zorgen dat je site technisch optimaal blijft draaien en voeren wijzigingen altijd binnen 24 uur live door. Zo hoef jij nooit meer te wachten of zelf te prutsen in een systeem: wij regelen alles.
+                                </p>
+                                <p>
+                                    En het mooiste? Je betaalt één vast bedrag per maand. Geen hoge opstartkosten, geen onverwachte facturen en geen verborgen kosten achteraf. Transparant, helder en voorspelbaar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Text Area with Mockup */}
                 <section className="bg-white py-32 border-y border-black/5">
-                    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                        <div className="order-2 lg:order-1 relative w-full flex justify-center lg:justify-start">
+                    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20 items-center">
+                        <div className="order-2 lg:order-1 relative w-full flex justify-center lg:justify-end pr-0 lg:pr-8">
                             <img
                                 src="/images/home_marketing/happy-restaurant-owner.png"
                                 alt="Blije restauranthouder met smartphone"
-                                className="w-full max-w-[500px] aspect-square object-cover rounded-[40px] drop-shadow-2xl border border-black/5"
+                                className="w-full max-w-[450px] aspect-[4/5] object-cover rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5"
                             />
                         </div>
                         <div className="order-1 lg:order-2">
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
-                                Speciaal ontwikkeld voor restaurants en horeca
+                            <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight text-chef-dark mb-6 leading-tight">
+                                Speciaal ontwikkeld<br className="hidden lg:block" /> voor restaurants en horeca
                             </h2>
-                            <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
+                            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium">
                                 Wij zijn gespecialiseerd in de horeca en hospitality. Daardoor weten we precies waar het bij een restaurantwebsite om draait:
                             </p>
 
-                            <ul className="space-y-6 mb-8 text-lg text-gray-600">
+                            <ul className="space-y-6 mb-10 text-lg md:text-xl text-gray-600">
                                 <li className="flex items-start gap-4">
                                     <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
                                     <span className="leading-relaxed">Snel en eenvoudig reserveren via geïntegreerde koppelingen zoals Zenchef, Guestplan, Tebi of The Fork.</span>
@@ -117,7 +140,7 @@ const HorecaWebsite = () => {
                                 </li>
                             </ul>
 
-                            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
                                 Of het nu gaat om tafels vullen tijdens rustige dagen of aanvragen binnenhalen voor feesten en zakelijke evenementen: onze websites zijn er helemaal op ingericht.
                             </p>
                         </div>
