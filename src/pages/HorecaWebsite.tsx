@@ -88,22 +88,11 @@ const HorecaWebsite = () => {
                 <section className="bg-white py-32 border-y border-black/5">
                     <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                         <div className="order-2 lg:order-1 relative w-full flex justify-center lg:justify-start">
-                            <div className="w-full max-w-[500px] bg-gradient-to-br from-chef-warm to-gray-200 rounded-[40px] aspect-square flex items-center justify-center p-8 md:p-12 overflow-hidden relative shadow-inner border border-black/5">
-                                <div className="absolute inset-0 bg-blue-50/50 backdrop-blur-3xl"></div>
-                                <div className="relative z-10 w-full rounded-2xl bg-white shadow-xl border border-black/5 p-8 hover:scale-105 transition-transform duration-500">
-                                    <div className="flex items-center gap-4 mb-6 border-b border-black/10 pb-4">
-                                        <span className="w-3 h-3 rounded-full bg-red-400"></span>
-                                        <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
-                                        <span className="w-3 h-3 rounded-full bg-green-400"></span>
-                                    </div>
-                                    <div className="space-y-4">
-                                        <div className="h-4 bg-gray-100 rounded-full w-2/3"></div>
-                                        <div className="h-4 bg-gray-100 rounded-full w-full"></div>
-                                        <div className="h-4 bg-gray-100 rounded-full w-4/5"></div>
-                                        <div className="h-4 bg-gray-100 rounded-full w-1/2"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <img
+                                src="/images/home_marketing/happy-restaurant-owner.png"
+                                alt="Blije restauranthouder met smartphone"
+                                className="w-full max-w-[500px] aspect-square object-cover rounded-[40px] drop-shadow-2xl border border-black/5"
+                            />
                         </div>
                         <div className="order-1 lg:order-2">
                             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
