@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check, MessageCircle, LineChart, ChefHat } from "lucide-react";
+import { ChevronDown, ChevronRight, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check, MessageCircle, LineChart, ChefHat } from "lucide-react";
 import HorecaWebsite from "./pages/HorecaWebsite";
 import { useState, useEffect } from "react";
 
@@ -586,25 +586,23 @@ export const CustomerStories = () => {
 
 export const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
   return (
-    <section className="bg-white py-32 overflow-hidden relative w-full border-t border-black/5">
-      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-chef-dark leading-tight max-w-4xl">
+    <section className="bg-black py-24 md:py-32 w-full">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-start text-left">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] max-w-4xl">
           {title}
         </h2>
-        <p className="mt-6 text-xl text-gray-500 max-w-2xl">
+        <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl font-medium">
           {subtitle}
         </p>
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
-            {primaryButtonText}
+        <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-start gap-3 w-full sm:w-auto">
+          <button className="w-full sm:w-auto bg-[#F07B2D] text-white px-6 py-3.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2">
+            {primaryButtonText} <ChevronRight size={16} strokeWidth={3} className="ml-[-4px]" />
           </button>
-          <button className="w-full sm:w-auto bg-transparent text-chef-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all border border-black/10">
+          <button className="w-full sm:w-auto bg-[#2A2A2A] text-white px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-[#3A3A3A] transition-all">
             {secondaryButtonText}
           </button>
         </div>
       </div>
-      {/* Background glow behind text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gray-100 rounded-full blur-[140px] pointer-events-none z-0"></div>
     </section>
   );
 };
