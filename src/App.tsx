@@ -193,7 +193,7 @@ const MarketingSection = () => {
   return (
     <section className="bg-chef-warm py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-4xl mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
             Één plek voor alle marketing van jouw horecazaak
           </h2>
