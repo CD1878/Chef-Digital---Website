@@ -206,10 +206,10 @@ const MarketingSection = () => {
           {/* Large Top Card */}
           <div className="lg:col-span-3 bg-black rounded-[32px] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] relative">
             <div className="max-w-xl z-10 relative flex flex-col h-full">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
                 Horeca websites
               </h3>
-              <p className="text-gray-400 font-semibold mb-4 text-lg">Geen opstartkosten</p>
+              <p className="text-gray-400 font-semibold mb-4 text-lg">Geen opstartkosten, geen commissies</p>
               <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-sm">
                 Wij doen alles qua bouw, beheer en updates. Jij bespaart kostbare tijd en hebt nergens omkijken naar.
               </p>
@@ -232,7 +232,7 @@ const MarketingSection = () => {
           {/* Small Left Card */}
           <div className="lg:col-span-2 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
             <div className="z-10 w-full flex flex-col flex-grow max-w-sm">
-              <h3 className="text-2xl font-bold text-chef-dark mb-4">Google Maps ads</h3>
+              <h3 className="text-2xl font-bold text-chef-dark mb-2">Google Maps ads</h3>
               <p className="text-gray-400 font-semibold mb-6">Direct boven je concurrenten</p>
 
               <p className="text-chef-dark/80 mb-8 leading-relaxed text-sm md:text-base max-w-xs">
@@ -257,7 +257,7 @@ const MarketingSection = () => {
           {/* Small Right Card */}
           <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
             <div className="z-10 flex flex-col h-full flex-grow">
-              <h3 className="text-2xl font-bold text-chef-dark mb-4">Google Search ads</h3>
+              <h3 className="text-2xl font-bold text-chef-dark mb-2">Google Search ads</h3>
               <p className="text-gray-400 font-semibold mb-6">Meer eventaanvragen</p>
               <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
                 Meer formulieraanvragen voor borrels, groepen, feestjes en evenementen door direct zichtbaar te zijn op de juiste zoekintentie.
