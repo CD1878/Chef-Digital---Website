@@ -230,7 +230,7 @@ const MarketingSection = () => {
           </div>
 
           {/* Small Left Card */}
-          <div className="lg:col-span-2 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+          <div className="lg:col-span-2 bg-white rounded-[32px] p-8 md:p-12 border border-blue-200 shadow-[0_0_40px_-15px_rgba(59,130,246,0.3)] flex flex-col relative overflow-hidden min-h-[450px]">
             <div className="z-10 w-full flex flex-col flex-grow max-w-sm">
               <h3 className="text-2xl font-bold text-chef-dark mb-2">Google Maps ads</h3>
               <p className="text-gray-400 font-semibold mb-6">Direct boven je concurrenten</p>
