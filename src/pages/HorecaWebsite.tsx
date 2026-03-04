@@ -1,14 +1,31 @@
+import { useState, useEffect } from "react";
 import { Check, X, ArrowRight, Smartphone, Zap, MonitorSmartphone, LineChart, Globe, Palette } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
+const horecaCustomers = [
+    { name: "Het Paardje", image: "/images/customers/het-paardje.jpg" },
+    { name: "In de Wildeman", image: "/images/customers/in-de-wildeman.png" },
+    { name: "Café Kramer", image: "/images/customers/cafe-kramer.png" },
+    { name: "Dutch Courage", image: "/images/customers/dutch-courage.png" },
+];
+
 const HorecaWebsite = () => {
+    const [currentIdx, setCurrentIdx] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIdx((prev) => (prev + 1) % horecaCustomers.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="min-h-screen bg-chef-warm selection:bg-chef-accent selection:text-white flex flex-col pt-24">
             <Navbar />
 
             <main className="flex-grow flex flex-col">
                 {/* Hero Section */}
-                <section className="bg-chef-warm py-24 pb-12 overflow-hidden text-center relative z-10">
+                <section className="bg-chef-warm pt-24 pb-0 overflow-hidden text-center relative z-10">
                     <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
                             Website voor restaurants en hospitality
@@ -26,32 +43,51 @@ const HorecaWebsite = () => {
                         </div>
                     </div>
 
-                    <div className="max-w-5xl mx-auto px-6 mt-24 relative flex justify-center pb-20 perspective-[2000px]">
+                    <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center perspective-[2000px] translate-y-px">
                         {/* Desktop Browser Mockup */}
-                        <div className="relative w-[85%] bg-white rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border border-black/5 overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-700 ease-out z-10">
+                        <div className="relative w-[85%] bg-white rounded-t-2xl shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.1)] border-x border-t border-black/10 overflow-hidden z-10 transition-transform duration-700 ease-out origin-bottom">
                             {/* Browser Header macOS style */}
                             <div className="bg-[#f0f0f0] h-10 w-full flex items-center px-4 gap-2 border-b border-black/5">
                                 <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
                                 <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
                                 <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
-                                <div className="mx-auto bg-white/60 h-5 w-1/3 rounded-md border border-black/5"></div>
+                                <div className="mx-auto bg-white/60 h-5 w-1/3 rounded-md border border-black/5 flex items-center justify-center"></div>
                             </div>
-                            {/* Browser content placeholder (we use het-paardje as image for now) */}
+                            {/* Browser content placeholder */}
                             <div className="w-full aspect-[16/10] bg-gray-100 flex items-center justify-center relative overflow-hidden">
-                                <img src="/images/customers/het-paardje.jpg" alt="Website Desktop Verion" className="w-full h-full object-cover absolute inset-0 opacity-80" />
+                                {horecaCustomers.map((customer, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={customer.image}
+                                        alt={`Website ${customer.name}`}
+                                        className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-80' : 'opacity-0'}`}
+                                    />
+                                ))}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                                <h3 className="relative z-10 text-white font-serif text-4xl tracking-widest uppercase">Het Paardje</h3>
+                                <h3
+                                    key={currentIdx}
+                                    className="relative z-10 text-white font-serif text-3xl md:text-5xl tracking-widest uppercase animate-fade-in"
+                                >
+                                    {horecaCustomers[currentIdx].name}
+                                </h3>
                             </div>
                         </div>
 
                         {/* Mobile Device Mockup */}
-                        <div className="absolute right-0 lg:-right-4 bottom-[-15%] w-[28%] max-w-[220px] bg-white rounded-[32px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] border-[6px] border-[#1A1A1A] overflow-hidden transform rotate-6 hover:rotate-0 hover:-translate-y-4 transition-all duration-700 ease-out z-20">
+                        <div className="absolute right-0 lg:-right-4 bottom-0 w-[28%] max-w-[220px] bg-white rounded-t-[32px] shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.2)] border-x-[6px] border-t-[6px] border-[#1A1A1A] overflow-hidden transition-all duration-700 ease-out z-20 origin-bottom">
                             {/* Apple style Notch */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[18px] bg-[#1A1A1A] rounded-b-xl z-20"></div>
-                            <div className="w-full aspect-[9/19] bg-gray-100 relative overflow-hidden">
-                                <img src="/images/customers/het-paardje.jpg" alt="Website Mobile Version" className="w-full h-full object-cover absolute inset-0" />
-                                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                <div className="absolute bottom-6 left-4 right-4 text-center">
+                            <div className="w-full aspect-[9/18] bg-gray-100 relative overflow-hidden">
+                                {horecaCustomers.map((customer, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={customer.image}
+                                        alt={`Mobile Website ${customer.name}`}
+                                        className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-100' : 'opacity-0'}`}
+                                    />
+                                ))}
+                                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                                <div className="absolute bottom-6 left-4 right-4 text-center z-20">
                                     <h4 className="text-white font-serif text-lg uppercase tracking-wider mb-2">Menu</h4>
                                     <div className="h-10 bg-[#F07B2D] rounded-full flex items-center justify-center text-white text-xs font-bold w-full uppercase">Reserveren</div>
                                 </div>
