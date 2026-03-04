@@ -548,10 +548,10 @@ export const CustomerStories = () => {
       <div className="flex gap-6">
         <div className="flex animate-marquee-fast gap-6">
           {[
-            "https://framerusercontent.com/images/KTjc7jo1m3ZHD2Rk4kig227pQ.jpg",
-            "https://framerusercontent.com/images/HC79c1OyyXNZAyFIzxHJSJGRM.jpg",
-            "https://framerusercontent.com/images/ZaGve0oI5633W8U526GprCTM.jpg",
-            "https://framerusercontent.com/images/SWVACnMQfwAsZLi43PYXru9CHz8.jpg"
+            "/images/customers/dutch-courage.png",
+            "/images/customers/in-de-wildeman.png",
+            "/images/customers/cafe-kramer.png",
+            "/images/customers/het-paardje.jpg"
           ].map((src, i) => (
             <div key={i} className="w-[400px] h-[520px] rounded-[32px] overflow-hidden flex-shrink-0 relative group cursor-pointer">
               <img src={src} alt="Customer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
@@ -564,10 +564,10 @@ export const CustomerStories = () => {
           ))}
           {/* Duplicate for marquee */}
           {[
-            "https://framerusercontent.com/images/KTjc7jo1m3ZHD2Rk4kig227pQ.jpg",
-            "https://framerusercontent.com/images/HC79c1OyyXNZAyFIzxHJSJGRM.jpg",
-            "https://framerusercontent.com/images/ZaGve0oI5633W8U526GprCTM.jpg",
-            "https://framerusercontent.com/images/SWVACnMQfwAsZLi43PYXru9CHz8.jpg"
+            "/images/customers/dutch-courage.png",
+            "/images/customers/in-de-wildeman.png",
+            "/images/customers/cafe-kramer.png",
+            "/images/customers/het-paardje.jpg"
           ].map((src, i) => (
             <div key={`dup-${i}`} className="w-[400px] h-[520px] rounded-[32px] overflow-hidden flex-shrink-0 relative group cursor-pointer">
               <img src={src} alt="Customer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
