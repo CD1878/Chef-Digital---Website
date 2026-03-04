@@ -85,22 +85,40 @@ const HorecaWebsite = () => {
                 </section>
 
                 {/* Intro Text Section */}
-                <section className="bg-chef-warm py-24 md:py-32 border-t border-black/5">
+                <section className="bg-white py-24 border-t border-black/5">
                     <div className="max-w-4xl mx-auto px-6">
-                        <p className="text-xl md:text-[22px] text-chef-dark/90 leading-[1.6] font-medium mb-24 md:mb-32 text-center text-balance">
+                        <p className="text-lg md:text-xl text-chef-dark/80 leading-[1.7] font-medium text-center text-balance">
                             De eerste indruk van jouw restaurant begint vaak niet bij de voordeur, maar online. Potentiële gasten bekijken je menu, foto's en recensies voordat ze beslissen of ze bij jou willen reserveren. Met een professionele website van Chef Digital zorg je ervoor dat die eerste indruk telt &ndash; en direct leidt tot reserveringen. Wij bouwen websites die niet alleen mooi zijn, maar ook functioneel, snel en volledig ingericht op de horeca.
                         </p>
+                    </div>
+                </section>
 
-                        <div className="max-w-3xl mx-auto">
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-8 leading-tight">
-                                Jij houdt tijd over, wij ontzorgen
-                            </h2>
-                            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                                <p>
-                                    Met Chef Digital heb je nergens omkijken naar. Wij doen al het beheer en onderhoud, zorgen dat je site technisch optimaal blijft draaien en voeren wijzigingen altijd binnen 24 uur live door. Zo hoef jij nooit meer te wachten of zelf te prutsen in een systeem: wij regelen alles.
+                {/* Services Grid Section */}
+                <section className="bg-chef-warm py-24 md:py-32 border-t border-black/5">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-16 leading-tight text-center">
+                            Jij houdt tijd over, wij ontzorgen
+                        </h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Aanpassingen snel geregeld</h3>
+                                <p className="text-gray-600 leading-relaxed font-medium mb-6">
+                                    Wijzigingen voeren we vaak binnen 24 uur door. Denk aan nieuwe menukaarten, actuele foto's, vacatures of evenementen.
                                 </p>
-                                <p>
-                                    En het mooiste? Je betaalt één vast bedrag per maand. Geen hoge opstartkosten, geen onverwachte facturen en geen verborgen kosten achteraf. Transparant, helder en voorspelbaar.
+                            </div>
+
+                            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Altijd up-to-date en vindbaar</h3>
+                                <p className="text-gray-600 leading-relaxed font-medium mb-6">
+                                    Je website is altijd up-to-date en AI- en zoekmachine-geoptimaliseerd. We werken continu aan betere vindbaarheid met de modernste technieken.
+                                </p>
+                            </div>
+
+                            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Continu in ontwikkeling</h3>
+                                <p className="text-gray-600 leading-relaxed font-medium mb-6">
+                                    De site is altijd up and running. Daarnaast ontwikkelen we proactief door, bouwen we nieuwe pagina's en groeien we digitaal met jouw zaak mee.
                                 </p>
                             </div>
                         </div>
@@ -118,12 +136,9 @@ const HorecaWebsite = () => {
                             />
                         </div>
                         <div className="order-1 lg:order-2">
-                            <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight text-chef-dark mb-6 leading-tight">
+                            <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight text-chef-dark mb-10 leading-tight">
                                 Speciaal ontwikkeld<br className="hidden lg:block" /> voor restaurants en horeca
                             </h2>
-                            <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-medium">
-                                Wij zijn gespecialiseerd in de horeca en hospitality. Daardoor weten we precies waar het bij een restaurantwebsite om draait:
-                            </p>
 
                             <ul className="space-y-6 mb-10 text-lg md:text-xl text-gray-600">
                                 <li className="flex items-start gap-4">
