@@ -43,7 +43,7 @@ const HorecaWebsite = () => {
                         </div>
                     </div>
 
-                    <div className="max-w-5xl mx-auto px-6 mt-8 lg:mt-12 relative flex justify-center perspective-[2000px] translate-y-[20%]">
+                    <div className="max-w-5xl mx-auto px-6 mt-4 lg:mt-6 relative flex justify-center perspective-[2000px] translate-y-[20%]">
                         {/* Desktop Browser Mockup */}
                         <div className="relative w-[85%] bg-white rounded-t-2xl shadow-[0_0_50px_rgba(0,0,0,0.15)] border-x border-t border-black/10 overflow-hidden z-10 transition-transform duration-700 ease-out origin-bottom">
                             {/* Browser Header macOS style */}
@@ -88,9 +88,12 @@ const HorecaWebsite = () => {
                 {/* Services Grid Section */}
                 <section className="bg-chef-warm py-24 md:py-32 border-t border-black/5">
                     <div className="max-w-7xl mx-auto px-6">
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-16 leading-tight text-center">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-4 leading-tight text-center">
                             Jij houdt tijd over, wij ontzorgen
                         </h2>
+                        <p className="text-lg md:text-xl text-gray-500 font-medium text-center mb-16">
+                            Voor slechts 129 euro per maand alles geregeld.
+                        </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
