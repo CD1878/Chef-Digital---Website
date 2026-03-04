@@ -26,7 +26,69 @@ const Navbar = () => {
           </a>
           <div className="hidden md:flex items-center gap-6 text-chef-dark/70 font-medium text-sm">
             <a href="/about" className="hover:text-chef-dark transition-colors">Over ons</a>
-            <button className="flex items-center gap-1 hover:text-chef-dark transition-colors">Producten <ChevronDown size={14} /></button>
+            <div className="relative group">
+              <button className="flex items-center gap-1 hover:text-chef-dark transition-colors py-4">
+                Producten <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
+              </button>
+
+              <div className="absolute top-full left-1/2 -translate-x-[35%] w-max bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-10 flex gap-12 z-50">
+                {/* Per sector column */}
+                <div className="flex flex-col w-64 pr-12 border-r border-black/5">
+                  <h4 className="font-bold text-lg text-chef-dark mb-6 border-b border-black/10 pb-4">Per sector</h4>
+                  <div className="flex flex-col gap-6">
+                    <a href="/restaurants" className="group/item flex flex-col">
+                      <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Restaurants</span>
+                      <span className="text-sm text-gray-500 mt-1 font-normal">Geef je restaurant een boost</span>
+                    </a>
+                    <a href="/cafes-bars" className="group/item flex flex-col">
+                      <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Cafés & Bars</span>
+                      <span className="text-sm text-gray-500 mt-1 font-normal">Direct bovenaan in Google</span>
+                    </a>
+                    <a href="/beachclubs" className="group/item flex flex-col">
+                      <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Beachclubs</span>
+                      <span className="text-sm text-gray-500 mt-1 font-normal">Bereik alle badgasten & toeristen</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Services columns */}
+                <div className="flex flex-col flex-grow">
+                  <h4 className="font-bold text-lg text-chef-dark mb-6 border-b border-black/10 pb-4">Services</h4>
+                  <div className="flex gap-12">
+                    <div className="flex flex-col gap-6 w-48">
+                      <a href="/services" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Alle services</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Bekijk alles wat we doen</span>
+                      </a>
+                    </div>
+                    <div className="flex flex-col gap-6 w-60">
+                      <a href="/horeca-website" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Horeca Website</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Geen omkijken meer naar</span>
+                      </a>
+                      <a href="/google-search-ads" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Google Search Ads</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Direct méér offerte aanvragen & groepen</span>
+                      </a>
+                      <a href="/google-maps-ads" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Google Maps Ads</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Lokaal beter vindbaar en zichtbaar</span>
+                      </a>
+                    </div>
+                    <div className="flex flex-col gap-6 w-56">
+                      <a href="/email-campagnes" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Email campagnes</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Haal meer uit je bestaande gasten</span>
+                      </a>
+                      <a href="/review-management" className="group/item flex flex-col">
+                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Review management</span>
+                        <span className="text-sm text-gray-500 mt-1 font-normal">Meer reviews via Rankmaster</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <a href="/how-it-works" className="hover:text-chef-dark transition-colors">Hoe het werkt</a>
             <a href="/customers" className="hover:text-chef-dark transition-colors">Klanten</a>
             <a href="/pricing" className="hover:text-chef-dark transition-colors">Pakketten</a>
