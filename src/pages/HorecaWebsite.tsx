@@ -3,10 +3,10 @@ import { Check, X, ArrowRight, Smartphone, Zap, MonitorSmartphone, LineChart, Gl
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const horecaCustomers = [
-    { name: "Het Paardje", image: "/images/customers/het-paardje.jpg" },
-    { name: "In de Wildeman", image: "/images/customers/in-de-wildeman.png" },
-    { name: "Café Kramer", image: "/images/customers/cafe-kramer.png" },
-    { name: "Dutch Courage", image: "/images/customers/dutch-courage.png" },
+    { name: "Julie's", desktopImage: "/images/customers/desktop-julies.png", mobileImage: "/images/customers/het-paardje.jpg" },
+    { name: "Herberg Jan", desktopImage: "/images/customers/desktop-herberg-jan.jpg", mobileImage: "/images/customers/in-de-wildeman.png" },
+    { name: "Onze Zaak", desktopImage: "/images/customers/desktop-onze-zaak.jpg", mobileImage: "/images/customers/cafe-kramer.png" },
+    { name: "Het Paardje", desktopImage: "/images/customers/desktop-het-paardje.jpg", mobileImage: "/images/customers/dutch-courage.png" },
 ];
 
 const HorecaWebsite = () => {
@@ -58,7 +58,7 @@ const HorecaWebsite = () => {
                                 {horecaCustomers.map((customer, idx) => (
                                     <img
                                         key={idx}
-                                        src={customer.image}
+                                        src={customer.desktopImage}
                                         alt={`Website ${customer.name}`}
                                         className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-100' : 'opacity-0'}`}
                                     />
@@ -74,16 +74,11 @@ const HorecaWebsite = () => {
                                 {horecaCustomers.map((customer, idx) => (
                                     <img
                                         key={idx}
-                                        src={customer.image}
+                                        src={customer.mobileImage}
                                         alt={`Mobile Website ${customer.name}`}
                                         className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-100' : 'opacity-0'}`}
                                     />
                                 ))}
-                                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                                <div className="absolute bottom-6 left-4 right-4 text-center z-20">
-                                    <h4 className="text-white font-serif text-lg uppercase tracking-wider mb-2">Menu</h4>
-                                    <div className="h-10 bg-[#F07B2D] rounded-full flex items-center justify-center text-white text-xs font-bold w-full uppercase">Reserveren</div>
-                                </div>
                             </div>
                         </div>
                     </div>
