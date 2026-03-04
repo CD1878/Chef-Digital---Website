@@ -535,12 +535,12 @@ export const CustomerStories = () => {
   return (
     <section className="bg-chef-warm py-24 border-t border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-            Een betrouwbare partner voor bedrijven in Europa
+        <div className="max-w-4xl mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+            Het digital marketing platform voor de horeca
           </h2>
-          <p className="mt-6 text-lg text-chef-dark/60">
-            Maak kennis met de bedrijven die onze oplossingen gebruiken om hun groei te stimuleren.
+          <p className="mt-6 text-lg md:text-xl text-chef-dark/80 font-medium leading-relaxed">
+            Meer dan 200 horecazaken maken inmiddels gebruik van het Chef Digital platform. Van kleine cafés en lokale restaurants tot grotere horecagroepen en beachclubs. Allemaal met hetzelfde doel: hun marketing slimmer organiseren, efficiënter werken en beter inzicht krijgen in wat online echt resultaat oplevert.
           </p>
         </div>
       </div>
