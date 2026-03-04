@@ -108,58 +108,71 @@ const HorecaWebsite = () => {
                             Het grote voordeel van Chef Digital is dat je volledig ontzorgd wordt. Voor een vast maandbedrag krijg je een op maat gemaakte website die continu wordt beheerd.
                         </p>
 
-                        <div className="overflow-x-auto pb-8">
-                            <table className="w-full text-left border-collapse min-w-[600px]">
-                                <thead>
-                                    <tr className="border-b-2 border-black/10">
-                                        <th className="py-6 px-4 font-bold text-lg text-chef-dark/60 w-1/2">Kenmerk</th>
-                                        <th className="py-6 px-4 font-bold text-lg text-chef-dark/60">Traditionele bureaus</th>
-                                        <th className="py-6 px-4 font-bold text-2xl text-chef-dark text-center bg-gray-50 rounded-t-3xl border-x border-t border-black/5">Chef Digital</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-sm md:text-base text-gray-700">
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Volledig maatwerk (geen templates)</td>
-                                        <td className="py-6 px-4 text-gray-500">€7,5k - €15k</td>
-                                        <td className="py-6 px-4 text-center font-bold text-chef-dark bg-gray-50 border-x border-black/5">€0,-</td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Alles-in-een: beheer & onderhoud inbegrepen</td>
-                                        <td className="py-6 px-4 text-gray-500">€70 - €120 p/uur</td>
-                                        <td className="py-6 px-4 text-center text-green-500 bg-gray-50 border-x border-black/5 flex justify-center"><Check size={24} strokeWidth={2.5} /></td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Vast maandelijks tarief zonder onverwachte kosten</td>
-                                        <td className="py-6 px-4 text-gray-400 flex justify-start"><X size={20} /></td>
-                                        <td className="py-6 px-4 text-center font-bold text-chef-dark bg-gray-50 border-x border-black/5">129,- p/maand</td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">24/7 bereikbaar; wijzigingen binnen 24 uur live</td>
-                                        <td className="py-6 px-4 text-gray-400 flex justify-start"><X size={20} /></td>
-                                        <td className="py-6 px-4 text-center text-green-500 bg-gray-50 border-x border-black/5 flex justify-center"><Check size={24} strokeWidth={2.5} /></td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Snel live zonder opstartkosten</td>
-                                        <td className="py-6 px-4 text-gray-500">€5k - €10k</td>
-                                        <td className="py-6 px-4 text-center font-bold text-chef-dark bg-gray-50 border-x border-black/5">€0,-</td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Transparante maandelijkse resultaten</td>
-                                        <td className="py-6 px-4 text-gray-400 flex justify-start"><X size={20} /></td>
-                                        <td className="py-6 px-4 text-center text-green-500 bg-gray-50 border-x border-black/5 flex justify-center"><Check size={24} strokeWidth={2.5} /></td>
-                                    </tr>
-                                    <tr className="border-b border-black/5 group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Persoonlijke en directe Whatsapp-communicatie</td>
-                                        <td className="py-6 px-4 text-gray-400 flex justify-start"><X size={20} /></td>
-                                        <td className="py-6 px-4 text-center text-green-500 bg-gray-50 border-x border-black/5 flex justify-center"><Check size={24} strokeWidth={2.5} /></td>
-                                    </tr>
-                                    <tr className="group hover:bg-gray-50/50">
-                                        <td className="py-6 px-4 font-medium">Gespecialiseerd in horeca</td>
-                                        <td className="py-6 px-4 text-gray-400 flex justify-start"><X size={20} /></td>
-                                        <td className="py-6 px-4 text-center text-green-500 bg-gray-50 border-x border-black/5 rounded-b-3xl border-b flex justify-center"><Check size={24} strokeWidth={2.5} /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div className="overflow-x-auto pb-8 pt-4">
+                            <div className="min-w-[700px] flex flex-col">
+                                {/* Header */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] items-end border-b-2 border-black/5">
+                                    <div className="py-6 px-6 font-bold text-lg text-gray-400">Kenmerk</div>
+                                    <div className="py-6 px-4 font-bold text-lg text-gray-400 text-center">Traditionele bureaus</div>
+                                    <div className="py-6 px-4 font-extrabold text-2xl text-chef-dark text-center bg-gray-50 rounded-t-[32px] border-x border-t border-black/5 translate-y-[2px]">Chef Digital</div>
+                                </div>
+
+                                {/* Row 1 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Volledig maatwerk (geen templates)</div>
+                                    <div className="py-6 px-4 text-gray-500 flex items-center justify-center text-center">€7,5k - €15k</div>
+                                    <div className="py-6 px-4 font-bold text-lg text-chef-dark bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors">€0,-</div>
+                                </div>
+
+                                {/* Row 2 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Alles-in-een: beheer & onderhoud inbegrepen</div>
+                                    <div className="py-6 px-4 text-gray-500 flex items-center justify-center text-center">€70 - €120 p/uur</div>
+                                    <div className="py-6 px-4 text-green-500 bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors"><Check size={28} strokeWidth={2.5} /></div>
+                                </div>
+
+                                {/* Row 3 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Vast maandelijks tarief zonder onverwachte kosten</div>
+                                    <div className="py-6 px-4 text-gray-300 flex items-center justify-center"><X size={24} strokeWidth={3} /></div>
+                                    <div className="py-6 px-4 font-bold text-lg text-chef-dark bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors">129,- p/maand</div>
+                                </div>
+
+                                {/* Row 4 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">24/7 bereikbaar; wijzigingen binnen 24 uur live</div>
+                                    <div className="py-6 px-4 text-gray-300 flex items-center justify-center"><X size={24} strokeWidth={3} /></div>
+                                    <div className="py-6 px-4 text-green-500 bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors"><Check size={28} strokeWidth={2.5} /></div>
+                                </div>
+
+                                {/* Row 5 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Snel live zonder opstartkosten</div>
+                                    <div className="py-6 px-4 text-gray-500 flex items-center justify-center text-center">€5k - €10k</div>
+                                    <div className="py-6 px-4 font-bold text-lg text-chef-dark bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors">€0,-</div>
+                                </div>
+
+                                {/* Row 6 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Transparante maandelijkse resultaten</div>
+                                    <div className="py-6 px-4 text-gray-300 flex items-center justify-center"><X size={24} strokeWidth={3} /></div>
+                                    <div className="py-6 px-4 text-green-500 bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors"><Check size={28} strokeWidth={2.5} /></div>
+                                </div>
+
+                                {/* Row 7 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b border-black/5 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center">Persoonlijke en directe Whatsapp-communicatie</div>
+                                    <div className="py-6 px-4 text-gray-300 flex items-center justify-center"><X size={24} strokeWidth={3} /></div>
+                                    <div className="py-6 px-4 text-green-500 bg-gray-50 border-x border-black/5 flex items-center justify-center group-hover:bg-gray-100 transition-colors"><Check size={28} strokeWidth={2.5} /></div>
+                                </div>
+
+                                {/* Row 8 */}
+                                <div className="grid grid-cols-[2fr_1.2fr_1.2fr] border-b-0 group hover:bg-gray-50/50 transition-colors">
+                                    <div className="py-6 px-6 font-medium text-gray-800 flex items-center border-b border-black/5">Gespecialiseerd in horeca</div>
+                                    <div className="py-6 px-4 text-gray-300 flex items-center justify-center border-b border-black/5"><X size={24} strokeWidth={3} /></div>
+                                    <div className="py-6 px-4 text-green-500 bg-gray-50 border-b border-x border-black/5 rounded-b-[32px] flex items-center justify-center group-hover:bg-gray-100 transition-colors"><Check size={28} strokeWidth={2.5} /></div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="flex justify-center mt-12">
