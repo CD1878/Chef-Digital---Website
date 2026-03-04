@@ -17,7 +17,7 @@ const HorecaWebsite = () => {
                             Krijg meer reserveringen via een op maat gemaakte restaurantwebsite. Responsive, met reserveringssysteem en SEO-optimalisatie.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-4">
-                            <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all shadow-[0_0_30px_-5px_rgba(0,0,0,0.3)] flex items-center justify-center gap-2">
+                            <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)] flex items-center justify-center gap-2">
                                 Nu beginnen
                             </button>
                             <button className="w-full sm:w-auto bg-transparent border border-black/10 text-chef-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-black/5 transition-all">
@@ -163,7 +163,7 @@ const HorecaWebsite = () => {
                         </div>
 
                         <div className="flex justify-center mt-12">
-                            <button className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-2">
+                            <button className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
                                 Plan een call in <ArrowRight size={20} />
                             </button>
                         </div>

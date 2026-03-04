@@ -98,7 +98,7 @@ export const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           <a href="/login" className="text-chef-dark text-sm font-medium hover:text-chef-dark/80 transition-colors">Inloggen</a>
-          <a href="/demo" className="bg-chef-accent text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition-all shadow-lg shadow-chef-accent/20">Demo aanvragen</a>
+          <a href="/demo" className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-900 transition-all shadow-md">Demo aanvragen</a>
         </div>
       </div>
     </nav>
@@ -133,11 +133,11 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="w-full sm:w-[240px] bg-black text-white px-8 py-4 rounded-md font-medium text-base hover:bg-gray-900 transition-all">
+          <button className="w-full sm:w-[240px] bg-black text-white px-8 py-4 rounded-full font-semibold text-base hover:bg-gray-900 transition-all shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
             Afspraak maken
           </button>
           <a href="/pakketten" className="w-full sm:w-[240px]">
-            <button className="w-full bg-chef-warm text-chef-dark border border-black/10 px-8 py-4 rounded-md font-medium text-base hover:bg-gray-100 transition-all">
+            <button className="w-full bg-transparent border border-black/10 text-chef-dark px-8 py-4 rounded-full font-semibold text-base hover:bg-black/5 transition-all">
               Pakketten
             </button>
           </a>
@@ -306,7 +306,7 @@ const MarketingSection = () => {
                 <p className="font-bold text-lg">€59 per maand</p>
                 <p className="text-xs text-gray-500 mb-8">*Excl. advertentie budget</p>
 
-                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max shadow-md">
                   Lees meer
                 </button>
               </div>
@@ -343,7 +343,7 @@ const MarketingSection = () => {
 
               <div className="mt-auto">
                 <p className="font-bold text-lg">€99 per maand</p>
-                <button className="mt-8 bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max inline-block">
+                <button className="mt-8 bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max inline-block shadow-md">
                   Lees meer
                 </button>
               </div>
@@ -365,7 +365,7 @@ const MarketingSection = () => {
               </p>
 
               <div className="mt-auto">
-                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max shadow-md">
                   Lees meer
                 </button>
               </div>
@@ -464,7 +464,7 @@ const DashboardSection = () => {
               Zie in één oogopslag wat je marketing echt oplevert.<br />
               Van reserveringen en telefoontjes tot websitebezoekers en nieuwe reviews. Alle resultaten overzichtelijk bij elkaar, zodat je direct weet waar je groei vandaan komt.
             </p>
-            <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all w-max mt-auto">
+            <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all w-max mt-auto">
               Bekijk meer
             </button>
           </div>
@@ -504,7 +504,7 @@ const USPsSection = () => {
               Laat ons jouw online marketing volledig verzorgen, zodat jij je kunt focussen op je onderneming. Dankzij onze korte communicatielijnen voelen wij daarbij echt als een verlengstuk van jouw zaak.
             </p>
             <div className="mt-auto">
-              <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max inline-block">
+              <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max inline-block shadow-md">
                 Learn more
               </button>
             </div>
@@ -586,25 +586,25 @@ export const CustomerStories = () => {
 
 export const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
   return (
-    <section className="bg-black py-32 overflow-hidden relative w-full">
-      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-start">
-        <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+    <section className="bg-white py-32 overflow-hidden relative w-full border-t border-black/5">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-chef-dark leading-tight max-w-4xl">
           {title}
         </h2>
-        <p className="mt-6 text-xl text-white/60 max-w-2xl">
+        <p className="mt-6 text-xl text-gray-500 max-w-2xl">
           {subtitle}
         </p>
-        <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <button className="w-full sm:w-auto bg-chef-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_rgba(239,111,46,0.6)] flex items-center justify-center gap-2">
-            {primaryButtonText} <ArrowRight size={20} />
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
+            {primaryButtonText}
           </button>
-          <button className="w-full sm:w-auto bg-[#1A1A1A] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#2A2A2A] transition-all border border-white/5">
+          <button className="w-full sm:w-auto bg-transparent text-chef-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all border border-black/10">
             {secondaryButtonText}
           </button>
         </div>
       </div>
-      {/* Abstract background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-chef-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* Background glow behind text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gray-100 rounded-full blur-[140px] pointer-events-none z-0"></div>
     </section>
   );
 };
