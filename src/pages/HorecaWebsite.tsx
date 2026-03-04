@@ -26,13 +26,36 @@ const HorecaWebsite = () => {
                         </div>
                     </div>
 
-                    <div className="max-w-5xl mx-auto px-6 mt-20 relative flex justify-center">
-                        <div className="relative w-full aspect-video md:w-4/5 flex justify-center perspective-[1000px]">
-                            <img
-                                src="/images/home_marketing/horeca-websites-collage.png"
-                                alt="Horeca Website Voorbeeld"
-                                className="w-full object-contain rounded-xl drop-shadow-2xl translate-y-4"
-                            />
+                    <div className="max-w-5xl mx-auto px-6 mt-24 relative flex justify-center pb-20 perspective-[2000px]">
+                        {/* Desktop Browser Mockup */}
+                        <div className="relative w-[85%] bg-white rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border border-black/5 overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-700 ease-out z-10">
+                            {/* Browser Header macOS style */}
+                            <div className="bg-[#f0f0f0] h-10 w-full flex items-center px-4 gap-2 border-b border-black/5">
+                                <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                                <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                                <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                                <div className="mx-auto bg-white/60 h-5 w-1/3 rounded-md border border-black/5"></div>
+                            </div>
+                            {/* Browser content placeholder (we use het-paardje as image for now) */}
+                            <div className="w-full aspect-[16/10] bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                                <img src="/images/customers/het-paardje.jpg" alt="Website Desktop Verion" className="w-full h-full object-cover absolute inset-0 opacity-80" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                <h3 className="relative z-10 text-white font-serif text-4xl tracking-widest uppercase">Het Paardje</h3>
+                            </div>
+                        </div>
+
+                        {/* Mobile Device Mockup */}
+                        <div className="absolute right-0 lg:-right-4 bottom-[-15%] w-[28%] max-w-[220px] bg-white rounded-[32px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] border-[6px] border-[#1A1A1A] overflow-hidden transform rotate-6 hover:rotate-0 hover:-translate-y-4 transition-all duration-700 ease-out z-20">
+                            {/* Apple style Notch */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[18px] bg-[#1A1A1A] rounded-b-xl z-20"></div>
+                            <div className="w-full aspect-[9/19] bg-gray-100 relative overflow-hidden">
+                                <img src="/images/customers/het-paardje.jpg" alt="Website Mobile Version" className="w-full h-full object-cover absolute inset-0" />
+                                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div className="absolute bottom-6 left-4 right-4 text-center">
+                                    <h4 className="text-white font-serif text-lg uppercase tracking-wider mb-2">Menu</h4>
+                                    <div className="h-10 bg-[#F07B2D] rounded-full flex items-center justify-center text-white text-xs font-bold w-full uppercase">Reserveren</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -41,11 +64,22 @@ const HorecaWebsite = () => {
                 <section className="bg-white py-32 border-y border-black/5">
                     <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                         <div className="order-2 lg:order-1 relative w-full flex justify-center lg:justify-start">
-                            <img
-                                src="/images/home_marketing/horeca-website-devices.png"
-                                alt="Horeca Website Voorbeeld"
-                                className="w-full max-w-[600px] object-contain drop-shadow-2xl"
-                            />
+                            <div className="w-full max-w-[500px] bg-gradient-to-br from-chef-warm to-gray-200 rounded-[40px] aspect-square flex items-center justify-center p-8 md:p-12 overflow-hidden relative shadow-inner border border-black/5">
+                                <div className="absolute inset-0 bg-blue-50/50 backdrop-blur-3xl"></div>
+                                <div className="relative z-10 w-full rounded-2xl bg-white shadow-xl border border-black/5 p-8 hover:scale-105 transition-transform duration-500">
+                                    <div className="flex items-center gap-4 mb-6 border-b border-black/10 pb-4">
+                                        <span className="w-3 h-3 rounded-full bg-red-400"></span>
+                                        <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                        <span className="w-3 h-3 rounded-full bg-green-400"></span>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <div className="h-4 bg-gray-100 rounded-full w-2/3"></div>
+                                        <div className="h-4 bg-gray-100 rounded-full w-full"></div>
+                                        <div className="h-4 bg-gray-100 rounded-full w-4/5"></div>
+                                        <div className="h-4 bg-gray-100 rounded-full w-1/2"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="order-1 lg:order-2">
                             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
