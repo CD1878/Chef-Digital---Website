@@ -268,6 +268,51 @@ const MarketingSection = () => {
               <img src="/images/home_marketing/google-search-phone.png" alt="Google Search ads" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
+
+          {/* Bottom Left Card (Email Marketing) */}
+          <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+            <div className="z-10 flex flex-col h-full flex-grow">
+              <h3 className="text-2xl font-bold text-chef-dark mb-2">Email marketing</h3>
+              <p className="text-gray-400 font-semibold mb-6">Nodig bestaande gasten opnieuw uit.</p>
+              <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8 max-w-sm">
+                Volledig AI gestuurde emails waarbij gekeken wordt wat voor jouw zaak belangrijk is. Gemiddeld reserveert 3,5% van de ontvangers opnieuw een tafel.
+              </p>
+
+              <div className="mt-auto">
+                <p className="font-bold text-lg">€99 per maand</p>
+                <button className="mt-8 bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max inline-block">
+                  Lees meer
+                </button>
+              </div>
+            </div>
+
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-12 w-[75%] max-w-[250px] flex justify-center pointer-events-none z-0">
+              <img src="/images/home_marketing/email-marketing.png" alt="Email Marketing" className="w-full h-auto object-contain drop-shadow-2xl" />
+            </div>
+          </div>
+
+          {/* Bottom Right Card (Rankmaster) */}
+          <div className="lg:col-span-2 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+            <div className="z-10 w-full flex flex-col flex-grow max-w-sm">
+              <h3 className="text-2xl font-bold text-chef-dark mb-2">Rankmaster</h3>
+              <p className="text-gray-400 font-semibold mb-6">Volledig geautomatiseerd reviewmanagement</p>
+
+              <p className="text-chef-dark/80 mb-8 leading-relaxed text-sm md:text-base max-w-xs">
+                Genereer meer 5 sterrenreviews en voorkom dat slechte reviews op Google belanden. Daarnaast maken we een maandelijkse sentiment analyse en is het mogelijk om reviews automatisch te beantwoorden.
+              </p>
+
+              <div className="mt-auto">
+                <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max">
+                  Lees meer
+                </button>
+              </div>
+            </div>
+
+            {/* Note content placeholder */}
+            <div className="absolute right-0 bottom-0 translate-x-4 translate-y-12 w-[75%] max-w-[480px] flex justify-end pointer-events-none">
+              {/* Image goes here once uploaded */}
+            </div>
+          </div>
         </div>
       </div>
     </section>
