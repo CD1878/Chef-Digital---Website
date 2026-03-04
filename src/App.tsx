@@ -451,15 +451,11 @@ const DashboardSection = () => {
 
 const USPsSection = () => {
   return (
-    <section className="bg-white py-24 border-t border-black/5">
+    <section className="bg-chef-warm py-24 border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* USP 1 */}
-          <div className="flex flex-col items-start text-left">
-            <div className="mb-8 relative">
-              <div className="absolute -inset-1 bg-blue-100 rounded-lg blur opacity-50"></div>
-              <MessageCircle size={48} className="text-blue-500 relative z-10" strokeWidth={1.5} />
-            </div>
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
             <h3 className="text-2xl font-bold text-chef-dark mb-4">24/7 Bereikbaar en snel</h3>
             <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
               Nieuwe gerechten, aangepaste tijden of een actie? Stuur het door en wij regelen het (ook in het weekend). Updates zijn inbegrepen in je abonnement en staan meestal binnen 24 uur online. Jij focust op je gasten, wij doen de rest.
@@ -467,11 +463,7 @@ const USPsSection = () => {
           </div>
 
           {/* USP 2 */}
-          <div className="flex flex-col items-start text-left">
-            <div className="mb-8 relative">
-              <div className="absolute -inset-1 bg-chef-blue/20 rounded-lg blur opacity-50"></div>
-              <LineChart size={48} className="text-chef-blue relative z-10" strokeWidth={1.5} />
-            </div>
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
             <h3 className="text-2xl font-bold text-chef-dark mb-4">Realtime resultaat en transparantie</h3>
             <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
               Bij ons weet je altijd wat er gebeurt. In je persoonlijke account zie je hoeveel gasten je website bezoeken en hoeveel reserveringen dat oplevert. Geen vage rapporten of verborgen cijfers, maar helder inzicht in wat werkt en waar we nog kunnen verbeteren.
@@ -479,11 +471,7 @@ const USPsSection = () => {
           </div>
 
           {/* USP 3 */}
-          <div className="flex flex-col items-start text-left">
-            <div className="mb-8 relative">
-              <div className="absolute -inset-1 bg-chef-primary/20 rounded-lg blur opacity-50"></div>
-              <ChefHat size={48} className="text-chef-primary relative z-10" strokeWidth={1.5} />
-            </div>
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
             <h3 className="text-2xl font-bold text-chef-dark mb-4">Volledig ontzorgd, wij regelen alles</h3>
             <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
               Van website tot advertenties en updates: wij nemen alles uit handen. Jij hoeft niets uit te zoeken of te plannen, wij zorgen dat alles soepel loopt. Zo bespaar je tijd en weet je zeker dat je zichtbaarheid en marketing altijd perfect geregeld zijn.
