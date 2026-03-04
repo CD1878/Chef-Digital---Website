@@ -319,36 +319,6 @@ const MarketingSection = () => {
   );
 };
 
-const TapToPay = () => {
-  return (
-    <section className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-black rounded-[40px] p-10 md:p-20 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative">
-          <div className="z-10 max-w-lg">
-            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-              Tap to Pay op iPhone
-            </h3>
-            <p className="mt-6 text-white/70 text-lg">
-              Accepteer contactloze betalingen op je iPhone. Je hebt alleen je iPhone en de app van Chef Digital nodig.
-            </p>
-            <button className="mt-10 bg-white/20 backdrop-blur-md text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-all">
-              Ontdek meer
-            </button>
-          </div>
-          <div className="relative w-full md:w-1/2 flex justify-center">
-            <img
-              src="https://framerusercontent.com/images/ULTklewmPBPDWl1pG4HiZzMk3Q.png"
-              alt="Tap to Pay"
-              className="w-full max-w-md rotate-[-15deg] translate-y-10"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const Footer = () => {
   return (
     <footer className="bg-black text-white pt-20 pb-10">
@@ -785,7 +755,6 @@ export default function App() {
       <Hero />
       <LogoTicker />
       <MarketingSection />
-      <TapToPay />
       <CustomerStories />
       <USPsSection />
       <DashboardSection />
