@@ -327,8 +327,8 @@ const MarketingSection = () => {
               </p>
             </div>
 
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-12 w-[75%] max-w-[250px] flex justify-center pointer-events-none z-0">
-              <img src="/images/home_marketing/google-search-phone.png" alt="Google Search ads" className="w-full h-auto object-contain drop-shadow-2xl" />
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-16 w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
+              <img src="/images/home_marketing/google-search-mockup-new.png" alt="Google Search ads" className="w-full h-auto object-contain rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5" />
             </div>
           </div>
 
