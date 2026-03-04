@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check, MessageCircle, LineChart, ChefHat } from "lucide-react";
+import HorecaWebsite from "./pages/HorecaWebsite";
 import { useState, useEffect } from "react";
 
 // --- Components ---
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -381,7 +382,7 @@ const MarketingSection = () => {
   );
 };
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="bg-black text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -530,7 +531,7 @@ const USPsSection = () => {
   );
 };
 
-const CustomerStories = () => {
+export const CustomerStories = () => {
   return (
     <section className="bg-chef-warm py-24 border-t border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -583,7 +584,7 @@ const CustomerStories = () => {
   );
 };
 
-const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
+export const CTASection = ({ title, subtitle, primaryButtonText, secondaryButtonText }: { title: string, subtitle: string, primaryButtonText: string, secondaryButtonText: string }) => {
   return (
     <section className="bg-black py-32 overflow-hidden relative w-full">
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-start">
@@ -811,6 +812,7 @@ const Pricing = () => {
 export default function App() {
   const currentPath = window.location.pathname;
   const isPricingPage = currentPath === '/pakketten' || currentPath === '/pricing';
+  const isHorecaWebsitePage = currentPath === '/horeca-website';
 
   const LandingContent = () => (
     <>
@@ -832,13 +834,25 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-chef-accent selection:text-white flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow flex flex-col">
-        {isPricingPage ? <Pricing /> : <LandingContent />}
-      </main>
-
-      <Footer />
+      {isHorecaWebsitePage ? (
+        <HorecaWebsite />
+      ) : isPricingPage ? (
+        <>
+          <Navbar />
+          <main className="flex-grow flex flex-col">
+            <Pricing />
+          </main>
+          <Footer />
+        </>
+      ) : (
+        <>
+          <Navbar />
+          <main className="flex-grow flex flex-col">
+            <LandingContent />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
