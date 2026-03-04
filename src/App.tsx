@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check } from "lucide-react";
+import { ChevronDown, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check, MessageCircle, LineChart, ChefHat } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // --- Components ---
@@ -449,73 +449,45 @@ const DashboardSection = () => {
   );
 };
 
-const IntegrationsSection = () => {
+const USPsSection = () => {
   return (
-    <section className="bg-chef-warm py-24 border-t border-black/5">
+    <section className="bg-white py-24 border-t border-black/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-            Voor elk bedrijf een geschikte oplossing
-          </h2>
-          <p className="mt-6 text-lg text-chef-dark/60">
-            Krijg toegang tot een ecosysteem van technologische oplossingen om je bedrijf naar een hoger niveau te tillen. Koppel Chef Digital naadloos aan je bestaande infrastructuur.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
-            <div>
-              <h3 className="text-2xl font-bold text-chef-dark">Handige integraties</h3>
-              <p className="mt-4 text-gray-500">Koppel Chef Digital aan je e-commerceplatform en tech stack met onze kant-en-klare plug-ins.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          {/* USP 1 */}
+          <div className="flex flex-col items-start text-left">
+            <div className="mb-8 relative">
+              <div className="absolute -inset-1 bg-blue-100 rounded-lg blur opacity-50"></div>
+              <MessageCircle size={48} className="text-blue-500 relative z-10" strokeWidth={1.5} />
             </div>
-            <div className="grid grid-cols-3 gap-4 my-8">
-              {[
-                "https://framerusercontent.com/images/dAo2rEXDpxQXytZv4V7FkByXM.png",
-                "https://framerusercontent.com/images/Xkb4CLU1Z6LjSIlyJj9EKB6dte4.png",
-                "https://framerusercontent.com/images/SeIjV62tnRUVuPX2Ix2Q6IsYwM.png",
-                "https://framerusercontent.com/images/hr008Czc1HOY241cSvTg9BHK2A.png",
-                "https://framerusercontent.com/images/Tc5J2rrxuYH6zW7GTQoEbWQWqGw.svg",
-                "https://framerusercontent.com/images/U63Qb2zApjdsSEfhrt1Cq5itd7Y.svg"
-              ].map((src, i) => (
-                <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center p-3">
-                  <img src={src} alt="Logo" className="w-full h-full object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" referrerPolicy="no-referrer" />
-                </div>
-              ))}
-            </div>
-            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Ontdek alle integraties <ArrowRight size={18} />
-            </button>
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">24/7 Bereikbaar en snel</h3>
+            <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
+              Nieuwe gerechten, aangepaste tijden of een actie? Stuur het door en wij regelen het (ook in het weekend). Updates zijn inbegrepen in je abonnement en staan meestal binnen 24 uur online. Jij focust op je gasten, wij doen de rest.
+            </p>
           </div>
 
-          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
-            <div>
-              <h3 className="text-2xl font-bold text-chef-dark">Eersteklas support</h3>
-              <p className="mt-4 text-gray-500">Krijg ondersteuning van lokale experts in je eigen taal.</p>
+          {/* USP 2 */}
+          <div className="flex flex-col items-start text-left">
+            <div className="mb-8 relative">
+              <div className="absolute -inset-1 bg-chef-blue/20 rounded-lg blur opacity-50"></div>
+              <LineChart size={48} className="text-chef-blue relative z-10" strokeWidth={1.5} />
             </div>
-            <div className="flex flex-col items-center justify-center my-8">
-              <span className="text-8xl font-light text-chef-dark">0.0</span>
-              <div className="flex gap-1 text-yellow-400 mt-2">
-                {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
-              </div>
-              <span className="text-xs text-gray-400 mt-2 uppercase tracking-widest font-bold">Trustpilot</span>
-            </div>
-            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Neem contact op <ArrowRight size={18} />
-            </button>
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">Realtime resultaat en transparantie</h3>
+            <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
+              Bij ons weet je altijd wat er gebeurt. In je persoonlijke account zie je hoeveel gasten je website bezoeken en hoeveel reserveringen dat oplevert. Geen vage rapporten of verborgen cijfers, maar helder inzicht in wat werkt en waar we nog kunnen verbeteren.
+            </p>
           </div>
 
-          <div className="bg-white rounded-[32px] p-10 flex flex-col justify-between min-h-[450px] shadow-sm border border-black/5">
-            <div>
-              <h3 className="text-2xl font-bold text-chef-dark">Kant-en-klare libraries</h3>
-              <p className="mt-4 text-gray-500">Gebruik onze client libraries en server libraries voor alles van JS en PHP tot .NET en Python.</p>
+          {/* USP 3 */}
+          <div className="flex flex-col items-start text-left">
+            <div className="mb-8 relative">
+              <div className="absolute -inset-1 bg-chef-primary/20 rounded-lg blur opacity-50"></div>
+              <ChefHat size={48} className="text-chef-primary relative z-10" strokeWidth={1.5} />
             </div>
-            <div className="grid grid-cols-3 gap-4 my-8">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="aspect-square bg-gray-50 rounded-2xl border border-black/5 flex items-center justify-center text-[10px] font-bold text-gray-300">SDK</div>
-              ))}
-            </div>
-            <button className="flex items-center gap-2 font-semibold text-chef-dark hover:gap-3 transition-all">
-              Bekijk alle libraries <ArrowRight size={18} />
-            </button>
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">Volledig ontzorgd, wij regelen alles</h3>
+            <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
+              Van website tot advertenties en updates: wij nemen alles uit handen. Jij hoeft niets uit te zoeken of te plannen, wij zorgen dat alles soepel loopt. Zo bespaar je tijd en weet je zeker dat je zichtbaarheid en marketing altijd perfect geregeld zijn.
+            </p>
           </div>
         </div>
       </div>
@@ -812,7 +784,7 @@ export default function App() {
       <MarketingSection />
       <TapToPay />
       <CustomerStories />
-      <IntegrationsSection />
+      <USPsSection />
       <DashboardSection />
 
       <CTASection
