@@ -261,7 +261,7 @@ const MarketingSection = () => {
             Één plek voor alle marketing van jouw horecazaak
           </h2>
           <p className="mt-6 text-lg md:text-xl text-chef-dark/90 font-medium leading-relaxed max-w-2xl">
-            Wij verzorgen alle digitale marketing die jouw horecazaak nodig heeft. Van websites en Google advertenties tot emailcampagnes en meer reviews. Jouw persoonlijke Chef Digital, zodat jij je volledig kunt richten op het runnen van je zaak!
+            Resultaatgerichte online marketing voor horecazaken tegen eerlijke tarieven. Geen logge marketingbureaus met hoge facturen, maar een slimme en efficiënt georganiseerde aanpak die echt werkt. Snel schakelen, betrouwbaar en bereikbaar op horecatijden.
           </p>
         </div>
 
@@ -492,7 +492,7 @@ const USPsSection = () => {
             Wij zijn ontstaan vanuit de horeca wereld en begrijpen de business
           </h2>
           <p className="text-lg text-chef-dark font-medium leading-relaxed">
-            Wij verzorgen alle digitale marketing die jouw horecazaak nodig heeft. Van websites en Google advertenties tot emailcampagnes en meer reviews. Jouw persoonlijke Chef Digital, zodat jij je volledig kunt richten op het runnen van je zaak!
+            Resultaatgerichte online marketing voor horecazaken tegen eerlijke tarieven. Geen logge marketingbureaus met hoge facturen, maar een slimme en efficiënt georganiseerde aanpak die echt werkt. Snel schakelen, betrouwbaar en bereikbaar op horecatijden.
           </p>
         </div>
 
