@@ -84,14 +84,6 @@ const HorecaWebsite = () => {
                     </div>
                 </section>
 
-                {/* Intro Text Section */}
-                <section className="bg-white py-24 border-t border-black/5">
-                    <div className="max-w-4xl mx-auto px-6">
-                        <p className="text-lg md:text-xl text-chef-dark/80 leading-[1.7] font-medium text-center text-balance">
-                            De eerste indruk van jouw restaurant begint vaak niet bij de voordeur, maar online. Potentiële gasten bekijken je menu, foto's en recensies voordat ze beslissen of ze bij jou willen reserveren. Met een professionele website van Chef Digital zorg je ervoor dat die eerste indruk telt &ndash; en direct leidt tot reserveringen. Wij bouwen websites die niet alleen mooi zijn, maar ook functioneel, snel en volledig ingericht op de horeca.
-                        </p>
-                    </div>
-                </section>
 
                 {/* Services Grid Section */}
                 <section className="bg-chef-warm py-24 md:py-32 border-t border-black/5">
