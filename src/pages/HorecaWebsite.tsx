@@ -43,9 +43,9 @@ const HorecaWebsite = () => {
                         </div>
                     </div>
 
-                    <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center perspective-[2000px] translate-y-px">
+                    <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center perspective-[2000px] translate-y-[20%]">
                         {/* Desktop Browser Mockup */}
-                        <div className="relative w-[85%] bg-white rounded-t-2xl shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.1)] border-x border-t border-black/10 overflow-hidden z-10 transition-transform duration-700 ease-out origin-bottom">
+                        <div className="relative w-[85%] bg-white rounded-t-2xl shadow-[0_0_50px_rgba(0,0,0,0.15)] border-x border-t border-black/10 overflow-hidden z-10 transition-transform duration-700 ease-out origin-bottom">
                             {/* Browser Header macOS style */}
                             <div className="bg-[#f0f0f0] h-10 w-full flex items-center px-4 gap-2 border-b border-black/5">
                                 <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
