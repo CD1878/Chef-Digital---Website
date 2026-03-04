@@ -60,16 +60,9 @@ const HorecaWebsite = () => {
                                         key={idx}
                                         src={customer.image}
                                         alt={`Website ${customer.name}`}
-                                        className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-80' : 'opacity-0'}`}
+                                        className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${idx === currentIdx ? 'opacity-100' : 'opacity-0'}`}
                                     />
                                 ))}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                                <h3
-                                    key={currentIdx}
-                                    className="relative z-10 text-white font-serif text-3xl md:text-5xl tracking-widest uppercase animate-fade-in"
-                                >
-                                    {horecaCustomers[currentIdx].name}
-                                </h3>
                             </div>
                         </div>
 
