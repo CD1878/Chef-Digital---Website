@@ -37,35 +37,42 @@ const HorecaWebsite = () => {
                     </div>
                 </section>
 
-                {/* Text Area */}
+                {/* Text Area with Mockup */}
                 <section className="bg-white py-32 border-y border-black/5">
-                    <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
-                                Jij houdt tijd over, wij ontzorgen
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Met Chef Digital heb je nergens omkijken naar. Wij doen al het beheer en onderhoud, zorgen dat je site technisch optimaal blijft draaien en voeren wijzigingen altijd binnen 24 uur live door. Zo hoef jij nooit meer te wachten of zelf te prutsen in een systeem: wij regelen alles.
-                            </p>
-                            <p className="text-lg text-gray-600 leading-relaxed font-semibold">
-                                En het mooiste? Je betaalt één vast bedrag per maand. Geen hoge opstartkosten, geen onverwachte facturen en geen verborgen kosten achteraf. Transparant, helder en voorspelbaar.
-                            </p>
+                    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                        <div className="order-2 lg:order-1 relative w-full flex justify-center lg:justify-start">
+                            <img
+                                src="/images/home_marketing/horeca-website-devices.png"
+                                alt="Horeca Website Voorbeeld"
+                                className="w-full max-w-[600px] object-contain drop-shadow-2xl"
+                            />
                         </div>
-                        <div className="bg-gradient-to-br from-chef-warm to-gray-200 rounded-[40px] aspect-square flex items-center justify-center p-12 overflow-hidden relative shadow-inner border border-black/5">
-                            <div className="absolute inset-0 bg-blue-50/50 backdrop-blur-3xl"></div>
-                            <div className="relative z-10 w-full rounded-2xl bg-white shadow-xl border border-black/5 p-8">
-                                <div className="flex items-center gap-4 mb-6 border-b border-black/10 pb-4">
-                                    <span className="w-3 h-3 rounded-full bg-red-400"></span>
-                                    <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
-                                    <span className="w-3 h-3 rounded-full bg-green-400"></span>
-                                </div>
-                                <div className="space-y-4">
-                                    <div className="h-4 bg-gray-100 rounded-full w-2/3"></div>
-                                    <div className="h-4 bg-gray-100 rounded-full w-full"></div>
-                                    <div className="h-4 bg-gray-100 rounded-full w-4/5"></div>
-                                    <div className="h-4 bg-gray-100 rounded-full w-1/2"></div>
-                                </div>
-                            </div>
+                        <div className="order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
+                                Speciaal ontwikkeld voor restaurants en horeca
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
+                                Wij zijn gespecialiseerd in de horeca en hospitality. Daardoor weten we precies waar het bij een restaurantwebsite om draait:
+                            </p>
+
+                            <ul className="space-y-6 mb-8 text-lg text-gray-600">
+                                <li className="flex items-start gap-4">
+                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="leading-relaxed">Snel en eenvoudig reserveren via geïntegreerde koppelingen zoals Zenchef, Guestplan, Tebi of The Fork.</span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="leading-relaxed">Conversiegericht design dat gasten overtuigt en omzet oplevert.</span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="leading-relaxed">Altijd SEO-geoptimaliseerd, zodat je goed gevonden wordt in Google en Maps.</span>
+                                </li>
+                            </ul>
+
+                            <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                                Of het nu gaat om tafels vullen tijdens rustige dagen of aanvragen binnenhalen voor feesten en zakelijke evenementen: onze websites zijn er helemaal op ingericht.
+                            </p>
                         </div>
                     </div>
                 </section>
