@@ -420,28 +420,29 @@ const Footer = () => {
 
 const DashboardSection = () => {
   return (
-    <section className="bg-chef-warm py-24 border-t border-black/5">
+    <section className="bg-chef-warm py-12 pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-white rounded-[40px] p-10 md:p-16 shadow-sm border border-black/5 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h3 className="text-3xl md:text-5xl font-bold leading-tight">
-                Alles op één plek met het Chef Digital Dashboard
-              </h3>
-              <p className="mt-6 text-lg text-gray-500">
-                Beheer betalingen, krijg inzichten, vraag financiering aan en vereenvoudig je boekhouding.
-              </p>
-              <button className="mt-10 bg-gray-100 text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all">
-                Ontdek het Chef Digital Dashboard
-              </button>
-            </div>
-            <div className="relative">
-              <img
-                src="/images/dashboard.png"
-                alt="Dashboard Report"
-                className="w-full rounded-2xl shadow-2xl border border-black/5 bg-white"
-              />
-            </div>
+        <div className="bg-black rounded-[40px] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between min-h-[500px]">
+          <div className="z-10 w-full md:w-1/2 flex flex-col items-start pr-0 md:pr-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+              Alle resultaten op één plek in The Kitchen
+            </h3>
+            <p className="text-white/80 text-base md:text-lg leading-relaxed mb-12 max-w-sm">
+              Zie in één oogopslag wat je marketing echt oplevert.<br />
+              Van reserveringen en telefoontjes tot websitebezoekers en nieuwe reviews. Alle resultaten overzichtelijk bij elkaar, zodat je direct weet waar je groei vandaan komt.
+            </p>
+            <button className="bg-transparent text-white border border-white/20 px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all w-max mt-auto">
+              Bekijk meer
+            </button>
+          </div>
+
+          <div className="relative w-full md:w-1/2 mt-16 md:mt-0 flex justify-center md:justify-end z-10 translate-y-8 md:translate-y-16 lg:translate-y-24">
+            <img
+              src="/images/the-kitchen-laptop.png"
+              alt="The Kitchen Performance Platform"
+              className="w-full max-w-[650px] h-auto object-contain drop-shadow-2xl translate-x-4 md:translate-x-12"
+              onError={(e) => { e.currentTarget.src = "/images/dashboard.png"; }}
+            />
           </div>
         </div>
       </div>
@@ -451,30 +452,44 @@ const DashboardSection = () => {
 
 const USPsSection = () => {
   return (
-    <section className="bg-chef-warm py-24 border-t border-black/5">
+    <section className="bg-chef-warm py-24 pb-12">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-4">
+            Wij zijn ontstaan vanuit de horeca wereld en begrijpen de business
+          </h2>
+          <p className="text-lg text-chef-dark font-medium leading-relaxed">
+            Wij verzorgen alle digitale marketing die jouw horecazaak nodig heeft. Van websites en Google advertenties tot emailcampagnes en meer reviews. Jouw persoonlijke Chef Digital, zodat jij je volledig kunt richten op het runnen van je zaak!
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* USP 1 */}
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-chef-dark mb-4">24/7 Bereikbaar en snel</h3>
-            <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
-              Nieuwe gerechten, aangepaste tijden of een actie? Stuur het door en wij regelen het (ook in het weekend). Updates zijn inbegrepen in je abonnement en staan meestal binnen 24 uur online. Jij focust op je gasten, wij doen de rest.
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full min-h-[380px]">
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">Bespaar tijd</h3>
+            <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base mb-8">
+              Laat ons jouw online marketing volledig verzorgen, zodat jij je kunt focussen op je onderneming. Dankzij onze korte communicatielijnen voelen wij daarbij echt als een verlengstuk van jouw zaak.
             </p>
+            <div className="mt-auto">
+              <button className="bg-black text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition-all w-max inline-block">
+                Learn more
+              </button>
+            </div>
           </div>
 
           {/* USP 2 */}
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-chef-dark mb-4">Realtime resultaat en transparantie</h3>
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full min-h-[380px]">
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">Transparant</h3>
             <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
-              Bij ons weet je altijd wat er gebeurt. In je persoonlijke account zie je hoeveel gasten je website bezoeken en hoeveel reserveringen dat oplevert. Geen vage rapporten of verborgen cijfers, maar helder inzicht in wat werkt en waar we nog kunnen verbeteren.
+              Dankzij onze extreme transparantie hebben wij alle verborgen kosten geëlimineerd. Je weet altijd precies waar je voor betaalt en profiteert zo van eerlijke prijzen en maximale waarde voor jouw horecazaak.
             </p>
           </div>
 
           {/* USP 3 */}
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-chef-dark mb-4">Volledig ontzorgd, wij regelen alles</h3>
+          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col h-full min-h-[380px]">
+            <h3 className="text-2xl font-bold text-chef-dark mb-4">Altijd up-to-date</h3>
             <p className="text-chef-dark/80 leading-relaxed text-sm lg:text-base">
-              Van website tot advertenties en updates: wij nemen alles uit handen. Jij hoeft niets uit te zoeken of te plannen, wij zorgen dat alles soepel loopt. Zo bespaar je tijd en weet je zeker dat je zichtbaarheid en marketing altijd perfect geregeld zijn.
+              Hosting, onderhoud en aanpassingen zijn inbegrepen in je abonnement. Je website blijft veilig, snel en actueel.
             </p>
           </div>
         </div>
