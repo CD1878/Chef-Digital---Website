@@ -3,10 +3,10 @@ import { Check, X, ArrowRight, Smartphone, Zap, MonitorSmartphone, LineChart, Gl
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const horecaCustomers = [
-    { name: "Julie's", desktopImage: "/images/customers/desktop-julies.png", mobileImage: "/images/customers/het-paardje.jpg" },
-    { name: "Herberg Jan", desktopImage: "/images/customers/desktop-herberg-jan.jpg", mobileImage: "/images/customers/in-de-wildeman.png" },
-    { name: "Onze Zaak", desktopImage: "/images/customers/desktop-onze-zaak.jpg", mobileImage: "/images/customers/cafe-kramer.png" },
-    { name: "Het Paardje", desktopImage: "/images/customers/desktop-het-paardje.jpg", mobileImage: "/images/customers/dutch-courage.png" },
+    { name: "Julie's", desktopImage: "/images/customers/desktop-julies.png", mobileImage: "/images/customers/mobile-julies.png" },
+    { name: "Herberg Jan", desktopImage: "/images/customers/desktop-herberg-jan.jpg", mobileImage: "/images/customers/mobile-herberg-jan.png" },
+    { name: "Onze Zaak", desktopImage: "/images/customers/desktop-onze-zaak.jpg", mobileImage: "/images/customers/mobile-onze-zaak.png" },
+    { name: "Het Paardje", desktopImage: "/images/customers/desktop-het-paardje.jpg", mobileImage: "/images/customers/mobile-het-paardje.png" },
 ];
 
 const HorecaWebsite = () => {
