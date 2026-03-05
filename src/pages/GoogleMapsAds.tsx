@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
@@ -6,13 +7,39 @@ const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "
 
 const GoogleMapsAds = () => {
     const [wordIdx, setWordIdx] = useState(0);
+    const [searchText, setSearchText] = useState("");
+    const fullSearchText = "italiaanse delicatessen amsterdam";
 
     useEffect(() => {
         const wordInterval = setInterval(() => {
             setWordIdx((prev) => (prev + 1) % businessTypes.length);
         }, 2200);
 
-        return () => clearInterval(wordInterval);
+        // Typing effect loop
+        let currentIndex = 0;
+        let isDeleting = false;
+
+        const typeLoop = () => {
+            if (!isDeleting && currentIndex <= fullSearchText.length) {
+                setSearchText(fullSearchText.slice(0, currentIndex));
+                currentIndex++;
+                setTimeout(typeLoop, Math.random() * 50 + 50);
+            } else if (isDeleting && currentIndex >= 0) {
+                setSearchText(fullSearchText.slice(0, currentIndex));
+                currentIndex--;
+                setTimeout(typeLoop, 30);
+            } else {
+                isDeleting = !isDeleting;
+                setTimeout(typeLoop, isDeleting ? 3000 : 500); // Wait longer when fully typed
+            }
+        };
+
+        const timeout = setTimeout(typeLoop, 1000);
+
+        return () => {
+            clearInterval(wordInterval);
+            clearTimeout(timeout);
+        };
     }, []);
 
     return (
@@ -58,13 +85,41 @@ const GoogleMapsAds = () => {
 
                     <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center">
                         {/* Hero Image / Visual */}
-                        <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden">
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                            className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden relative group"
+                        >
                             <img
                                 src="/images/products/google-maps-ads-hero.png"
                                 alt="Google Maps Ads voor restaurants"
-                                className="w-full h-auto object-cover"
+                                className="w-full h-auto object-cover relative z-10"
                             />
-                        </div>
+
+                            {/* 2. Typing animation covering the static search bar text */}
+                            <div className="absolute top-[3.7%] md:top-[3.7%] left-[4.2%] w-[14%] h-[3.5%] bg-white z-20 flex items-center">
+                                <span className={`text-[#3c4043] font-sans text-[0.7vw] md:text-[0.8vw] lg:text-[0.9vw] whitespace-nowrap overflow-hidden border-r pr-0.5 ${searchText.length === fullSearchText.length ? 'border-transparent animate-pulse' : 'border-black'}`}>
+                                    {searchText}
+                                </span>
+                            </div>
+
+                            {/* 3. Pulsing map pins over the main interest points on the map */}
+                            {/* Pin on sponsored popup (Feduzzi) */}
+                            <div className="absolute top-[67%] left-[63%] w-[2%] lg:w-[1.5%] aspect-square z-20 pointer-events-none">
+                                <div className="w-full h-full bg-blue-500/60 rounded-full animate-ping"></div>
+                            </div>
+                            {/* Secondary red map pin */}
+                            <div className="absolute top-[36%] left-[51%] w-[1%] aspect-square z-20 pointer-events-none">
+                                <div className="w-full h-full bg-red-500/60 rounded-full animate-ping" style={{ animationDelay: '0.4s' }}></div>
+                            </div>
+                            {/* Third red pin */}
+                            <div className="absolute top-[44%] left-[45%] w-[1%] aspect-square z-20 pointer-events-none">
+                                <div className="w-full h-full bg-red-500/60 rounded-full animate-ping" style={{ animationDelay: '1.2s' }}></div>
+                            </div>
+
+                            {/* 4. Highlight overlay on the sponsored result in the left sidebar (appears on hover) */}
+                            <div className="absolute top-[13.5%] left-0 w-[21%] h-[15%] rounded-r-2xl z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-blue-500/10 border-y border-r border-blue-400/30 backdrop-blur-[1px] shadow-[inset_0_0_20px_rgba(59,130,246,0.1)]"></div>
+                        </motion.div>
                     </div>
                 </section>
 
