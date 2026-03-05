@@ -40,7 +40,7 @@ const HorecaWebsite = () => {
                     <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
                             Website voor{" "}
-                            <span className="inline-grid align-bottom text-chef-accent">
+                            <span className="inline-grid align-bottom text-chef-accent text-left">
                                 {businessTypes.map((word, idx) => (
                                     <span
                                         key={idx}
