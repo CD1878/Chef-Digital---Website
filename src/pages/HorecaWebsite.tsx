@@ -9,14 +9,25 @@ const horecaCustomers = [
     { name: "Het Paardje", desktopImage: "/images/customers/desktop-het-paardje.jpg", mobileImage: "/images/customers/mobile-het-paardje.png" },
 ];
 
+const businessTypes = ["restaurants", "bars", "bistro's", "beachclubs", "grand cafes", "lunchrooms"];
+
 const HorecaWebsite = () => {
     const [currentIdx, setCurrentIdx] = useState(0);
+    const [wordIdx, setWordIdx] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIdx((prev) => (prev + 1) % horecaCustomers.length);
         }, 4000);
-        return () => clearInterval(interval);
+
+        const wordInterval = setInterval(() => {
+            setWordIdx((prev) => (prev + 1) % businessTypes.length);
+        }, 2200);
+
+        return () => {
+            clearInterval(interval);
+            clearInterval(wordInterval);
+        };
     }, []);
 
     return (
@@ -28,7 +39,24 @@ const HorecaWebsite = () => {
                 <section className="bg-white pt-24 pb-0 overflow-hidden text-center relative z-10">
                     <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
-                            Website voor restaurants en hospitality
+                            Website voor{" "}
+                            <span className="inline-grid align-bottom text-chef-accent">
+                                {businessTypes.map((word, idx) => (
+                                    <span
+                                        key={idx}
+                                        className={`col-start-1 row-start-1 pb-1 transition-all duration-500 ease-in-out ${idx === wordIdx
+                                                ? "opacity-100 translate-y-0"
+                                                : idx < wordIdx || (wordIdx === 0 && idx === businessTypes.length - 1)
+                                                    ? "opacity-0 -translate-y-4 pointer-events-none"
+                                                    : "opacity-0 translate-y-4 pointer-events-none"
+                                            }`}
+                                    >
+                                        {word}
+                                    </span>
+                                ))}
+                            </span>{" "}
+                            <br className="hidden md:block" />
+                            en hospitality
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl text-balance">
                             Meer reserveringen via een professionele restaurantwebsite. Wij verzorgen de bouw en het volledige beheer, inclusief alle aanpassingen. Zo heb jij er geen omkijken naar en bespaar je tijd.
