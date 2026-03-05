@@ -34,7 +34,7 @@ export const Navbar = () => {
 
               <div className="absolute top-full left-1/2 -translate-x-[60%] md:-translate-x-[45%] lg:-translate-x-[35%] w-[85vw] md:w-[80vw] lg:w-max max-w-5xl bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-6 lg:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 z-50 overflow-y-auto max-h-[85vh] lg:overflow-visible lg:max-h-none">
                 {/* Per sector column */}
-                <div className="flex flex-col w-full lg:w-64 pr-0 lg:pr-12 border-b lg:border-b-0 lg:border-r border-black/5 pb-6 lg:pb-0">
+                <div className="flex flex-col w-full lg:w-80 pr-0 lg:pr-12 border-b lg:border-b-0 lg:border-r border-black/5 pb-6 lg:pb-0">
                   <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Per sector</h4>
                   <div className="flex flex-col gap-4 lg:gap-6">
                     <a href="/restaurants" className="group/item flex flex-col">
@@ -318,7 +318,7 @@ const MarketingSection = () => {
           </div>
 
           {/* Small Right Card */}
-          <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
+          <div className="lg:col-span-1 bg-white rounded-[32px] p-8 md:p-12 pb-48 lg:pb-60 shadow-sm border border-black/5 flex flex-col relative overflow-hidden min-h-[450px]">
             <div className="z-10 flex flex-col h-full flex-grow">
               <h3 className="text-2xl font-bold text-chef-dark mb-2">Google Search ads</h3>
               <p className="text-gray-400 font-semibold mb-6">Meer eventaanvragen</p>
@@ -327,7 +327,7 @@ const MarketingSection = () => {
               </p>
             </div>
 
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[25%] w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[45%] w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
               <img src="/images/home_marketing/google-search-mockup-new.png" alt="Google Search ads" className="w-full h-auto object-contain rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5" />
             </div>
           </div>
