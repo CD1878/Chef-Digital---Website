@@ -59,18 +59,7 @@ const GoogleMapsAds = () => {
 
                     <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center">
                         {/* Hero Images / Visual Layers */}
-                        <motion.div
-                            className="w-full bg-white rounded-[32px] md:rounded-[40px] border border-black/5 overflow-hidden relative"
-                            initial={{ boxShadow: "0px 20px 60px -15px rgba(0,0,0,0.15)" }}
-                            animate={{
-                                boxShadow: [
-                                    "0px 20px 60px -15px rgba(59, 130, 246, 0.15)",
-                                    "0px 20px 80px 0px rgba(59, 130, 246, 0.4)",
-                                    "0px 20px 60px -15px rgba(59, 130, 246, 0.15)"
-                                ]
-                            }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        >
+                        <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden relative">
                             {/* Base Image (without pop-up) */}
                             <img
                                 src="/images/products/google-maps-ads-base.png"
@@ -91,7 +80,31 @@ const GoogleMapsAds = () => {
                                     delay: 1
                                 }}
                             />
-                        </motion.div>
+
+                            {/* Targeted Glow around the Popup */}
+                            <motion.div
+                                className="absolute rounded-[24px] pointer-events-none z-30"
+                                style={{
+                                    left: '58.5%',
+                                    top: '22%',
+                                    width: '27.5%',
+                                    height: '42.5%',
+                                }}
+                                initial={{ opacity: 0 }}
+                                animate={{
+                                    opacity: 1,
+                                    boxShadow: [
+                                        "0px 0px 40px 10px rgba(59, 130, 246, 0.4), inset 0px 0px 10px 0px rgba(59, 130, 246, 0.05)",
+                                        "0px 0px 70px 20px rgba(59, 130, 246, 0.7), inset 0px 0px 15px 0px rgba(59, 130, 246, 0.15)",
+                                        "0px 0px 40px 10px rgba(59, 130, 246, 0.4), inset 0px 0px 10px 0px rgba(59, 130, 246, 0.05)",
+                                    ]
+                                }}
+                                transition={{
+                                    opacity: { duration: 1.5, delay: 1, ease: "easeOut" },
+                                    boxShadow: { duration: 3, delay: 2.5, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                            />
+                        </div>
                     </div>
                 </section>
 
