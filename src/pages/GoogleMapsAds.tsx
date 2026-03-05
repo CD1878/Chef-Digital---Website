@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick } from "lucide-react";
+import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick, Phone, Navigation, CalendarCheck, Eye } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
 
 const GoogleMapsAds = () => {
     const [wordIdx, setWordIdx] = useState(0);
+    const [searchVolume, setSearchVolume] = useState(5000);
+
+    // Interactive Calculator Math Logic
+    const profileViews = Math.round(searchVolume * 0.35);
+    const totalInteractions = Math.round(profileViews * 0.18);
+    const calls = Math.round(totalInteractions * 0.25);
+    const directions = Math.round(totalInteractions * 0.35);
+    const websiteClicks = Math.round(totalInteractions * 0.40);
+    const reservations = Math.round((websiteClicks * 0.20) + (calls * 0.50));
 
     useEffect(() => {
         const wordInterval = setInterval(() => {
@@ -181,6 +190,131 @@ const GoogleMapsAds = () => {
                                     <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ROI Calculator Section */}
+                <section className="bg-white py-24 pb-32 border-t border-black/5">
+                    <div className="max-w-6xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-chef-dark mb-6 leading-tight">
+                                Bereken jouw potentiële groei
+                            </h2>
+                            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
+                                Ontdek wat een toppositie in Google Maps maandelijks voor jouw horecazaak kan betekenen. Speel met het lokale zoekvolume in jouw stad of dorp.
+                            </p>
+                        </div>
+
+                        <div className="bg-chef-dark rounded-[40px] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden relative">
+                            {/* Decorative background elements */}
+                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+                            <div className="flex flex-col lg:flex-row gap-12 relative z-10">
+                                {/* Left side: Slider */}
+                                <div className="w-full lg:w-5/12 flex flex-col justify-center">
+                                    <h3 className="text-2xl font-bold text-white mb-4">Lokaal Zoekvolume</h3>
+                                    <p className="text-gray-400 mb-8 font-medium">Hoeveel mensen zoeken er maandelijks naar horeca in jouw omgeving?</p>
+
+                                    <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
+                                        <div className="flex justify-between items-end mb-6">
+                                            <span className="text-4xl font-bold text-white tracking-tight">{searchVolume.toLocaleString('nl-NL')}</span>
+                                            <span className="text-gray-400 font-medium mb-1">zoekopdrachten</span>
+                                        </div>
+
+                                        <input
+                                            type="range"
+                                            min="1000"
+                                            max="50000"
+                                            step="500"
+                                            value={searchVolume}
+                                            onChange={(e) => setSearchVolume(parseInt(e.target.value))}
+                                            className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                                        />
+                                        <div className="flex justify-between mt-3 text-sm text-gray-500 font-medium">
+                                            <span>Middengroot dorp</span>
+                                            <span>Grote stad</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right side: Results Dashboard */}
+                                <div className="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {/* Views */}
+                                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                                <Eye className="w-5 h-5 text-blue-400" />
+                                            </div>
+                                            <h4 className="text-gray-300 font-medium">Extra Profielweergaven</h4>
+                                        </div>
+                                        <div className="text-4xl font-bold text-white">
+                                            <motion.span key={profileViews} initial={{ opacity: 0.5, y: -5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
+                                                +{profileViews.toLocaleString('nl-NL')}
+                                            </motion.span>
+                                        </div>
+                                    </div>
+
+                                    {/* Interactions Breakdown */}
+                                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md row-span-2 flex flex-col justify-center">
+                                        <h4 className="text-gray-300 font-medium mb-6">Extra interacties per maand</h4>
+
+                                        <div className="space-y-6">
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                                        <Phone className="w-5 h-5 text-green-400" />
+                                                    </div>
+                                                    <span className="text-white font-medium">Bellen</span>
+                                                </div>
+                                                <motion.span key={calls} initial={{ opacity: 0.5, x: 5 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold text-white">
+                                                    {calls.toLocaleString('nl-NL')}
+                                                </motion.span>
+                                            </div>
+
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                                                        <Navigation className="w-5 h-5 text-yellow-400" />
+                                                    </div>
+                                                    <span className="text-white font-medium">Route</span>
+                                                </div>
+                                                <motion.span key={directions} initial={{ opacity: 0.5, x: 5 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold text-white">
+                                                    {directions.toLocaleString('nl-NL')}
+                                                </motion.span>
+                                            </div>
+
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                                                        <MousePointerClick className="w-5 h-5 text-purple-400" />
+                                                    </div>
+                                                    <span className="text-white font-medium">Website</span>
+                                                </div>
+                                                <motion.span key={websiteClicks} initial={{ opacity: 0.5, x: 5 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold text-white">
+                                                    {websiteClicks.toLocaleString('nl-NL')}
+                                                </motion.span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Reservations */}
+                                    <div className="bg-blue-600 rounded-3xl p-6 border border-blue-500 shadow-[0_0_40px_rgba(37,99,235,0.4)] relative overflow-hidden">
+                                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                                        <div className="flex items-center gap-3 mb-4 relative z-10">
+                                            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                                                <CalendarCheck className="w-5 h-5 text-white" />
+                                            </div>
+                                            <h4 className="text-blue-100 font-medium">Tafelreserveringen</h4>
+                                        </div>
+                                        <div className="text-5xl font-bold text-white relative z-10 tracking-tight">
+                                            <motion.span key={reservations} initial={{ opacity: 0.5, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }}>
+                                                +{reservations.toLocaleString('nl-NL')}
+                                            </motion.span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
