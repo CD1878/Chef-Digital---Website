@@ -5,25 +5,18 @@ import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
 
+const cityVolumes = [5000, 15000, 45000];
+const cityNames = ["Dorp", "Stad", "Grote stad"];
+
+const typeMultipliers = [1.0, 0.8, 1.2, 1.5, 1.5, 1.2, 1.4];
+const typeNames = ["Restaurant", "Lunch", "Bar", "Pizzeria", "Sushi", "Tapas", "Burger"];
+
 const GoogleMapsAds = () => {
     const [wordIdx, setWordIdx] = useState(0);
-    const [citySize, setCitySize] = useState<"small" | "medium" | "large">("medium");
-    const [restType, setRestType] = useState<"diner" | "lunch" | "fastfood" | "cafe">("diner");
+    const [cityIdx, setCityIdx] = useState(1);
+    const [typeIdx, setTypeIdx] = useState(0);
 
-    const cityVolumes = {
-        small: 5000,
-        medium: 15000,
-        large: 45000
-    };
-
-    const typeMultipliers = {
-        diner: 1.0,
-        lunch: 0.8,
-        fastfood: 1.5,
-        cafe: 1.2
-    };
-
-    const searchVolume = cityVolumes[citySize] * typeMultipliers[restType];
+    const searchVolume = cityVolumes[cityIdx] * typeMultipliers[typeIdx];
 
     // Interactive Calculator Math Logic (fictitious base numbers for demonstration)
     const profileViews = Math.round(searchVolume * 0.35);
@@ -233,32 +226,81 @@ const GoogleMapsAds = () => {
                                     <h3 className="text-2xl font-bold text-white mb-4">Jouw Zaak & Omgeving</h3>
                                     <p className="text-gray-400 mb-8 font-medium">Selecteer de locatie en het type horeca om de verwachte extra resultaten van een gesponsorde advertentie te berekenen.</p>
 
-                                    <div className="space-y-5">
-                                        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                                            <label className="block text-sm font-medium text-gray-400 mb-2">Locatie / Stad</label>
-                                            <select
-                                                value={citySize}
-                                                onChange={(e) => setCitySize(e.target.value as any)}
-                                                className="w-full bg-white/10 text-white border-0 rounded-xl px-4 py-3 appearance-none focus:ring-2 focus:ring-blue-500 font-medium cursor-pointer"
-                                            >
-                                                <option value="small" className="text-black">Dorp / Kleine stad</option>
-                                                <option value="medium" className="text-black">Middelgrote stad (bijv. Haarlem, Leiden)</option>
-                                                <option value="large" className="text-black">Grote stad (bijv. Amsterdam, Rotterdam)</option>
-                                            </select>
+                                    <div className="space-y-12 mt-4">
+                                        <div className="bg-white/5 rounded-3xl p-6 sm:p-8 border border-white/10 relative">
+                                            <h4 className="text-white font-medium mb-8">Locatie / Stad</h4>
+
+                                            <div className="relative w-full pb-8">
+                                                {/* Track */}
+                                                <div className="absolute top-2 left-0 right-0 h-1.5 bg-white/10 rounded-full"></div>
+                                                {/* Active Track */}
+                                                <div
+                                                    className="absolute top-2 left-0 h-1.5 bg-blue-500 rounded-full transition-all duration-300 ease-out"
+                                                    style={{ width: `${(cityIdx / (cityNames.length - 1)) * 100}%` }}
+                                                ></div>
+
+                                                {/* Bullet Points */}
+                                                <div className="relative flex justify-between z-10 w-full px-2">
+                                                    {cityNames.map((name, i) => (
+                                                        <div
+                                                            key={name}
+                                                            className="flex flex-col items-center cursor-pointer group"
+                                                            onClick={() => setCityIdx(i)}
+                                                            style={{ width: 0 }}
+                                                        >
+                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i <= cityIdx
+                                                                    ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
+                                                                    : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
+                                                                }`}
+                                                            >
+                                                                {i === cityIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                                                            </div>
+                                                            <span className={`absolute top-8 whitespace-nowrap text-xs md:text-sm font-medium transition-colors ${i === cityIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                                                                {name}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                                            <label className="block text-sm font-medium text-gray-400 mb-2">Type Horeca</label>
-                                            <select
-                                                value={restType}
-                                                onChange={(e) => setRestType(e.target.value as any)}
-                                                className="w-full bg-white/10 text-white border-0 rounded-xl px-4 py-3 appearance-none focus:ring-2 focus:ring-blue-500 font-medium cursor-pointer"
-                                            >
-                                                <option value="diner" className="text-black">Restaurant / Luxe dineren</option>
-                                                <option value="lunch" className="text-black">Lunchroom / Ontbijt</option>
-                                                <option value="fastfood" className="text-black">Snelle hap / Pizzeria / Sushi</option>
-                                                <option value="cafe" className="text-black">Gezellig Eetcafé / Bar</option>
-                                            </select>
+                                        <div className="bg-white/5 rounded-3xl p-6 sm:p-8 border border-white/10 relative">
+                                            <h4 className="text-white font-medium mb-8">Type Horeca</h4>
+
+                                            <div className="relative w-full pb-10">
+                                                {/* Track */}
+                                                <div className="absolute top-2 left-0 right-0 h-1.5 bg-white/10 rounded-full"></div>
+                                                {/* Active Track */}
+                                                <div
+                                                    className="absolute top-2 left-0 h-1.5 bg-blue-500 rounded-full transition-all duration-300 ease-out"
+                                                    style={{ width: `${(typeIdx / (typeNames.length - 1)) * 100}%` }}
+                                                ></div>
+
+                                                {/* Bullet Points */}
+                                                <div className="relative flex justify-between z-10 w-full px-2">
+                                                    {typeNames.map((name, i) => (
+                                                        <div
+                                                            key={name}
+                                                            className="flex flex-col items-center cursor-pointer group"
+                                                            onClick={() => setTypeIdx(i)}
+                                                            style={{ width: 0 }}
+                                                        >
+                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i <= typeIdx
+                                                                    ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
+                                                                    : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
+                                                                }`}
+                                                            >
+                                                                {i === typeIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                                                            </div>
+                                                            {/* Label - rotate on mobile or smaller screens with dynamic offset */}
+                                                            <span className={`absolute top-8 text-[10px] sm:text-xs font-medium transition-colors origin-top-left sm:origin-top ${i === typeIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'
+                                                                } -rotate-45 sm:rotate-0 -translate-x-3 sm:-translate-x-1/2 whitespace-nowrap z-0`}>
+                                                                {name}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
