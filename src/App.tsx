@@ -54,14 +54,8 @@ export const Navbar = () => {
 
                 {/* Services columns */}
                 <div className="flex flex-col flex-grow">
-                  <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Services</h4>
+                  <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Producten</h4>
                   <div className="flex flex-col md:flex-row gap-8 lg:gap-12 flex-wrap lg:flex-nowrap">
-                    <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-48">
-                      <a href="/services" className="group/item flex flex-col">
-                        <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Alle services</span>
-                        <span className="text-sm text-gray-500 mt-1 font-normal">Bekijk alles wat we doen</span>
-                      </a>
-                    </div>
                     <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-60">
                       <a href="/horeca-website" className="group/item flex flex-col">
                         <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Horeca Website</span>
