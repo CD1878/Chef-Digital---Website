@@ -374,9 +374,9 @@ const HorecaWebsite = () => {
                         </div>
 
                         <div className="flex justify-center mt-12">
-                            <button className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
-                                Bekijk onze tarieven <ArrowRight size={20} />
-                            </button>
+                            <a href="/pakketten" className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
+                                Bekijk onze pakketten <ArrowRight size={20} />
+                            </a>
                         </div>
                     </div>
                 </section>
