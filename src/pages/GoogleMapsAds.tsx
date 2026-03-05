@@ -59,7 +59,18 @@ const GoogleMapsAds = () => {
 
                     <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center">
                         {/* Hero Images / Visual Layers */}
-                        <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden relative">
+                        <motion.div
+                            className="w-full bg-white rounded-[32px] md:rounded-[40px] border border-black/5 overflow-hidden relative"
+                            initial={{ boxShadow: "0px 20px 60px -15px rgba(0,0,0,0.15)" }}
+                            animate={{
+                                boxShadow: [
+                                    "0px 20px 60px -15px rgba(59, 130, 246, 0.15)",
+                                    "0px 20px 80px 0px rgba(59, 130, 246, 0.4)",
+                                    "0px 20px 60px -15px rgba(59, 130, 246, 0.15)"
+                                ]
+                            }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        >
                             {/* Base Image (without pop-up) */}
                             <img
                                 src="/images/products/google-maps-ads-base.png"
@@ -73,15 +84,14 @@ const GoogleMapsAds = () => {
                                 alt="Google Maps gesponsord kaartje"
                                 className="absolute top-0 left-0 w-full h-full object-cover z-20"
                                 initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true, amount: 1 }}
+                                animate={{ opacity: 1 }}
                                 transition={{
-                                    duration: 1.2,
+                                    duration: 1.5,
                                     ease: "easeOut",
-                                    delay: 0.3
+                                    delay: 1
                                 }}
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
