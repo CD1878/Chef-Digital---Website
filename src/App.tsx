@@ -32,11 +32,11 @@ export const Navbar = () => {
                 Producten <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
               </button>
 
-              <div className="absolute top-full left-1/2 -translate-x-[35%] w-max bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-10 flex gap-12 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-[60%] md:-translate-x-[45%] lg:-translate-x-[35%] w-[85vw] md:w-[80vw] lg:w-max max-w-5xl bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-6 lg:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 z-50 overflow-y-auto max-h-[85vh] lg:overflow-visible lg:max-h-none">
                 {/* Per sector column */}
-                <div className="flex flex-col w-64 pr-12 border-r border-black/5">
-                  <h4 className="font-bold text-lg text-chef-dark mb-6 border-b border-black/10 pb-4">Per sector</h4>
-                  <div className="flex flex-col gap-6">
+                <div className="flex flex-col w-full lg:w-64 pr-0 lg:pr-12 border-b lg:border-b-0 lg:border-r border-black/5 pb-6 lg:pb-0">
+                  <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Per sector</h4>
+                  <div className="flex flex-col gap-4 lg:gap-6">
                     <a href="/restaurants" className="group/item flex flex-col">
                       <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Restaurants</span>
                       <span className="text-sm text-gray-500 mt-1 font-normal">Geef je restaurant een boost</span>
@@ -54,15 +54,15 @@ export const Navbar = () => {
 
                 {/* Services columns */}
                 <div className="flex flex-col flex-grow">
-                  <h4 className="font-bold text-lg text-chef-dark mb-6 border-b border-black/10 pb-4">Services</h4>
-                  <div className="flex gap-12">
-                    <div className="flex flex-col gap-6 w-48">
+                  <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Services</h4>
+                  <div className="flex flex-col md:flex-row gap-8 lg:gap-12 flex-wrap lg:flex-nowrap">
+                    <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-48">
                       <a href="/services" className="group/item flex flex-col">
                         <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Alle services</span>
                         <span className="text-sm text-gray-500 mt-1 font-normal">Bekijk alles wat we doen</span>
                       </a>
                     </div>
-                    <div className="flex flex-col gap-6 w-60">
+                    <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-60">
                       <a href="/horeca-website" className="group/item flex flex-col">
                         <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Horeca Website</span>
                         <span className="text-sm text-gray-500 mt-1 font-normal">Geen omkijken meer naar</span>
@@ -76,7 +76,7 @@ export const Navbar = () => {
                         <span className="text-sm text-gray-500 mt-1 font-normal">Lokaal beter vindbaar en zichtbaar</span>
                       </a>
                     </div>
-                    <div className="flex flex-col gap-6 w-56">
+                    <div className="flex flex-col gap-4 lg:gap-6 w-full md:w-56">
                       <a href="/email-campagnes" className="group/item flex flex-col">
                         <span className="font-bold text-chef-dark group-hover/item:text-chef-accent transition-colors text-base">Email campagnes</span>
                         <span className="text-sm text-gray-500 mt-1 font-normal">Haal meer uit je bestaande gasten</span>
@@ -241,7 +241,7 @@ const LogoTicker = () => {
     <div className="bg-white py-10 border-b border-gray-100 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">
         {[...Array(2)].map((_, i) => (
-          <div key={i} className="flex items-center gap-20 px-10">
+          <div key={i} className="flex items-center gap-10 px-5">
             {logos.map((logo, index) => (
               <LogoImage key={`${logo.name}-${index}`} name={logo.name} src={logo.src} />
             ))}
@@ -306,8 +306,8 @@ const MarketingSection = () => {
                 <p className="font-bold text-lg">€59 per maand</p>
                 <p className="text-xs text-gray-500 mb-8">*Excl. advertentie budget</p>
 
-                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max shadow-md">
-                  Lees meer
+                <button className="flex items-center gap-2 font-bold text-chef-dark hover:text-chef-accent transition-colors w-max relative z-20 mt-2">
+                  Lees meer <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </div>
             </div>
@@ -327,7 +327,7 @@ const MarketingSection = () => {
               </p>
             </div>
 
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-16 w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[25%] w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
               <img src="/images/home_marketing/google-search-mockup-new.png" alt="Google Search ads" className="w-full h-auto object-contain rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5" />
             </div>
           </div>
@@ -343,8 +343,8 @@ const MarketingSection = () => {
 
               <div className="mt-auto">
                 <p className="font-bold text-lg">€99 per maand</p>
-                <button className="mt-8 bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max inline-block shadow-md">
-                  Lees meer
+                <button className="mt-6 flex items-center gap-2 font-bold text-chef-dark hover:text-chef-accent transition-colors w-max relative z-20">
+                  Lees meer <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </div>
             </div>
@@ -365,8 +365,8 @@ const MarketingSection = () => {
               </p>
 
               <div className="mt-auto">
-                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all w-max shadow-md">
-                  Lees meer
+                <button className="flex items-center gap-2 font-bold text-chef-dark hover:text-chef-accent transition-colors w-max relative z-20 mt-2">
+                  Lees meer <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </div>
             </div>
