@@ -37,7 +37,7 @@ const HorecaWebsite = () => {
             <main className="flex-grow flex flex-col">
                 {/* Hero Section */}
                 <section className="bg-white pt-24 pb-0 overflow-hidden text-center relative z-10">
-                    <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
+                    <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
                             Website voor{" "}
                             <span className="inline-grid align-bottom text-chef-accent">
@@ -45,10 +45,10 @@ const HorecaWebsite = () => {
                                     <span
                                         key={idx}
                                         className={`col-start-1 row-start-1 pb-1 transition-all duration-500 ease-in-out ${idx === wordIdx
-                                                ? "opacity-100 translate-y-0"
-                                                : idx < wordIdx || (wordIdx === 0 && idx === businessTypes.length - 1)
-                                                    ? "opacity-0 -translate-y-4 pointer-events-none"
-                                                    : "opacity-0 translate-y-4 pointer-events-none"
+                                            ? "opacity-100 translate-y-0"
+                                            : idx < wordIdx || (wordIdx === 0 && idx === businessTypes.length - 1)
+                                                ? "opacity-0 -translate-y-4 pointer-events-none"
+                                                : "opacity-0 translate-y-4 pointer-events-none"
                                             }`}
                                     >
                                         {word}
