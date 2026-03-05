@@ -58,8 +58,8 @@ const HorecaWebsite = () => {
                             <br className="hidden md:block" />
                             en hospitality
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl text-balance">
-                            Meer reserveringen via een professionele restaurantwebsite. Wij verzorgen de bouw en het volledige beheer, inclusief alle aanpassingen. Zo heb jij er geen omkijken naar en bespaar je tijd.
+                        <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-3xl text-balance">
+                            Meer reserveringen via een professionele horeca website. Wij verzorgen de bouw en het volledige beheer, inclusief alle aanpassingen. Zo heb jij er geen omkijken naar en bespaar je tijd.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <button className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)] flex items-center justify-center gap-2">
