@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
@@ -57,12 +58,28 @@ const GoogleMapsAds = () => {
                     </div>
 
                     <div className="max-w-5xl mx-auto px-6 mt-16 lg:mt-24 relative flex justify-center">
-                        {/* Hero Image / Visual */}
-                        <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden">
+                        {/* Hero Images / Visual Layers */}
+                        <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden relative">
+                            {/* Base Image (without pop-up) */}
                             <img
-                                src="/images/products/google-maps-ads-hero.png"
-                                alt="Google Maps Ads voor restaurants"
-                                className="w-full h-auto object-cover"
+                                src="/images/products/google-maps-ads-base.png"
+                                alt="Google Maps weergave"
+                                className="w-full h-auto object-cover relative z-10"
+                            />
+
+                            {/* Popup Overlay layer (with the pop-up) */}
+                            <motion.img
+                                src="/images/products/google-maps-ads-popup.png"
+                                alt="Google Maps gesponsord kaartje"
+                                className="absolute top-0 left-0 w-full h-full object-cover z-20"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: [0, 0, 1, 1, 0] }}
+                                transition={{
+                                    duration: 8,
+                                    times: [0, 0.1, 0.25, 0.85, 1],
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
                             />
                         </div>
                     </div>
