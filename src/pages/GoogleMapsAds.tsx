@@ -5,8 +5,8 @@ import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
 
-const cityVolumes = [5000, 15000, 45000];
-const cityNames = ["Dorp", "Stad", "Grote stad"];
+const cityVolumes = [80000, 45000, 35000, 25000, 15000];
+const cityNames = ["Amsterdam", "Rotterdam", "Den Haag", "Utrecht", "Arnhem"];
 
 const typeMultipliers = [1.0, 0.8, 1.2, 1.5, 1.5, 1.2, 1.4];
 const typeNames = ["Restaurant", "Lunch", "Bar", "Pizzeria", "Sushi", "Tapas", "Burger"];
@@ -233,11 +233,6 @@ const GoogleMapsAds = () => {
                                             <div className="relative w-full pb-8">
                                                 {/* Track */}
                                                 <div className="absolute top-2 left-0 right-0 h-1.5 bg-white/10 rounded-full"></div>
-                                                {/* Active Track */}
-                                                <div
-                                                    className="absolute top-2 left-0 h-1.5 bg-blue-500 rounded-full transition-all duration-300 ease-out"
-                                                    style={{ width: `${(cityIdx / (cityNames.length - 1)) * 100}%` }}
-                                                ></div>
 
                                                 {/* Bullet Points */}
                                                 <div className="relative flex justify-between z-10 w-full px-2">
@@ -248,9 +243,9 @@ const GoogleMapsAds = () => {
                                                             onClick={() => setCityIdx(i)}
                                                             style={{ width: 0 }}
                                                         >
-                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i <= cityIdx
-                                                                    ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
-                                                                    : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
+                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i === cityIdx
+                                                                ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
+                                                                : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
                                                                 }`}
                                                             >
                                                                 {i === cityIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
@@ -270,11 +265,6 @@ const GoogleMapsAds = () => {
                                             <div className="relative w-full pb-10">
                                                 {/* Track */}
                                                 <div className="absolute top-2 left-0 right-0 h-1.5 bg-white/10 rounded-full"></div>
-                                                {/* Active Track */}
-                                                <div
-                                                    className="absolute top-2 left-0 h-1.5 bg-blue-500 rounded-full transition-all duration-300 ease-out"
-                                                    style={{ width: `${(typeIdx / (typeNames.length - 1)) * 100}%` }}
-                                                ></div>
 
                                                 {/* Bullet Points */}
                                                 <div className="relative flex justify-between z-10 w-full px-2">
@@ -285,9 +275,9 @@ const GoogleMapsAds = () => {
                                                             onClick={() => setTypeIdx(i)}
                                                             style={{ width: 0 }}
                                                         >
-                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i <= typeIdx
-                                                                    ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
-                                                                    : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
+                                                            <div className={`w-5 h-5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center -translate-y-[6px] ${i === typeIdx
+                                                                ? 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]'
+                                                                : 'bg-gray-600 border-2 border-transparent group-hover:bg-gray-500'
                                                                 }`}
                                                             >
                                                                 {i === typeIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
