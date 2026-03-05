@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ChevronDown, ChevronRight, ArrowRight, Globe, Github, Instagram, Linkedin, Twitter, Lock, Check, MessageCircle, LineChart, ChefHat } from "lucide-react";
 import HorecaWebsite from "./pages/HorecaWebsite";
+import GoogleMapsAds from "./pages/GoogleMapsAds";
 import { useState, useEffect } from "react";
 
 // --- Components ---
@@ -805,6 +806,7 @@ export default function App() {
   const currentPath = window.location.pathname;
   const isPricingPage = currentPath === '/pakketten' || currentPath === '/pricing';
   const isHorecaWebsitePage = currentPath === '/horeca-website';
+  const isGoogleMapsAdsPage = currentPath === '/google-maps-ads';
 
   const LandingContent = () => (
     <>
@@ -828,6 +830,8 @@ export default function App() {
     <div className="min-h-screen bg-white selection:bg-chef-accent selection:text-white flex flex-col">
       {isHorecaWebsitePage ? (
         <HorecaWebsite />
+      ) : isGoogleMapsAdsPage ? (
+        <GoogleMapsAds />
       ) : isPricingPage ? (
         <>
           <Navbar />
