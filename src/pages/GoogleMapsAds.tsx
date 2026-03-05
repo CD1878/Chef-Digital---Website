@@ -1,20 +1,37 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick, Phone, Navigation, CalendarCheck, Eye } from "lucide-react";
+import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick, Phone, Navigation, CalendarCheck, Eye, BookOpen } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
 
 const GoogleMapsAds = () => {
     const [wordIdx, setWordIdx] = useState(0);
-    const [searchVolume, setSearchVolume] = useState(5000);
+    const [citySize, setCitySize] = useState<"small" | "medium" | "large">("medium");
+    const [restType, setRestType] = useState<"diner" | "lunch" | "fastfood" | "cafe">("diner");
 
-    // Interactive Calculator Math Logic
+    const cityVolumes = {
+        small: 5000,
+        medium: 15000,
+        large: 45000
+    };
+
+    const typeMultipliers = {
+        diner: 1.0,
+        lunch: 0.8,
+        fastfood: 1.5,
+        cafe: 1.2
+    };
+
+    const searchVolume = cityVolumes[citySize] * typeMultipliers[restType];
+
+    // Interactive Calculator Math Logic (fictitious base numbers for demonstration)
     const profileViews = Math.round(searchVolume * 0.35);
     const totalInteractions = Math.round(profileViews * 0.18);
-    const calls = Math.round(totalInteractions * 0.25);
-    const directions = Math.round(totalInteractions * 0.35);
-    const websiteClicks = Math.round(totalInteractions * 0.40);
+    const calls = Math.round(totalInteractions * 0.20);
+    const directions = Math.round(totalInteractions * 0.30);
+    const websiteClicks = Math.round(totalInteractions * 0.35);
+    const menuViews = Math.round(totalInteractions * 0.15);
     const reservations = Math.round((websiteClicks * 0.20) + (calls * 0.50));
 
     useEffect(() => {
@@ -202,7 +219,7 @@ const GoogleMapsAds = () => {
                                 Bereken jouw potentiële groei
                             </h2>
                             <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
-                                Ontdek wat een toppositie in Google Maps maandelijks voor jouw horecazaak kan betekenen. Speel met het lokale zoekvolume in jouw stad of dorp.
+                                Ontdek wat een gesponsorde toppositie in Google Maps maandelijks extra kan opleveren voor jouw horecazaak. Vul hieronder jouw situatie in.
                             </p>
                         </div>
 
@@ -211,29 +228,37 @@ const GoogleMapsAds = () => {
                             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
                             <div className="flex flex-col lg:flex-row gap-12 relative z-10">
-                                {/* Left side: Slider */}
+                                {/* Left side: Select Inputs */}
                                 <div className="w-full lg:w-5/12 flex flex-col justify-center">
-                                    <h3 className="text-2xl font-bold text-white mb-4">Lokaal Zoekvolume</h3>
-                                    <p className="text-gray-400 mb-8 font-medium">Hoeveel mensen zoeken er maandelijks naar horeca in jouw omgeving?</p>
+                                    <h3 className="text-2xl font-bold text-white mb-4">Jouw Zaak & Omgeving</h3>
+                                    <p className="text-gray-400 mb-8 font-medium">Selecteer de locatie en het type horeca om de verwachte extra resultaten van een gesponsorde advertentie te berekenen.</p>
 
-                                    <div className="bg-white/5 rounded-3xl p-8 border border-white/10">
-                                        <div className="flex justify-between items-end mb-6">
-                                            <span className="text-4xl font-bold text-white tracking-tight">{searchVolume.toLocaleString('nl-NL')}</span>
-                                            <span className="text-gray-400 font-medium mb-1">zoekopdrachten</span>
+                                    <div className="space-y-5">
+                                        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                            <label className="block text-sm font-medium text-gray-400 mb-2">Locatie / Stad</label>
+                                            <select
+                                                value={citySize}
+                                                onChange={(e) => setCitySize(e.target.value as any)}
+                                                className="w-full bg-white/10 text-white border-0 rounded-xl px-4 py-3 appearance-none focus:ring-2 focus:ring-blue-500 font-medium cursor-pointer"
+                                            >
+                                                <option value="small" className="text-black">Dorp / Kleine stad</option>
+                                                <option value="medium" className="text-black">Middelgrote stad (bijv. Haarlem, Leiden)</option>
+                                                <option value="large" className="text-black">Grote stad (bijv. Amsterdam, Rotterdam)</option>
+                                            </select>
                                         </div>
 
-                                        <input
-                                            type="range"
-                                            min="1000"
-                                            max="50000"
-                                            step="500"
-                                            value={searchVolume}
-                                            onChange={(e) => setSearchVolume(parseInt(e.target.value))}
-                                            className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-blue-500"
-                                        />
-                                        <div className="flex justify-between mt-3 text-sm text-gray-500 font-medium">
-                                            <span>Middengroot dorp</span>
-                                            <span>Grote stad</span>
+                                        <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                                            <label className="block text-sm font-medium text-gray-400 mb-2">Type Horeca</label>
+                                            <select
+                                                value={restType}
+                                                onChange={(e) => setRestType(e.target.value as any)}
+                                                className="w-full bg-white/10 text-white border-0 rounded-xl px-4 py-3 appearance-none focus:ring-2 focus:ring-blue-500 font-medium cursor-pointer"
+                                            >
+                                                <option value="diner" className="text-black">Restaurant / Luxe dineren</option>
+                                                <option value="lunch" className="text-black">Lunchroom / Ontbijt</option>
+                                                <option value="fastfood" className="text-black">Snelle hap / Pizzeria / Sushi</option>
+                                                <option value="cafe" className="text-black">Gezellig Eetcafé / Bar</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +271,7 @@ const GoogleMapsAds = () => {
                                             <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
                                                 <Eye className="w-5 h-5 text-blue-400" />
                                             </div>
-                                            <h4 className="text-gray-300 font-medium">Extra Profielweergaven</h4>
+                                            <h4 className="text-gray-300 font-medium">Extra Profielweergaven door advertentie</h4>
                                         </div>
                                         <div className="text-4xl font-bold text-white">
                                             <motion.span key={profileViews} initial={{ opacity: 0.5, y: -5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
@@ -257,7 +282,7 @@ const GoogleMapsAds = () => {
 
                                     {/* Interactions Breakdown */}
                                     <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md row-span-2 flex flex-col justify-center">
-                                        <h4 className="text-gray-300 font-medium mb-6">Extra interacties per maand</h4>
+                                        <h4 className="text-gray-300 font-medium mb-6">Extra interacties per maand door Ads</h4>
 
                                         <div className="space-y-6">
                                             <div className="flex items-center justify-between">
@@ -295,6 +320,18 @@ const GoogleMapsAds = () => {
                                                     {websiteClicks.toLocaleString('nl-NL')}
                                                 </motion.span>
                                             </div>
+
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+                                                        <BookOpen className="w-5 h-5 text-orange-400" />
+                                                    </div>
+                                                    <span className="text-white font-medium">Menukaart</span>
+                                                </div>
+                                                <motion.span key={menuViews} initial={{ opacity: 0.5, x: 5 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold text-white">
+                                                    {menuViews.toLocaleString('nl-NL')}
+                                                </motion.span>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -305,7 +342,7 @@ const GoogleMapsAds = () => {
                                             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                                                 <CalendarCheck className="w-5 h-5 text-white" />
                                             </div>
-                                            <h4 className="text-blue-100 font-medium">Tafelreserveringen</h4>
+                                            <h4 className="text-blue-100 font-medium">Extra Tafelreserveringen</h4>
                                         </div>
                                         <div className="text-5xl font-bold text-white relative z-10 tracking-tight">
                                             <motion.span key={reservations} initial={{ opacity: 0.5, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }}>
