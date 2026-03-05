@@ -62,14 +62,14 @@ const GoogleMapsAds = () => {
                         <div className="w-full bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden relative">
                             {/* Base Image (without pop-up) */}
                             <img
-                                src="/images/products/google-maps-ads-base.png"
+                                src="/images/products/google-maps-ads-popup.png"
                                 alt="Google Maps weergave"
                                 className="w-full h-auto object-cover relative z-10"
                             />
 
                             {/* Popup Overlay layer (with the pop-up) */}
                             <motion.img
-                                src="/images/products/google-maps-ads-popup.png"
+                                src="/images/products/google-maps-ads-base.png"
                                 alt="Google Maps gesponsord kaartje"
                                 className="absolute top-0 left-0 w-full h-full object-cover z-20"
                                 initial={{ opacity: 0 }}
@@ -101,7 +101,7 @@ const GoogleMapsAds = () => {
                                 }}
                                 transition={{
                                     opacity: { duration: 1.5, delay: 1, ease: "easeOut" },
-                                    boxShadow: { duration: 3, delay: 2.5, repeat: Infinity, ease: "easeInOut" }
+                                    boxShadow: { duration: 3, delay: 1, repeat: Infinity, ease: "easeInOut" }
                                 }}
                             />
                         </div>
