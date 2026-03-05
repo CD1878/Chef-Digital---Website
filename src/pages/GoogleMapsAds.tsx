@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
+const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
+
 const GoogleMapsAds = () => {
+    const [wordIdx, setWordIdx] = useState(0);
+
+    useEffect(() => {
+        const wordInterval = setInterval(() => {
+            setWordIdx((prev) => (prev + 1) % businessTypes.length);
+        }, 2200);
+
+        return () => clearInterval(wordInterval);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white selection:bg-chef-accent selection:text-white flex flex-col pt-24">
             <Navbar />
@@ -12,10 +24,24 @@ const GoogleMapsAds = () => {
                 <section className="bg-white pt-24 pb-0 overflow-hidden text-center relative z-10">
                     <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-chef-dark mb-6 leading-[1.1]">
-                            Google Maps Ads voor{" "}
-                            <span className="text-chef-accent">
-                                restaurants
-                            </span>
+                            Jouw{" "}
+                            <span className="inline-grid align-bottom text-chef-accent text-left">
+                                {businessTypes.map((word, idx) => (
+                                    <span
+                                        key={idx}
+                                        className={`col-start-1 row-start-1 pb-1 transition-all duration-500 ease-in-out ${idx === wordIdx
+                                            ? "opacity-100 translate-y-0"
+                                            : idx < wordIdx || (wordIdx === 0 && idx === businessTypes.length - 1)
+                                                ? "opacity-0 -translate-y-4 pointer-events-none"
+                                                : "opacity-0 translate-y-4 pointer-events-none"
+                                            }`}
+                                    >
+                                        {word}
+                                    </span>
+                                ))}
+                            </span>{" "}
+                            <br className="hidden md:block" />
+                            bovenaan in Google Maps
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-3xl text-balance">
                             Gasten zoeken vaak pas kort van tevoren een plek om te eten. Met Google Maps Ads verschijn je direct bovenaan bij lokale zoekopdrachten. Perfect om dagelijks tafels te vullen.
