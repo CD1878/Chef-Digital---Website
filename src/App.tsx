@@ -32,7 +32,7 @@ export const Navbar = () => {
                 Producten <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
               </button>
 
-              <div className="absolute top-full left-1/2 -translate-x-[60%] md:-translate-x-[45%] lg:-translate-x-[35%] w-[85vw] md:w-[80vw] lg:w-max max-w-5xl bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-6 lg:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 z-50 overflow-y-auto max-h-[85vh] lg:overflow-visible lg:max-h-none">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 lg:-translate-x-[35%] w-[85vw] md:w-[80vw] lg:w-max min-w-max bg-white rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-6 lg:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12 z-50 overflow-y-auto max-h-[85vh] lg:overflow-visible lg:max-h-none">
                 {/* Per sector column */}
                 <div className="flex flex-col w-full lg:w-80 pr-0 lg:pr-12 border-b lg:border-b-0 lg:border-r border-black/5 pb-6 lg:pb-0">
                   <h4 className="font-bold text-lg text-chef-dark mb-4 lg:mb-6 border-b border-black/10 pb-4">Per sector</h4>
@@ -327,7 +327,7 @@ const MarketingSection = () => {
               </p>
             </div>
 
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[45%] w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[35%] w-[85%] max-w-[280px] flex justify-center pointer-events-none z-0">
               <img src="/images/home_marketing/google-search-mockup-new.png" alt="Google Search ads" className="w-full h-auto object-contain rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5" />
             </div>
           </div>
