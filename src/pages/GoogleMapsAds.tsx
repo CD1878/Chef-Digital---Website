@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick, Phone, Navigation, CalendarCheck, Eye, BookOpen } from "lucide-react";
+import { ArrowRight, Check, MapPin, Store, Smartphone, TrendingUp, Clock, MousePointerClick, Phone, Navigation, CalendarCheck, Eye, BookOpen, Banknote } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const businessTypes = ["restaurant", "pizzeria", "broodjeszaak", "steakhouse", "tapasbar", "sushi-bar", "visrestaurant"];
@@ -13,8 +13,9 @@ const typeNames = ["Restaurant", "Lunch", "Bar", "Pizzeria", "Sushi", "Tapas", "
 
 const GoogleMapsAds = () => {
     const [wordIdx, setWordIdx] = useState(0);
-    const [cityIdx, setCityIdx] = useState(1);
+    const [cityIdx, setCityIdx] = useState(0);
     const [typeIdx, setTypeIdx] = useState(0);
+    const [revenuePerTable, setRevenuePerTable] = useState(150);
 
     const searchVolume = cityVolumes[cityIdx] * typeMultipliers[typeIdx];
 
@@ -26,6 +27,7 @@ const GoogleMapsAds = () => {
     const websiteClicks = Math.round(totalInteractions * 0.35);
     const menuViews = Math.round(totalInteractions * 0.15);
     const reservations = Math.round((websiteClicks * 0.20) + (calls * 0.50));
+    const extraRevenue = reservations * revenuePerTable;
 
     useEffect(() => {
         const wordInterval = setInterval(() => {
@@ -250,7 +252,7 @@ const GoogleMapsAds = () => {
                                                             >
                                                                 {i === cityIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
                                                             </div>
-                                                            <span className={`absolute top-8 whitespace-nowrap text-xs md:text-sm font-medium transition-colors ${i === cityIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                                                            <span className={`absolute top-8 whitespace-nowrap text-[11px] sm:text-[13px] font-medium transition-colors origin-top-left -rotate-45 -translate-x-2.5 mt-1 z-0 ${i === cityIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
                                                                 {name}
                                                             </span>
                                                         </div>
@@ -260,7 +262,7 @@ const GoogleMapsAds = () => {
                                         </div>
 
                                         <div className="bg-white/5 rounded-3xl p-6 sm:p-8 border border-white/10 relative">
-                                            <h4 className="text-white font-medium mb-8">Type Horeca</h4>
+                                            <h4 className="text-white font-medium mb-8">"{typeNames[typeIdx]} near me"</h4>
 
                                             <div className="relative w-full pb-10">
                                                 {/* Track */}
@@ -282,15 +284,30 @@ const GoogleMapsAds = () => {
                                                             >
                                                                 {i === typeIdx && <div className="w-2 h-2 bg-white rounded-full"></div>}
                                                             </div>
-                                                            {/* Label - rotate on mobile or smaller screens with dynamic offset */}
-                                                            <span className={`absolute top-8 text-[10px] sm:text-xs font-medium transition-colors origin-top-left sm:origin-top ${i === typeIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'
-                                                                } -rotate-45 sm:rotate-0 -translate-x-3 sm:-translate-x-1/2 whitespace-nowrap z-0`}>
+                                                            <span className={`absolute top-8 text-[11px] sm:text-[13px] font-medium transition-colors origin-top-left -rotate-45 -translate-x-2.5 mt-1 whitespace-nowrap z-0 ${i === typeIdx ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
                                                                 {name}
                                                             </span>
                                                         </div>
                                                     ))}
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        {/* Revenue / omzet input slider */}
+                                        <div className="bg-white/5 rounded-3xl p-6 sm:p-8 border border-white/10 relative mt-6 lg:mt-12">
+                                            <div className="flex justify-between items-center mb-6">
+                                                <h4 className="text-white font-medium text-sm sm:text-base pr-4">Gemiddelde omzet p. tafel</h4>
+                                                <span className="text-xl sm:text-2xl font-bold text-emerald-400">€{revenuePerTable}</span>
+                                            </div>
+                                            <input
+                                                type="range"
+                                                min="10"
+                                                max="500"
+                                                step="5"
+                                                value={revenuePerTable}
+                                                onChange={(e) => setRevenuePerTable(parseInt(e.target.value))}
+                                                className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -313,7 +330,7 @@ const GoogleMapsAds = () => {
                                     </div>
 
                                     {/* Interactions Breakdown */}
-                                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md row-span-2 flex flex-col justify-center">
+                                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md row-span-2 sm:row-span-3 flex flex-col justify-center">
                                         <h4 className="text-gray-300 font-medium mb-6">Extra interacties per maand door Ads</h4>
 
                                         <div className="space-y-6">
@@ -379,6 +396,21 @@ const GoogleMapsAds = () => {
                                         <div className="text-5xl font-bold text-white relative z-10 tracking-tight">
                                             <motion.span key={reservations} initial={{ opacity: 0.5, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 12 }}>
                                                 +{reservations.toLocaleString('nl-NL')}
+                                            </motion.span>
+                                        </div>
+                                    </div>
+
+                                    {/* Omzet Result */}
+                                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-md">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                                                <Banknote className="w-5 h-5 text-emerald-400" />
+                                            </div>
+                                            <h4 className="text-gray-300 font-medium">Extra Bruto Omzet</h4>
+                                        </div>
+                                        <div className="text-4xl font-bold text-white">
+                                            <motion.span key={extraRevenue} initial={{ opacity: 0.5, y: -5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
+                                                +<span className="text-emerald-400">€{extraRevenue.toLocaleString('nl-NL')}</span>
                                             </motion.span>
                                         </div>
                                     </div>
