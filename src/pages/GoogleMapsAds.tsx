@@ -85,10 +85,10 @@ const GoogleMapsAds = () => {
                             <motion.div
                                 className="absolute rounded-[24px] pointer-events-none z-30"
                                 style={{
-                                    left: '58.5%',
-                                    top: '22%',
-                                    width: '27.5%',
-                                    height: '42.5%',
+                                    left: '55.2%',
+                                    top: '14.5%',
+                                    width: '28.5%',
+                                    height: '37.5%',
                                 }}
                                 initial={{ opacity: 0 }}
                                 animate={{
