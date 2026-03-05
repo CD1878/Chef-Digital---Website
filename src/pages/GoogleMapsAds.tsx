@@ -73,12 +73,12 @@ const GoogleMapsAds = () => {
                                 alt="Google Maps gesponsord kaartje"
                                 className="absolute top-0 left-0 w-full h-full object-cover z-20"
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: [0, 0, 1, 1, 0] }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.4 }}
                                 transition={{
-                                    duration: 8,
-                                    times: [0, 0.1, 0.25, 0.85, 1],
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
+                                    duration: 1.2,
+                                    ease: "easeOut",
+                                    delay: 0.3
                                 }}
                             />
                         </div>
