@@ -74,7 +74,7 @@ const GoogleMapsAds = () => {
                                 className="absolute top-0 left-0 w-full h-full object-cover z-20"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                viewport={{ once: true, amount: 0.4 }}
+                                viewport={{ once: true, amount: 1 }}
                                 transition={{
                                     duration: 1.2,
                                     ease: "easeOut",
