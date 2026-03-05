@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, X, ArrowRight, Smartphone, Zap, MonitorSmartphone, LineChart, Globe, Palette } from "lucide-react";
+import { Check, X, ArrowRight, Smartphone, Zap, MonitorSmartphone, LineChart, Globe, Palette, ShoppingBag, ClipboardList, Plus, Star } from "lucide-react";
 import { Navbar, Footer, CTASection, CustomerStories } from "../App";
 
 const horecaCustomers = [
@@ -99,21 +99,21 @@ const HorecaWebsite = () => {
                             <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
                                 <h3 className="text-2xl font-bold text-chef-dark mb-4">Aanpassingen snel geregeld</h3>
                                 <p className="text-gray-600 leading-relaxed font-medium mb-6">
-                                    Wijzigingen voeren we vaak binnen 24 uur door. Denk aan nieuwe menukaarten, actuele foto's, vacatures of evenementen.
+                                    Wijzigingen voeren we meestal binnen 24 uur door. Denk aan nieuwe menu’s, actuele foto’s, openingstijden, vacatures of evenementen op je website.
                                 </p>
                             </div>
 
                             <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Altijd up-to-date en vindbaar</h3>
+                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Altijd up-to-date en veilig</h3>
                                 <p className="text-gray-600 leading-relaxed font-medium mb-6">
-                                    Je website is altijd up-to-date en AI- en zoekmachine-geoptimaliseerd. We werken continu aan betere vindbaarheid met de modernste technieken.
+                                    Je website blijft technisch up-to-date, veilig en goed werkend. Updates, controles en onderhoud zorgen dat alles soepel blijft draaien.
                                 </p>
                             </div>
 
                             <div className="bg-white rounded-[32px] p-8 md:p-10 border border-black/5 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Continu in ontwikkeling</h3>
+                                <h3 className="text-2xl font-bold text-chef-dark mb-4">Geen omkijken naar je website</h3>
                                 <p className="text-gray-600 leading-relaxed font-medium mb-6">
-                                    De site is altijd up and running. Daarnaast ontwikkelen we proactief door, bouwen we nieuwe pagina's en groeien we digitaal met jouw zaak mee.
+                                    Wij regelen het beheer en alle kleine aanpassingen. Zo blijft je website actueel terwijl jij je volledig kunt focussen op je zaak.
                                 </p>
                             </div>
                         </div>
@@ -270,6 +270,89 @@ const HorecaWebsite = () => {
                     </div>
                 </section>
 
+                {/* Pricing Section */}
+                <section className="bg-chef-warm py-32 border-t border-black/5">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-chef-dark mb-4 leading-tight">
+                                Eerlijke en transparante prijzen
+                            </h2>
+                            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                                Geen verborgen kosten, geen vaste contracten, geen verrassingen.<br className="hidden md:block" /> Gewoon duidelijke prijzen die zich aanpassen aan je bedrijf.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                            {/* Website Card */}
+                            <div className="bg-white rounded-[32px] p-10 border border-black/5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                                <h3 className="text-3xl font-bold text-chef-dark mb-2">Website</h3>
+                                <p className="text-gray-500 mb-6 text-sm leading-relaxed max-w-[85%]">
+                                    Perfect voor elk restaurant. Je betaalt alleen een vast, laag bedrag voor het actueel houden en onderhouden van een professionele website.
+                                </p>
+                                <div className="mb-8 font-extrabold text-chef-dark flex items-baseline gap-1">
+                                    <span className="text-4xl tracking-tight">€129</span><span className="text-lg text-gray-400 font-medium">/mnd</span>
+                                </div>
+
+                                <ul className="space-y-4 mb-2 mt-auto">
+                                    {[
+                                        { title: "Géén opstartkosten en commissies" },
+                                        { title: "Onbeperkt aanpassingen" },
+                                        { title: "Onbeperkt pagina's" },
+                                        { title: "Alle integraties en koppelingen inbegrepen" },
+                                        { title: "Zoekmachine en AI geoptimaliseerd" },
+                                        { title: "Na 6 maanden maandelijks opzegbaar" }
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-center gap-4">
+                                            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-black/10 shrink-0">
+                                                <Check size={12} className="text-chef-dark" strokeWidth={3} />
+                                            </div>
+                                            <span className="text-gray-800 font-medium">{item.title}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Add-ons Card */}
+                            <div className="bg-white rounded-[32px] p-10 border border-black/5 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                                <h3 className="text-3xl font-bold text-chef-dark mb-2">Upgrade je website</h3>
+                                <p className="text-gray-500 mb-8 text-sm leading-relaxed max-w-[85%]">
+                                    Breid je website eenvoudig uit met specifieke add-ons. Perfect afgestemd op organisaties die nóg meer uit hun online aanwezigheid willen halen.
+                                </p>
+
+                                <ul className="space-y-6 mt-auto">
+                                    <li className="flex items-center gap-4">
+                                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 shrink-0 border border-black/5">
+                                            <Globe size={16} className="text-gray-600" />
+                                        </div>
+                                        <span className="text-gray-800 font-medium flex-grow">Meertalig</span>
+                                        <span className="font-bold text-chef-dark whitespace-nowrap">+ €15/mnd</span>
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 shrink-0 border border-black/5">
+                                            <ClipboardList size={16} className="text-gray-600" />
+                                        </div>
+                                        <span className="text-gray-800 font-medium flex-grow">Online bestelformulier</span>
+                                        <span className="font-bold text-chef-dark whitespace-nowrap">+ €15/mnd</span>
+                                    </li>
+                                    <li className="flex items-center gap-4">
+                                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 shrink-0 border border-black/5">
+                                            <ShoppingBag size={16} className="text-gray-600" />
+                                        </div>
+                                        <span className="text-gray-800 font-medium flex-grow">Webshop upgrade</span>
+                                        <span className="font-bold text-chef-dark whitespace-nowrap">+ €200/mnd</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center mt-12">
+                            <button className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)]">
+                                Bekijk onze tarieven <ArrowRight size={20} />
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
                 <CustomerStories />
 
                 <CTASection
@@ -281,7 +364,7 @@ const HorecaWebsite = () => {
 
             </main>
             <Footer />
-        </div>
+        </div >
     );
 };
 
