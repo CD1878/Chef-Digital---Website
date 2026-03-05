@@ -135,22 +135,22 @@ const HorecaWebsite = () => {
                                 Speciaal ontwikkeld<br className="hidden lg:block" /> voor restaurants en horeca
                             </h2>
 
-                            <ul className="space-y-6 mb-10 text-lg md:text-xl text-gray-600">
+                            <ul className="space-y-6 mb-10 text-base md:text-lg text-gray-600">
                                 <li className="flex items-start gap-4">
-                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
                                     <span className="leading-relaxed">Snel en eenvoudig reserveren via geïntegreerde koppelingen zoals Zenchef, Guestplan, Tebi of The Fork.</span>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
                                     <span className="leading-relaxed">Conversiegericht design dat gasten overtuigt en omzet oplevert.</span>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <span className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></span>
                                     <span className="leading-relaxed">Altijd SEO-geoptimaliseerd, zodat je goed gevonden wordt in Google en Maps.</span>
                                 </li>
                             </ul>
 
-                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+                            <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
                                 Of het nu gaat om tafels vullen tijdens rustige dagen of aanvragen binnenhalen voor feesten en zakelijke evenementen: onze websites zijn er helemaal op ingericht.
                             </p>
                         </div>
